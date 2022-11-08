@@ -2,13 +2,13 @@ import React from 'react'
 import {Box, Container, Flex, Grid, Img, Text} from '@chakra-ui/react'
 const Footer1_cultfit = () => {
   return (
- <Box bgColor='black' color='grey' py='20' px='20px' >
-<Grid  templateColumns={{base:"repeat(1,1fr)",sm:"repeat(1,1fr)", md:"repeat(2,1fr)" , lg:"repeat(2,1fr)", xl:"repeat(2,1fr)"}} gap='40px'>
+ <Box bgColor='black' color='whiteAlpha.800' py='20' px='20px' >
+<Grid  templateColumns={{base:"repeat(1,1fr)",sm:"repeat(1,1fr)", md:"repeat(2,1fr)" , lg:"repeat(2,1fr)", xl:"repeat(2,1fr)"}} gap='45px'>
 <Box>
     <Img src='https://framerusercontent.com/images/p0p2QDo9SGEP5w1KV2uX5dsBXU.jpg' w='40' />
     <Text maxW='70%'>At cult.fit, we make group workouts fun, daily food healthy & tasty, mental fitness easy with yoga & meditation, Medical & lifestyle care hassle-free.#BeBetterEveryDay</Text>
 </Box>
-<Grid  templateColumns={{base:"repeat(1,1fr)",sm:"repeat(2,1fr)", md:"repeat(2,1fr)" , lg:"repeat(4,1fr)", xl:"repeat(4,1fr)"}} gap='20px' >
+<Grid lineHeight='30px' templateColumns={{base:"repeat(1,1fr)",sm:"repeat(2,1fr)", md:"repeat(2,1fr)" , lg:"repeat(4,1fr)", xl:"repeat(4,1fr)"}} gap='35px' >
 <Flex flexDir='column'>
     <Text>cult.fit for business</Text>
     <Text>cult.fit franchise</Text>

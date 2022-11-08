@@ -4,9 +4,9 @@ import {Box, Text, Grid} from '@chakra-ui/react'
 
 const Footer2_cultfit = () => {
   return (
-    <Box backgroundColor='black' py='14'>
+    <Box backgroundColor='blackAlpha.900' py='14'>
  
- <Grid fontWeight='medium' color='grey' textAlign='left' templateColumns={{base:"repeat(1,1fr)",sm:"repeat(1,1fr)", md:"repeat(3,1fr)" , lg:"repeat(6,1fr)", xl:"repeat(6,1fr)"}} gap='3' fontSize='12px'>
+ <Grid fontWeight='medium' color='grey' textAlign='left' templateColumns={{base:"repeat(1,1fr)",sm:"repeat(2,1fr)", md:"repeat(3,1fr)" , lg:"repeat(6,1fr)", xl:"repeat(6,1fr)"}} gap='3' fontSize='14px'>
  
 
  <Box>

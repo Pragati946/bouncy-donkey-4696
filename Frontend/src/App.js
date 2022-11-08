@@ -9,8 +9,8 @@ function App() {
 
 
 
-      {/* <Footer1_cultfit />  */} 
-      {/* <Footer2_cultfit /> */}
+      <Footer1_cultfit />  
+      <Footer2_cultfit />
     </div>
   );
 }
