@@ -1,11 +1,12 @@
-import { GET_ERROR, GET_LOADING, GET_SUCCESS } from "./store.types";
+import { GET_ERROR, GET_LOADING, GET_SUCCESS } from "./man_store.types";
+
 
 const initialState = {
   data: [],
   loading: false,
   error: false,
 };
-export const storeReducer = (state = { initialState }, { type, payload }) => {
+export const menReducer = (state = { initialState }, { type, payload }) => {
   switch (type) {
     case GET_LOADING:{
         return {

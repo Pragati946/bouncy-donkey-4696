@@ -1,10 +1,10 @@
 import { Heading } from "@chakra-ui/react";
-import {Store} from "../src/Components/CultStore/Store/Store"
+import {Man} from "./Components/CultStore/Store/Man"
 function App() {
   return (
     <div>
       {/* <Heading>Cultfit</Heading> */}
-      <Store/>
+      <Man/>
     </div>
   );
 }
