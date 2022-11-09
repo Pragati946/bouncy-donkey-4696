@@ -1,3 +1,4 @@
+
 import React from "react";
 import {
   Box,
@@ -491,5 +492,3 @@ const NAV_ITEMS = [
     ],
   },
 ];
-
-// export default CultStoreNavbar
