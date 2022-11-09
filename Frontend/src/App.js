@@ -1,9 +1,11 @@
-import { Heading } from "@chakra-ui/react";
+// import { Heading } from "@chakra-ui/react";
+import Navbar from './Components/CultFit/CultNavbar/CultNavbar';
+// import CultNavbar from './Components/CultFit/CultNavbar/CultNavbar';
 
 function App() {
   return (
     <div>
-      <Heading>Cultfit</Heading>
+     <Navbar/>
     </div>
   );
 }
