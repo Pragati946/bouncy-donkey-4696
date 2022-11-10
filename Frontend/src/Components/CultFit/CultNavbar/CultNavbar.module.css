@@ -1,0 +1,32 @@
+.Text{
+    font-weight: bolder;
+    color: #b9babc;
+    margin-left: 55px;
+    font-size: larger;
+}
+
+.main{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    background-color: #161821;
+    height: 65px;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 10px;
+    width: 100%;
+}
+
+.textBox{
+    display: flex;
+}
+.iconBox{
+    display: flex;
+    margin-right: 25px;
+}
+.menuItemColor{
+    color: #a1a2a7;
+    font-weight: bold;
+    size: 0px;
+    margin-bottom: 10px;
+}
