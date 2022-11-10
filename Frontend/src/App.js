@@ -1,4 +1,8 @@
 
+function App() {
+  return (
+    <div>
+   
 import { Heading } from "@chakra-ui/react";
 
 import {Store} from "../src/Components/CultStore/Store/Store"
@@ -35,4 +39,4 @@ function App() {
   );
 }
 
-export default App
+export default App;
