@@ -5,8 +5,13 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { ChakraProvider } from "@chakra-ui/react";
 import {BrowserRouter} from  "react-router-dom"
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css';
+
 import { store } from "./Redux/store";
 import { Provider } from "react-redux";
+
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
