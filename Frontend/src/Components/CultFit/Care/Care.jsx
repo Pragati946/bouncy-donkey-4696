@@ -2,13 +2,31 @@ import React from "react";
 import { NavbarCare } from "./NavbarCare";
 import "bootstrap/dist/css/bootstrap.css";
 import Carousel from "react-bootstrap/Carousel";
-import { Box, Image, Text } from "@chakra-ui/react";
+import { border, Box, Container, Divider, Image, Text } from "@chakra-ui/react";
 import "./Care.module.css";
 import { Grid, GridItem } from "@chakra-ui/react";
 import data from "./LabtestData.json";
 
 function Care() {
   console.log(data);
+
+let Senierdata = [
+  {
+    "href": "https://www.cult.fit/care/diagnostic-tests/full-body-checkup",
+    "src": "https://cdn-images.cure.fit/www-curefit-com/image/upload/w_232,fl_progressive,f_auto,q_auto:eco/dpr_2/image/carefit/diagnostics/screening-packs/sr_citizen_adv_m_mag.png",
+    "price": "₹ 5999",
+    "price_text":"Price",
+     "Offer_Price":"Offer Price",
+    "discounted_price": "₹ 2990"},
+    {
+      "href": "https://www.cult.fit/care/diagnostic-tests/full-body-checkup",
+      "src": "https://cdn-images.cure.fit/www-curefit-com/image/upload/w_232,fl_progressive,f_auto,q_auto:eco/dpr_2/image/carefit/bundle/FitCheck_Magazine-02.png",
+      "price": "₹ 5999",
+      "price_text":"Price",
+       "Offer_Price":"Offer Price",
+      "discounted_price": "₹ 2990"},
+]
+
 
   return (
     <div>
@@ -46,31 +64,28 @@ function Care() {
         </Carousel>
       </Box>
       <Box marginLeft="15%" marginRight="15%" marginTop="2%">
-        <h3>Lab Tests</h3>
+        <Text fontWeight='bold' fontSize='25'>Lab Tests</Text>
         <p>Assess and monitor your health from the comfort of your home now.</p>
-        <Grid templateColumns="repeat(5, 1fr)" gap={6}>
+        <Grid templateColumns={{base:"repeat(1, 1fr)",sm:"repeat(3, 1fr)",md:"repeat(4, 1fr)",lg:"repeat(5, 1fr)",xl:"repeat(5, 1fr)"}} gap={6}>
           {data.map((e) => {
             return (
-              <GridItem w="100%" >
+              <GridItem   _hover={{transition:'all 0.3s ease-in',border:'4px solid transparent'}} w="100%" >
                 <Image borderRadius='5px' src={e.src}></Image>
                 <Box display='flex' justifyContent='space-between' marginBottom='0px' >
                 <Text>{e.price_text}</Text>
                 <Text decoration='line-through' color='grey' >{e.price}</Text>
                 </Box>
-                <Box display='flex' justifyContent='space-between' marginTop='-12px' >
+                <Box display='flex' justifyContent='space-between' marginTop='-2px' >
                 <Text >{e.Offer_Price}</Text>
                 <Text  fontWeight='bold' >{e.discounted_price}</Text>
                 </Box>
               </GridItem>
             );
           })}
-
-          {/* <GridItem w='100%' h='52' bg='blue.500' />
-  <GridItem w='100%' h='52' bg='blue.500' />
-  <GridItem w='100%' h='52' bg='blue.500' />
-  <GridItem w='100%' h='52' bg='blue.500' /> */}
         </Grid>
-        <div height="400px">h</div>
+        <Divider bgColor='black' height='0.5px' color='black' lineHeight='20px' />
+
+
       </Box>
     </div>
   );

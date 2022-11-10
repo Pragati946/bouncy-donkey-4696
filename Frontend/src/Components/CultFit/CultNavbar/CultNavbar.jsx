@@ -1,12 +1,15 @@
 import {
   Box,
   Button,
+  Hide,
+  IconButton,
   Image,
   Input,
   InputGroup,
   InputLeftElement,
   MenuDivider,
   MenuGroup,
+  Show,
   Text,
 } from "@chakra-ui/react";
 import React from "react";
@@ -16,6 +19,7 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 import { GoLocation } from "react-icons/go";
 import { Menu, MenuButton, MenuList, MenuItem } from "@chakra-ui/react";
 import Care from './../Care/Care';
+import {AddIcon, EditIcon, ExternalLinkIcon, HamburgerIcon, RepeatIcon} from "@chakra-ui/icons"
 
 let data = [
   "Imphal",
@@ -48,12 +52,14 @@ function CultNavbar() {
         height="35px"
         src="https://cdn-images.cure.fit/www-curefit-com/image/upload/c_fill,w_120,q_auto:eco,dpr_2,f_auto,fl_progressive//image/test/brand-logo/vman-and-white-cult-text.png"
       ></Image>
+      <Hide below="md" >
       <Box className={styles.textBox}>
         <Text className={styles.Text}>FITNESS</Text>
         <Text className={styles.Text}>CARE</Text>
         <Text className={styles.Text}>MIND</Text>
         <Text className={styles.Text}>STORE</Text>
       </Box>
+      </Hide>
       <Box className={styles.iconBox}>
         <Menu >
           <MenuButton
@@ -170,6 +176,30 @@ function CultNavbar() {
         <AiOutlineShoppingCart
           style={{ color: "#e8e8e9", height: "40px", width: "26px" }}
         />
+           <Show below="md" >
+<Menu>
+  <MenuButton
+    as={IconButton}
+    aria-label='Options'
+    icon={<HamburgerIcon />}
+    variant='outline'
+  />
+  <MenuList>
+    <MenuItem icon={<AddIcon />} >
+      FITNESS
+    </MenuItem>
+    <MenuItem icon={<ExternalLinkIcon />} >
+      CARE
+    </MenuItem>
+    <MenuItem icon={<RepeatIcon />} >
+      MIND
+    </MenuItem>
+    <MenuItem icon={<EditIcon />} >
+      STORE
+    </MenuItem>
+  </MenuList>
+</Menu>
+           </Show>
       </Box>
     </Box>
     <Care/>
