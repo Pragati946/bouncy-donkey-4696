@@ -1,0 +1,3 @@
+export const ProductDetails_Loading="ProductDetails_Loading"
+export const ProductDetails_Error="ProductDetails_Error"
+export const ProductDetails_Success="ProductDetails_Success"
