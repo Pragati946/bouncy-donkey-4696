@@ -1,10 +1,11 @@
+import { applyMiddleware, combineReducers, legacy_createStore } from "redux";
+import { getDataReducer } from "./GetData/getData.reducer";
+import thunk from "redux-thunk";
+import { buttonReducer } from "./ButtonRoute/button.reducer";
 
-import { applyMiddleware, combineReducers, legacy_createStore} from "redux";
-import thunk from "redux-thunk"
-import { menReducer } from "./ManProduct/man_store.reducer";
-const rootReducer=combineReducers({
-man:menReducer,
+const rootreducer = combineReducers({
+  getData: getDataReducer,
+  button: buttonReducer,
 });
 
-export const store=legacy_createStore(rootReducer,applyMiddleware(thunk));
-
+export const store = legacy_createStore(rootreducer, applyMiddleware(thunk));

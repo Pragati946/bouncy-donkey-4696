@@ -1,4 +1,3 @@
-
 import React from "react";
 import {
   Box,
@@ -25,9 +24,11 @@ import {
   ChevronDownIcon,
   ChevronRightIcon,
 } from "@chakra-ui/icons";
-
 import { BsCart } from "react-icons/bs";
 import UserLogin from "./UserLogin";
+import { useDispatch, useSelector } from "react-redux";
+import { getData } from "../../../Redux/GetData/getData.actions";
+import { getButton } from "../../../Redux/ButtonRoute/button.action";
 
 export default function CultStoreNavbar() {
   const { isOpen, onToggle } = useDisclosure();
@@ -147,7 +148,14 @@ const DesktopNav = () => {
   );
 };
 
-const DesktopSubNav = ({ label, href, subLabel }) => {
+const DesktopSubNav = ({ label, href, subLabel, route }) => {
+  const dispatch = useDispatch();
+
+  const handleRoute = (route) => {
+    dispatch(getData(route));
+    dispatch(getButton(route));
+  };
+
   return (
     <Link
       href={href}
@@ -156,9 +164,11 @@ const DesktopSubNav = ({ label, href, subLabel }) => {
       p={2}
       rounded={"md"}
       _hover={{ bg: useColorModeValue("pink.50", "gray.900") }}
+      onClick={() => handleRoute(route)}
     >
       <Stack direction={"row"} align={"center"}>
         <Box>
+          {/* <Button> */}
           <Text
             transition={"all .9s ease"}
             _groupHover={{ color: "pink.400" }}
@@ -166,6 +176,7 @@ const DesktopSubNav = ({ label, href, subLabel }) => {
           >
             {label}
           </Text>
+          {/* </Button> */}
           <Text fontSize={"sm"}>{subLabel}</Text>
         </Box>
         <Flex
@@ -259,8 +270,10 @@ const NAV_ITEMS = [
       {
         label: "Top Selling",
         href: "#",
+        route: "topSellings",
       },
     ],
+    route: "topSellings",
   },
   {
     label: "Just Launched",
@@ -268,8 +281,10 @@ const NAV_ITEMS = [
       {
         label: "New Arrivals",
         href: "#",
+        route: "topArrivals",
       },
     ],
+    route: "topArrivals",
   },
   {
     label: "Men",
@@ -277,24 +292,30 @@ const NAV_ITEMS = [
       {
         label: "Apparel",
         href: "#",
+        route: "mens",
       },
       {
         label: "T-Shirts",
         href: "#",
+        route: "mens",
       },
       {
         label: "Joggers and Track Pants",
         href: "#",
+        route: "mens",
       },
       {
         label: "Jackets and Sweatshirts",
         href: "#",
+        route: "mens",
       },
       {
         label: "Shorts",
         href: "#",
+        route: "mens",
       },
     ],
+    route: "mens",
   },
   {
     label: "Women",
@@ -302,36 +323,45 @@ const NAV_ITEMS = [
       {
         label: "Apparel",
         href: "#",
+        route: "womens",
       },
       {
         label: "T-Shirts",
         href: "#",
+        route: "womens",
       },
       {
         label: "Sports Bra",
         href: "#",
+        route: "womens",
       },
       {
         label: "Tights",
         href: "#",
+        route: "womens",
       },
       {
         label: "Shorts",
         href: "#",
+        route: "womens",
       },
       {
         label: "Joggers",
         href: "#",
+        route: "womens",
       },
       {
         label: "Jackets and Sweatshirts",
         href: "#",
+        route: "womens",
       },
       {
         label: "BoyShorts",
         href: "#",
+        route: "womens",
       },
     ],
+    route: "womens",
   },
   {
     label: "Footwear",
@@ -339,16 +369,20 @@ const NAV_ITEMS = [
       {
         label: "All",
         href: "#",
+        route: "footwears",
       },
       {
         label: "Men's Footwear",
         href: "#",
+        route: "footwears",
       },
       {
         label: "Women's Footwear",
         href: "#",
+        route: "footwears",
       },
     ],
+    route: "footwears",
   },
   {
     label: "Cardio",
@@ -356,20 +390,25 @@ const NAV_ITEMS = [
       {
         label: "All",
         href: "#",
+        route: "cardio",
       },
       {
         label: "Spinbikes",
         href: "#",
+        route: "cardio",
       },
       {
         label: "Treadmills",
         href: "#",
+        route: "cardio",
       },
       {
         label: "Rower",
         href: "#",
+        route: "cardio",
       },
     ],
+    route: "cardio",
   },
   {
     label: "Cycles",
@@ -377,24 +416,30 @@ const NAV_ITEMS = [
       {
         label: "All",
         href: "#",
+        route: "cycles",
       },
       {
         label: "Geared Cycles",
         href: "#",
+        route: "cycles",
       },
       {
         label: "Sinhle speed cycles",
         href: "#",
+        route: "cycles",
       },
       {
         label: "Electric cycles",
         href: "#",
+        route: "cycles",
       },
       {
         label: "kids cycles",
         href: "#",
+        route: "cycles",
       },
     ],
+    route: "cycles",
   },
   {
     label: "Accessories",
@@ -402,36 +447,45 @@ const NAV_ITEMS = [
       {
         label: "All",
         href: "#",
+        route: "accessories",
       },
       {
         label: "Towel",
         href: "#",
+        route: "accessories",
       },
       {
         label: "Gloves",
         href: "#",
+        route: "accessories",
       },
       {
         label: "Mask",
         href: "#",
+        route: "accessories",
       },
       {
         label: "Duffle Bag",
         href: "#",
+        route: "accessories",
       },
       {
         label: "Socks",
         href: "#",
+        route: "accessories",
       },
       {
         label: "Yoga Mat",
         href: "#",
+        route: "accessories",
       },
       {
         label: "Jumping Rope",
         href: "#",
+        route: "accessories",
       },
     ],
+    route: "accessories",
   },
   {
     label: "Supplements",
@@ -439,40 +493,50 @@ const NAV_ITEMS = [
       {
         label: "All",
         href: "#",
+        route: "supplements",
       },
       {
         label: "Personal cares",
         href: "#",
+        route: "supplements",
       },
       {
         label: "Protein",
         href: "#",
+        route: "supplements",
       },
       {
         label: "Snacks",
         href: "#",
+        route: "supplements",
       },
       {
         label: "Staples",
         href: "#",
+        route: "supplements",
       },
       {
         label: "Vitamins",
         href: "#",
+        route: "supplements",
       },
       {
         label: "Weight loss",
         href: "#",
+        route: "supplements",
       },
       {
         label: "Immunity",
         href: "#",
+        route: "supplements",
       },
       {
         label: "Muscle recovery",
         href: "#",
+        route: "supplements",
       },
     ],
+    route: "supplements",
   },
   {
     label: "Equipments",
@@ -480,15 +544,19 @@ const NAV_ITEMS = [
       {
         label: "All",
         href: "#",
+        route: "equipments",
       },
       {
         label: "Strenghts",
         href: "#",
+        route: "equipments",
       },
       {
         label: "Others",
         href: "#",
+        route: "equipments",
       },
     ],
+    route: "equipments",
   },
 ];
