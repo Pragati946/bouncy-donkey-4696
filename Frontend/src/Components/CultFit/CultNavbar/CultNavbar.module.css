@@ -3,6 +3,11 @@
     color: #b9babc;
     margin-left: 55px;
     font-size: larger;
+    cursor:pointer;
+}
+.Text:hover{
+    color: #8c8e91;
+
 }
 
 .main{

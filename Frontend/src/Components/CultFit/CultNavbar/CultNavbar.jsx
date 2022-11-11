@@ -1,26 +1,13 @@
-import {
-  Box,
-  Button,
-  Hide,
-  IconButton,
-  Image,
-  Input,
-  InputGroup,
-  InputLeftElement,
-  MenuDivider,
-  MenuGroup,
-  Show,
-  Text,
-} from "@chakra-ui/react";
+import {  Box,  Button,  Flex,  Hide,  IconButton,  Image,  Input,  InputGroup,  InputLeftElement,  MenuDivider,  MenuGroup,
+  Show,  Text,} from "@chakra-ui/react";
 import React from "react";
 import styles from "./CultNavbar.module.css";
 import { BsFillPersonFill, BsSearch } from "react-icons/bs";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { GoLocation } from "react-icons/go";
 import { Menu, MenuButton, MenuList, MenuItem } from "@chakra-ui/react";
-import Care from './../Care/Care';
 import {AddIcon, EditIcon, ExternalLinkIcon, HamburgerIcon, RepeatIcon} from "@chakra-ui/icons"
-import Mind from './../Mind/Mind';
+
 
 let data = [
   "Imphal",
@@ -46,13 +33,16 @@ let data = [
 
 function CultNavbar() {
   return (
-    <Box>
-      <Box className={styles.main}>
+    <Box pos='sticky' top='0' zIndex='300'>
+      <Flex
+      gap='3'
+      className={styles.main}>
       
       <Image
         height="35px"
         src="https://cdn-images.cure.fit/www-curefit-com/image/upload/c_fill,w_120,q_auto:eco,dpr_2,f_auto,fl_progressive//image/test/brand-logo/vman-and-white-cult-text.png"
       ></Image>
+      
       <Hide below="md" >
       <Box className={styles.textBox}>
         <Text className={styles.Text}>FITNESS</Text>
@@ -61,7 +51,10 @@ function CultNavbar() {
         <Text className={styles.Text}>STORE</Text>
       </Box>
       </Hide>
+
+
       <Box className={styles.iconBox}>
+<Hide below='sm'>
         <Menu >
           <MenuButton
             style={{ backgroundColor: "transparent", color: "#879ca6" }}
@@ -137,6 +130,7 @@ function CultNavbar() {
                 <span className={styles.menuItemColor}>Mumbai</span>
               </MenuItem>
             </MenuGroup>
+
             <MenuGroup title="Others" className={styles.menuItemColor}>
               <MenuDivider marginLeft="15px" marginRight="15px" />
             </MenuGroup>
@@ -155,35 +149,40 @@ function CultNavbar() {
             })}
           </MenuList>
         </Menu>
-        <Button
-          style={{
-            backgroundColor: "transparent",
-            border: "2px solid white",
-            color: "#f1fafe",
-          }}
+
+        <Button          
+            backgroundColor= "transparent"
+                     border= "2px solid white"
+                      color= "#f1fafe"
+          
         >
           GET APP
         </Button>
-
+        </Hide>
         <BsFillPersonFill
           style={{
             color: "#e8e8e9",
             height: "40px",
             width: "26px",
             marginRight: "20px",
-            marginLeft: "20px",
-          }}
+            marginLeft: "20px"  }}
         />
         <AiOutlineShoppingCart
-          style={{ color: "#e8e8e9", height: "40px", width: "26px" }}
+          style={{ color: "#e8e8e9", height: "40px", width: "26px",marginRight: "20px" }}
         />
-           <Show below="md" >
-<Menu>
+
+      
+           <Show below="md" > 
+<Menu  >
   <MenuButton
     as={IconButton}
+    border='1px solid white'
+    color='white'
     aria-label='Options'
     icon={<HamburgerIcon />}
-    variant='outline'
+    variant='ghost'
+    _hover={{bg:'whiteAlpha.400'}}
+
   />
   <MenuList>
     <MenuItem icon={<AddIcon />} >
@@ -201,9 +200,11 @@ function CultNavbar() {
   </MenuList>
 </Menu>
            </Show>
-      </Box>
+
     </Box>
-    <Mind/>
+
+    </Flex>
+  
     </Box>
   );
 }

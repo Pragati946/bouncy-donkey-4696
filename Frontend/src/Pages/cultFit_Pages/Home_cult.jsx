@@ -32,16 +32,14 @@ const Home_cult = () => {
           flexDir='column'
           alignItems='center'
             pos="absolute"
-            top="25%"
+            top="15%"
             left="20%"        
             m="auto"
            gap='10'
           >
                      
-              <Box>
+              <Box  w={{md:'250px',lg:'auto'}}>
                 <Img
-              fontSize={{base:"1em", md:"2.2rem",lg:"2.4rem", "2xl":"3.6rem" }}
-        
                   src="https://cdn-images.cure.fit/www-curefit-com/image/upload/c_fill,w_500,q_auto:eco,dpr_1,f_auto,fl_progressive/image/test/we-are-cult-logo/text-only-v2.png"
                   alt=""
                 />

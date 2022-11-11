@@ -1,29 +1,21 @@
-<<<<<<< HEAD
+
 import { applyMiddleware, combineReducers, legacy_createStore } from "redux";
-import { getDataReducer } from "./GetData/getData.reducer";
 import thunk from "redux-thunk";
+import { getDataReducer } from "./GetData/getData.reducer";
 import { buttonReducer } from "./ButtonRoute/button.reducer";
 import { AuthReducer } from "./Auth/Auth.reducer";
+// import { storeReducer } from "./Store/store.reducer";
 
-const rootreducer = combineReducers({
+const rootReducer = combineReducers({
   getData: getDataReducer,
   button: buttonReducer,
   auth:AuthReducer,
-=======
-
-// import { storeReducer } from "./Store/store.reducer";
-import { applyMiddleware, combineReducers, legacy_createStore} from "redux";
-import thunk from "redux-thunk"
-import ProductDetailsreducer from "./Product_Details/ProductDetails.reducer";
-import { getDataReducer } from "./GetData/getData.reducer";
-import { buttonReducer } from "./ButtonRoute/button.reducer";
-const rootReducer=combineReducers({
-// store:storeReducer,
-productdetail:ProductDetailsreducer,
-getData: getDataReducer,
-  button: buttonReducer
->>>>>>> main
-});
+  // store:storeReducer,
+})
+// import ProductDetailsreducer from "./Product_Details/ProductDetails.reducer";
+// const rootReducer=combineReducers({
 
 
-export const store = legacy_createStore(rootReducer, applyMiddleware(thunk));
+
+
+export const store = legacy_createStore(rootReducer, applyMiddleware(thunk))
