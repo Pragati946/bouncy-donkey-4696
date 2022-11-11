@@ -25,14 +25,13 @@ import {
   ChevronRightIcon,
 } from "@chakra-ui/icons";
 import { BsCart } from "react-icons/bs";
-import UserLogin from "./UserLogin";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch} from "react-redux";
 import { getData } from "../../../Redux/GetData/getData.actions";
 import { getButton } from "../../../Redux/ButtonRoute/button.action";
+import { Login } from "../../../Pages/Authentication/Login";
 
 export default function CultStoreNavbar() {
   const { isOpen, onToggle } = useDisclosure();
-
   return (
     <Box>
       <Flex
@@ -78,7 +77,7 @@ export default function CultStoreNavbar() {
         </Flex>
 
         <HStack flex={{ base: 1, md: 0 }} justify={"flex-end"} spacing={3}>
-          <UserLogin />
+          <Login/>
           <Button
             fontSize={"sm"}
             fontWeight={200}
@@ -99,7 +98,6 @@ export default function CultStoreNavbar() {
 }
 
 const DesktopNav = () => {
-  const linkColor = useColorModeValue("gray.600", "gray.200");
   const linkHoverColor = useColorModeValue("gray.800", "white");
   const popoverContentBgColor = useColorModeValue("white", " #262626");
 
