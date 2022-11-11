@@ -1,22 +1,24 @@
 import React from "react";
 import { useState } from "react";
-import {Box, Grid, Text} from '@chakra-ui/react'
+import {Box, Grid, Img, Text} from '@chakra-ui/react'
 
 const Slide = () => {
   const [image, setImage] = useState('https://cdn-images.cure.fit/www-curefit-com/image/upload/w_232,fl_progressive,f_auto,q_auto:eco/dpr_2/image/carefit/bundle/Alcohol_magazine.png');
   return (
-    <Grid  borderRadius='12' templateColumns={{lg:'repeat(2,1fr)'}} color='white' w='70%' m='auto' justifyContent='center' alignItem='center' borderRight='5px dashed grey'>
 
-      <Box p='0' backgroundRepeat='no-repeat' backgroundSize='cover' bgImg={image}  borderRadius='12'>  </Box>
+    <Grid  borderRadius='12' templateColumns={{base:'repeat(1,1fr)',sm:'repeat(1,1fr)',md:'repeat(2,1fr)',lg:'repeat(2,1fr)',xl:'repeat(2,1fr)'}} color='white' w='70%' m='auto' justifyContent='center' alignItem='center' borderRight='5px dashed grey'>
+
+      <Box p='0' h={{sm:'30vh',md:'auto'}} backgroundRepeat='no-repeat' backgroundSize='cover' bgImg={image}  borderRadius='12'>
+        </Box>
       <Box p='5' textAlign='center'>
           <Text  fontSize='25px' fontWeight='bold'>WellNess Hub</Text>  
           <Text>One place for all your well-being needs</Text>
         {
 images_forBadge.map((ele)=>   <Text p='3' bg='whiteAlpha.200' m='2' borderRadius='12'  _hover={{bg: 'whiteAlpha.400'}} 
-            onMouseEnter={() =>
+            onMouseEnter ={() =>
                 setImage(ele.namepodkasterimage)
              } >   
-            <Box textAlign='left'>
+            <Box textAlign='left' >
               <h2>{ele.namepodkaster}</h2>
             </Box>
   </Text>

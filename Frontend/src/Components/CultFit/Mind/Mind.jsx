@@ -1,6 +1,6 @@
 import { Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPanel, Box, Image } from '@chakra-ui/react';
 import React from 'react'
-import Footer1_cultfit from '../Footer/Footer1_cultfit/Footer1_cultfit';
+import Footer1_cultfit from '../Footer/Footer1_cultfit';
 import { Navbarmind } from './Navbarmind';
 import { Text } from '@chakra-ui/react';
 import { Grid } from '@chakra-ui/react';

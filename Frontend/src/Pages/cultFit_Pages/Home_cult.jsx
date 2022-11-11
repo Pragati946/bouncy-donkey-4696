@@ -1,37 +1,31 @@
 import React from "react";
 import {
-  Box,
-  Button,
-  Flex,
-  Grid,
-  Hide,
-  Img,
-  ListItem,
-  Text,
-  UnorderedList,
-} from "@chakra-ui/react";
-import { motion } from "framer-motion";
+  Box,  Button,  Flex,  Grid,  Hide,  Img,  ListItem,  Show,  Text,  UnorderedList,} from "@chakra-ui/react";
+import { motion,useScroll  } from "framer-motion";
 import Slider from "../../Components/CultFit/HomePage_cultfit/Slider";
 import Footer1_cultfit from "../../Components/CultFit/Footer/Footer1_cultfit";
 import Footer2_cultfit from "../../Components/CultFit/Footer/Footer2_cultfit";
 import { BsArrowRightCircle } from "react-icons/bs";
-import {
-  cards_premium,
-  PassBoxElite,
-  Home_cult_grid4_boxes,
-} from "../../Components/CultFit/Fitness_cultfitPage/CommonExports_Raj/components_cultfit";
+import {  cards_premium,  PassBoxElite,  Home_cult_grid4_boxes} from "../../Components/CultFit/Fitness_cultfitPage/CommonExports_Raj/components_cultfit";
 import { data_passes_fitness } from "./FitnessPage_cultfit";
 const Home_cult = () => {
+  const {scrollProgress} = useScroll ()
+  
   return (
     <>
-      <Box>
+      <Box bg='blackAlpha.800'>
         <Box pos="relative">
           <Box opacity=".8">
             <video
               autoPlay
-              loop
-              src="https://cdn-images.cure.fit/www-curefit-com/video/upload/c_fill,w_1600,ar_1.77,q_auto:eco,dpr_1,vc_auto,f_auto/video/test/we-are-cult-web.mp4"
-            />
+              loop>
+              <source 
+               src="https://cdn-images.cure.fit/www-curefit-com/video/upload/c_fill,w_1600,ar_1.77,q_auto:eco,dpr_1,vc_auto,f_auto/video/test/we-are-cult-web.mp4"
+               type='video/mp4'
+              />
+              </video>
+
+           
           </Box>
 
           <Flex
@@ -56,7 +50,8 @@ const Home_cult = () => {
 
               <Box>
                 <Img
-                  w="20vw"
+         fontSize={{base:"1em", md:"2.2rem",lg:"2.4rem", "2xl":"3.6rem" }}
+        
                   src="https://cdn-images.cure.fit/www-curefit-com/image/upload/c_fill,w_500,q_auto:eco,dpr_1,f_auto,fl_progressive/image/test/we-are-cult-logo/text-only-v2.png"
                   alt=""
                 />
@@ -90,22 +85,24 @@ const Home_cult = () => {
           </Flex>
         </Box>
 
-        {/* motion Boxs********************** */}
-        <Box textAlign="center" border="1px solid red" p="20">
-          <motion.Box
-            initial={{ opacity: 1 }}
-            exit={{ opacity: 0, scale: 0 }}
+        {/* motion Boxs******************************************************* */}
+        <Show above='sm'>
+        <Box textAlign="center" color='whiteAlpha.300' p="20">
+          <Box as={motion.div}  pos='sticky' top='0'
+            initial={{scale:0, opacity: 0 }}
+            animate={{ opacity: 1, scale: 1 }}
             transition={{}}
-          >
-            <Flex
-              pos="sticky"
-              top="0"
-              objectFit="cover"
-              justifyContent="space-between"
-              onAbort={{ scale: "0" }}
+            zIndex='-3'         
+            >
+          
+            
+            <Flex     
+              // objectFit="cover"
+              justifyContent="space-around"              
             >
               <Img
                 boxSize="30%"
+
                 src="https://cdn-images.cure.fit/www-curefit-com/image/upload/c_fill,w_630,q_auto:eco,dpr_1,f_auto,fl_progressive/image/test/image_zoom_widget/image_zoom_widget_Img_1.png"
               ></Img>
               <Img
@@ -114,12 +111,14 @@ const Home_cult = () => {
                 src="https://cdn-images.cure.fit/www-curefit-com/image/upload/c_fill,w_630,q_auto:eco,dpr_1,f_auto,fl_progressive/image/test/image_zoom_widget/image_zoom_widget_Img_2.png"
               ></Img>
             </Flex>
-          </motion.Box>
+          </Box>
+<Box zIndex='20' >
+          <Text
+          fontSize={{sm:"40px", md:"40px",lg:"40px", "2xl":"3.6rem" }}
+          fontWeight='bold' >One membership for all your fitness needs</Text>
+          </Box>
 
-          <Text fontSize="40px">One membership for all your fitness needs</Text>
-
-          <motion.Box animate={{}}>
-            <Flex objectFit="cover" justifyContent="space-between">
+            <Flex as='motion.Box' objectFit="cover" zIndex='-3' justifyContent="space-between">
               <Img
                 boxSize="25%"
                 src="https://cdn-images.cure.fit/www-curefit-com/image/upload/c_fill,w_630,q_auto:eco,dpr_1,f_auto,fl_progressive/image/test/image_zoom_widget/image_zoom_widget_Img_3.png"
@@ -138,78 +137,101 @@ const Home_cult = () => {
                 alt=""
               />
             </Flex>
-          </motion.Box>
+       
         </Box>
+        </Show>
 
-        {/* motion Boxs2********************** */}
 
-        <Box textAlign="center" p="20" m="auto">
-          <Text pos="sticky" top="20%" fontSize="60px" fontWeight="bold">
-            Fun, trainer led <br /> group classes
-          </Text>
-          <motion.Box
-            border="10px solid green"
-            pos="sticky"
-            top="20%"
-            zIndex="-1"
-            transition={{ velocity: "0.7" }}
-          >
-            <Flex objectFit="cover" justifyContent="center">
-              <Img
-                boxSize="21%"
+        {/* motion Boxs2*************************************************************************************************** */}
+
+        <Box
+         as={motion.div}
+        textAlign="center"
+          m="auto"
+          transition={{ velocity: "0.6" }}
+          initial={{transform:'scale(0)'}}
+          animate={{transform:'scale(1)'}}          
+        exit={{tranform:'scale(0)'}}
+               >
+        <Text
+        fontSize={{base:"1.4em", md:"2.2rem",lg:"2.4rem", "2xl":"3.6rem" }}
+           pos="sticky" top="20%"  
+          zIndex='20' color='whiteAlpha.600'
+            fontWeight="bold" textDecor='wavy'  >
+            Fun, trainer led  group classes
+          </Text> 
+          <Box
+          w='100%'
+          py='3'
+            // as={motion.div}
+            // animate={{transform:'scale(1)',opacity:1,z:0 }}
+            // exit={{scale:0,opacity:0}}
+            // transition={{z:-20 }}
+            zIndex="-3"    
+            sm={{border:'20px solid red' }}
+            >
+
+            <Flex pos='sticky'top="0"  objectFit="cover" zIndex='-10' 
+            justifyContent="center"
+            >
+              <Box
+                // _hover={{border:'1px solid red'}}
+                // _hover={{w:'22%',transition:'all 0.5s ease-out'}}
+                w="21%"
                 mt="50px"
+              >
+              <Img 
                 src="https://cdn-images.cure.fit/www-curefit-com/image/upload/c_fill,w_200,q_auto:eco,dpr_2,f_auto,fl_progressive/image/test/trainer-parallax/tile-1.png"
-              ></Img>
+
+                />
+                </Box>
 
               <Img
-                boxSize="21%"
+                w="21%"           
                 mt="50px"
                 src="https://cdn-images.cure.fit/www-curefit-com/image/upload/c_fill,w_200,q_auto:eco,dpr_2,f_auto,fl_progressive/image/test/trainer-parallax/tile-2.png"
-              ></Img>
+                />
 
-              <Img
-                boxSize="21%"
-                mt="50px"
+              <Img        
+               w="21%"               
+                mt="50px"              
                 src="https://cdn-images.cure.fit/www-curefit-com/image/upload/c_fill,w_200,q_auto:eco,dpr_2,f_auto,fl_progressive/image/test/trainer-parallax/tile-3.png"
-              ></Img>
+               />
 
               <Img
-                boxSize="21%"
+                w="21%"
                 mt="50px"
                 src="https://cdn-images.cure.fit/www-curefit-com/image/upload/c_fill,w_200,q_auto:eco,dpr_2,f_auto,fl_progressive/image/test/trainer-parallax/tile-4.png"
-              ></Img>
+               />
             </Flex>
-            {/* </motion.Box>
-
-
-
-<motion.Box  animate={{}}> */}
-            <Flex objectFit="cover" justifyContent="center">
+          
+            <Flex  objectFit="cover" justifyContent="center">
               <Img
-                boxSize="21%"
+                w="21%"
                 src="https://cdn-images.cure.fit/www-curefit-com/image/upload/c_fill,w_200,q_auto:eco,dpr_2,f_auto,fl_progressive/image/test/trainer-parallax/tile-5.png"
                 alt=""
-              />
+                />
               <Img
-                boxSize="21%"
+                w="21%"
                 src="https://cdn-images.cure.fit/www-curefit-com/image/upload/c_fill,w_200,q_auto:eco,dpr_2,f_auto,fl_progressive/image/test/trainer-parallax/tile-6.png"
                 alt=""
-              />
+                />
               <Img
-                boxSize="21%"
+                w="21%"
                 src="https://cdn-images.cure.fit/www-curefit-com/image/upload/c_fill,w_200,q_auto:eco,dpr_2,f_auto,fl_progressive/image/test/trainer-parallax/tile-7.png"
                 alt=""
-              />
+                />
               <Img
-                boxSize="21%"
+                w="21%"
                 src="https://cdn-images.cure.fit/www-curefit-com/image/upload/c_fill,w_200,q_auto:eco,dpr_2,f_auto,fl_progressive/image/test/trainer-parallax/tile-8.png"
                 alt=""
-              />
+                />
             </Flex>
-          </motion.Box>
+                </Box>
+         
         </Box>
 
-        {/* motion Boxs end...............********************** */}
+        {/* motion Boxs end...............***************************************************************** */}
 
         {/* Static Boxs    ...............**************************** */}
         {/* CultFit Pass Boxs    ...............********************** */}
@@ -336,19 +358,27 @@ const Home_cult = () => {
             bgImage="https://cdn-images.cure.fit/www-curefit-com/image/upload/c_fill,w_1200,q_auto:eco,dpr_1,f_auto,fl_progressive//image/test/download-app/download-app-variant-2.png"
             color="whiteAlpha.500"
             borderRadius="16"
-            p="16"
-            w="70%"
-            m="auto"
-            mt="4vw"
+        
+              p="16"
+              w="70%"
+              m="auto"
+             mt="4vw"
+      
+            sm={{
+              p:"2",
+              w:"100%",
+              m:"auto",
+             mt:"4vw",
+             
+            }}
           >
             <Box>
-              <Text fontSize="2em">Download the most loved fitness app</Text>
+              <Text fontSize={{sm:"1.4em",md:'2em'}}>Download the most loved fitness app</Text>
               <p>Start your fitness journey with us. Join the Cult!</p>
             </Box>
 
-            <Box mt="10">
-              <Img
-                py="3"
+            <Box mt="10" sm={{width:'60%',transform:'scale(.6)'}}>
+              <Img                 
                 src="https://cdn-images.cure.fit/www-curefit-com/image/upload/c_fill,h_50,ar_2.98,q_auto:eco,dpr_1.0700000524520874,f_auto,fl_progressive//image/test/download-app/app-store-dark-card-2.png"
                 alt=""
               />
@@ -357,7 +387,9 @@ const Home_cult = () => {
                 alt=""
               />
             </Box>
+
           </Box>
+
 
           <Box
             p="20vw"
