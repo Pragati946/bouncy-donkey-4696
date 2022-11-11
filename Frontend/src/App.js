@@ -1,12 +1,13 @@
 
 
 import CultNavbar from './Components/CultFit/CultNavbar/CultNavbar';
+import Fitness_Page from './Pages/cultFit_Pages/FitnessPage_cultfit';
 
 
 function App() {
   return (
     <div>
-<CultNavbar/>
+    <Fitness_Page/>
     </div>
   );
 }
