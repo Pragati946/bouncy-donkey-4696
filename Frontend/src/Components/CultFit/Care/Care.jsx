@@ -6,6 +6,7 @@ import { Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPane
 import "./Care.module.css";
 import { Grid, GridItem } from "@chakra-ui/react";
 import data from "./LabtestData.json";
+import Footer1_cultfit from './../Footer/Footer1_cultfit/Footer1_cultfit';
 
 function Care() {
   console.log(data);
@@ -39,7 +40,7 @@ let Senierdata = [
         marginRight="15%"
       >
         <Image src="https://cdn-images.cure.fit/www-curefit-com/image/upload/fl_progressive,f_auto,q_auto:eco,w_1440/dpr_2/image/vm/aa3e1923-35c9-474a-9725-b805692a668b.png"></Image>
-        <Carousel>
+        <Carousel  prevIcon='' nextIcon=''  >
           <Carousel.Item interval={2000}>
             <Image
               className="d-block w-100"
@@ -219,7 +220,7 @@ let Senierdata = [
       <Text marginTop='-2%' fontWeight='bold' marginBottom='-1%' color='#cccccc' fontSize='300%' >DOCTOR GIVES</Text>
       <Text color='#cccccc' fontSize='300%' fontWeight='bold' >THE LEAST MEDICINE</Text>
      </Box>
-     
+     <Footer1_cultfit/>
     </div>
   );
 }
