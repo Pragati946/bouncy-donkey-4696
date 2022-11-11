@@ -20,6 +20,7 @@ import { GoLocation } from "react-icons/go";
 import { Menu, MenuButton, MenuList, MenuItem } from "@chakra-ui/react";
 import Care from './../Care/Care';
 import {AddIcon, EditIcon, ExternalLinkIcon, HamburgerIcon, RepeatIcon} from "@chakra-ui/icons"
+import Mind from './../Mind/Mind';
 
 let data = [
   "Imphal",
@@ -202,7 +203,7 @@ function CultNavbar() {
            </Show>
       </Box>
     </Box>
-    <Care/>
+    <Mind/>
     </Box>
   );
 }
