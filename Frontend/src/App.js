@@ -9,6 +9,7 @@ import CultStoreNavbar from "./Components/CultStore/CultStoreNavbar/CultStoreNav
 
 
 
+import CultNavbar from './Components/CultFit/CultNavbar/CultNavbar';
 
 
 function App() {
@@ -26,8 +27,9 @@ function App() {
 <StoreHome />
 
 
+<CultNavbar/>
     </div>
   );
 }
 
-export default App
+export default App;
