@@ -10,6 +10,7 @@ import CultStoreNavbar from "./Components/CultStore/CultStoreNavbar/CultStoreNav
 
 
 import CultNavbar from './Components/CultFit/CultNavbar/CultNavbar';
+import Fitness_Page from './Pages/cultFit_Pages/FitnessPage_cultfit';
 
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
 
 
 <CultNavbar/>
+    <Fitness_Page/>
     </div>
   );
 }
