@@ -1,29 +1,10 @@
 import React from "react";
-import {
-  Box,
-  Button,
-  Grid,
-  Heading,
-  Hide,
-  Image,
-  Img,
-  Link,
-  Text,
-} from "@chakra-ui/react";
-import {
-  Table,
-  Thead,
-  Tbody,
-  Tfoot,
-  Tr,
-  Th,
-  Td,
-  TableContainer,
-} from "@chakra-ui/react";
+import {  Box,  Button,  Grid,  Heading,  Hide,  Image,  Img,  Link,  Text} from "@chakra-ui/react";
+import {  Table,  Thead,  Tbody,  Tfoot,  Tr,  Th,  Td,  TableContainer} from "@chakra-ui/react";
 import { CheckCircleIcon } from "@chakra-ui/icons";
 import { MdHighlightOff } from "react-icons/md";
-import Footer2_cultfit from "../../Components/CultFit/Footer/Footer1_cultfit/Footer2_cultfit";
-import Footer1_cultfit from "../../Components/CultFit/Footer/Footer1_cultfit/Footer1_cultfit";
+import Footer2_cultfit from "../../Components/CultFit/Footer/Footer2_cultfit";
+import Footer1_cultfit from "../../Components/CultFit/Footer/Footer1_cultfit";
 import FitnessFAQs from "./FitnessFAQs";
 import Carousel from "react-bootstrap/Carousel";
 import { AiOutlineCheckCircle } from "react-icons/ai";
