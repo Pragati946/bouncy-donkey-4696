@@ -45,8 +45,8 @@ export const Login = () => {
           color="black"
           onClick={onOpen}
         >
-          <BiUserCircle fontSize={"35px"} />
-        </Button>
+          {/* <BiUserCircle fontSize={"35px"} /> */}
+          <Image borderRadius="50%" src="https://media-exp1.licdn.com/dms/image/C4D03AQEH5ZaKCdg4JQ/profile-displayphoto-shrink_100_100/0/1652277771819?e=1673481600&v=beta&t=tDxMSAwyH2aLOX3lrL4z3DtMtYl-I8ENs1HYN3-tJWw" alt=""/>       </Button>
         :
         <Button
           as={"a"}
@@ -54,11 +54,11 @@ export const Login = () => {
           fontWeight={200}
           variant={"link"}
           href={"#"}
-          color="red"
+          color="black"
           onClick={onOpen}
         >
-          {/* <BiUserCircle fontSize={"35px"} /> */}
-          Login
+          <BiUserCircle fontSize={"35px"} />
+        
         </Button>
         }
         <Modal isOpen={isOpen} onClose={onClose}>
@@ -119,6 +119,7 @@ export const Login = () => {
                     mt="5"
                     type="submit"
                     _hover={{ bgColor: "rgba(255, 49, 109, 0.7)" }}
+                    onClick={onClose}
                   >
                     <Text
                       letterSpacing={"1.2px"}
