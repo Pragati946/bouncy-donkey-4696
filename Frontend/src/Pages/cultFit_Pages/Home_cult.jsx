@@ -14,7 +14,7 @@ const Home_cult = () => {
   return (
     <>
       <Box bg='blackAlpha.800'>
-        <Box pos="relative">
+        <Box pos="relative" m='auto' >
           <Box opacity=".8">
             <video
               autoPlay
@@ -30,60 +30,60 @@ const Home_cult = () => {
 
           <Flex
           flexDir='column'
+          alignItems='center'
             pos="absolute"
             top="25%"
-            left="40%"
-            border="1px solid red"
+            left="20%"        
             m="auto"
+           gap='10'
           >
-            <Flex >
+                     
               <Box>
                 <Img
-                  src="https://cdn-images.cure.fit/www-curefit-com/image/upload/c_fill,q_auto:eco,dpr_1,f_auto,fl_progressive/image/test/videoGradientDesktopV2.png"
-                  alt=""
-                />
-                <Img
-                  src="https://cdn-images.cure.fit/www-curefit-com/image/upload/c_fill,q_auto:eco,dpr_1,f_auto,fl_progressive/image/test/videoGradientDesktopV2.png"
-                  alt=""
-                />
-              </Box>
-
-              <Box>
-                <Img
-         fontSize={{base:"1em", md:"2.2rem",lg:"2.4rem", "2xl":"3.6rem" }}
+              fontSize={{base:"1em", md:"2.2rem",lg:"2.4rem", "2xl":"3.6rem" }}
         
                   src="https://cdn-images.cure.fit/www-curefit-com/image/upload/c_fill,w_500,q_auto:eco,dpr_1,f_auto,fl_progressive/image/test/we-are-cult-logo/text-only-v2.png"
                   alt=""
                 />
               </Box>
 
-              <Box>
-                <Img
-                  src="https://cdn-images.cure.fit/www-curefit-com/image/upload/c_fill,q_auto:eco,dpr_1,f_auto,fl_progressive/image/test/videoGradientDesktopV2.png"
-                  alt=""
-                />
-                <Img
-                  src="https://cdn-images.cure.fit/www-curefit-com/image/upload/c_fill,q_auto:eco,dpr_1,f_auto,fl_progressive/image/test/videoGradientDesktopV2.png"
-                  alt=""
-                />
-              </Box>
-            </Flex>
+          
+          
 
-            <Grid
-              border="1px solid white"
-              templateColumns={{
-                md: "repeat(2,1fr)",
+
+<Show above='sm'>
+  
+            <Grid    
+              templateColumns={{                
+                md: "repeat(3,1fr)",
                 lg: "repeat(3,1fr)",
                 xl: "repeat(3,1fr)",
               }}
-              // boxSize="100px"
-            >
+              w='60%'
+              m='auto'
+              justifyContent='center'
+              scale='0.5'
+              
+              >
               {data_passes_fitness.map((ele) => (
+                <Box w={{md:'200px',lg:'200px',xl:'250px'}} >
                 <PassBoxElite ele={ele} />
+                </Box>
               ))}
             </Grid>
+              </Show>
           </Flex>
         </Box>
+
+
+
+
+
+
+
+
+
+
 
         {/* motion Boxs******************************************************* */}
         <Show above='sm'>
@@ -399,6 +399,7 @@ const Home_cult = () => {
             color="whiteAlpha.800"
           ></Box>
         </Box>
+        
         <Footer1_cultfit />
         <Footer2_cultfit />
       </Box>
