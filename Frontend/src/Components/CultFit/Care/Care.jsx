@@ -6,7 +6,7 @@ import { Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPane
 import "./Care.module.css";
 import { Grid, GridItem } from "@chakra-ui/react";
 import data from "./LabtestData.json";
-import Footer1_cultfit from './../Footer/Footer1_cultfit/Footer1_cultfit';
+import Footer1_cultfit from '../Footer/Footer1_cultfit';
 
 function Care() {
   console.log(data);

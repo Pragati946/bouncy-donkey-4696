@@ -10,12 +10,22 @@ import CultStoreNavbar from "./Components/CultStore/CultStoreNavbar/CultStoreNav
 
 
 import CultNavbar from './Components/CultFit/CultNavbar/CultNavbar';
+
+import Crousel1_cultfit from './Pages/cultFit_Pages/FitnessPage_cultfit';
+import Home_cult from './Pages/cultFit_Pages/Home_cult';
+
 import Fitness_Page from './Pages/cultFit_Pages/FitnessPage_cultfit';
+
 
 
 function App() {
   return (
     <div>
+
+{/* <CultNavbar/ */}
+<Home_cult />
+{/* <Crousel1_cultfit /> */}
+
 
       {/* <Heading>Cultfit</Heading> */}
 {/* <Home_cult/> */}
@@ -30,6 +40,7 @@ function App() {
 
 <CultNavbar/>
     <Fitness_Page/>
+
     </div>
   );
 }
