@@ -77,7 +77,7 @@ export default function CultStoreNavbar() {
         </Flex>
 
         <HStack flex={{ base: 1, md: 0 }} justify={"flex-end"} spacing={3}>
-          <Login/>
+          <Login />
           <Button
             fontSize={"sm"}
             fontWeight={200}

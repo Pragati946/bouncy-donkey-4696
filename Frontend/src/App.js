@@ -4,6 +4,7 @@ import Crousel1_cultfit from "./Components/CultFit/Fitness_cultfitPage/Crousel1_
 import Footer1_cultfit from "./Components/CultFit/Footer/Footer1_cultfit/Footer1_cultfit";
 import Footer2_cultfit from "./Components/CultFit/Footer/Footer1_cultfit/Footer2_cultfit";
 import Home_cult from "./Components/CultFit/HomePage_cultfit/Home_cult";
+import StoreHome from "./Components/CultStore/CultStoreHome/StoreHome";
 import CultStoreNavbar from "./Components/CultStore/CultStoreNavbar/CultStoreNavbar";
 
 
@@ -22,6 +23,8 @@ function App() {
       <Footer2_cultfit />   */}
 
 <CultStoreNavbar/>
+<StoreHome />
+
 
     </div>
   );

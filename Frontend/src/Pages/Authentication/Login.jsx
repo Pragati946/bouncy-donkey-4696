@@ -19,10 +19,9 @@ import { useState } from "react";
 import { BiUserCircle } from "react-icons/bi";
 import { useDispatch, useSelector } from "react-redux";
 import { login } from "../../Redux/Auth/Auth.action";
-import { store } from "../../Redux/store";
 export const Login = () => {
   const [loginCred, setLoginCred] = useState({});
-  const { loading, error, errorMessage,isAuth,token } = useSelector((store) => store.auth);
+  const {isAuth} = useSelector((store) => store.auth);
   const dispatch = useDispatch();
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -45,8 +44,11 @@ export const Login = () => {
           color="black"
           onClick={onOpen}
         >
-          {/* <BiUserCircle fontSize={"35px"} /> */}
-          <Image borderRadius="50%" src="https://media-exp1.licdn.com/dms/image/C4D03AQEH5ZaKCdg4JQ/profile-displayphoto-shrink_100_100/0/1652277771819?e=1673481600&v=beta&t=tDxMSAwyH2aLOX3lrL4z3DtMtYl-I8ENs1HYN3-tJWw" alt=""/>       </Button>
+          <Image 
+          borderRadius="50%" 
+          src="https://media-exp1.licdn.com/dms/image/C4D03AQEH5ZaKCdg4JQ/profile-displayphoto-shrink_100_100/0/1652277771819?e=1673481600&v=beta&t=tDxMSAwyH2aLOX3lrL4z3DtMtYl-I8ENs1HYN3-tJWw" 
+          alt=""/>    
+          </Button>
         :
         <Button
           as={"a"}
