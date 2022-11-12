@@ -8,11 +8,13 @@ import Footer2_cultfit from "../../Components/CultFit/Footer/Footer2_cultfit";
 import { BsArrowRightCircle } from "react-icons/bs";
 import {  cards_premium,  PassBoxElite,  Home_cult_grid4_boxes} from "../../Components/CultFit/Fitness_cultfitPage/CommonExports_Raj/components_cultfit";
 import { data_passes_fitness } from "./FitnessPage_cultfit";
+import CultNavbar from "../../Components/CultFit/CultNavbar/CultNavbar";
 const Home_cult = () => {
   const {scrollProgress} = useScroll ()
   
   return (
     <>
+    <CultNavbar/>
       <Box bg='blackAlpha.800'>
         <Box pos="relative" m='auto' >
           <Box opacity=".8">

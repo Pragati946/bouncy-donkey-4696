@@ -9,6 +9,8 @@ import HomePage_cultfit from './Pages/cultFit_Pages/Home_cult'
 
 
 import CultNavbar from './Components/CultFit/CultNavbar/CultNavbar';
+import Fitness_Page from './Pages/cultFit_Pages/FitnessPage_cultfit';
+import Care from './Components/CultFit/Care/Care';
 
 // import Crousel1_cultfit from './Pages/cultFit_Pages/FitnessPage_cultfit';
 // import Home_cult from './Pages/cultFit_Pages/Home_cult';
@@ -21,14 +23,13 @@ function App() {
   return (
     <div>
 
-{/* <CultNavbar/ */}
 {/* <Home_cult /> */}
-{/* <Crousel1_cultfit /> */}
-<CultNavbar/>
+{/* <CultNavbar/> */}
 <HomePage_cultfit/>
-
+{/* <Fitness_Page/> */}
+{/* <Care/> */}
       {/* <Heading>Cultfit</Heading> */}
-{/* <Home_cult/> */}
+
 {/* <Crousel1_cultfit></Crousel1_cultfit> */}
 
       {/* <Footer1_cultfit />  
@@ -36,9 +37,10 @@ function App() {
 
 {/* <CultStoreNavbar/>
 <StoreHome />
+*/}
 
 
-    <Fitness_Page/> */}
+
 
     </div>
   );
