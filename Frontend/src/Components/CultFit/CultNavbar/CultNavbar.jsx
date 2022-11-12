@@ -16,7 +16,6 @@ import {
 import React from "react";
 import styles from "./CultNavbar.module.css";
 import { BsFillPersonFill, BsSearch } from "react-icons/bs";
-import { AiOutlineShoppingCart } from "react-icons/ai";
 import { GoLocation } from "react-icons/go";
 import { Menu, MenuButton, MenuList, MenuItem } from "@chakra-ui/react";
 import {
@@ -210,15 +209,6 @@ function CultNavbar() {
             >
             <Login/>
             </Box>
-            
-            <AiOutlineShoppingCart
-              style={{
-                color: "#e8e8e9",
-                height: "40px",
-                width: "26px",
-                marginRight: "20px",
-              }}
-            />
 
             <Show below="md">
               <Menu>

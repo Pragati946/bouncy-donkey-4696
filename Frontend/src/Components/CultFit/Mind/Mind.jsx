@@ -118,7 +118,7 @@ function Mind() {
                     bgRepeat="no-repeat"
                     bgSize="cover"
                   
-                  border='1px solid red'>
+                 >
                   <Box                  
                   borderRadius="5px"
                     p="3%"
