@@ -9,9 +9,11 @@ import FitnessFAQs from "./FitnessFAQs";
 import Carousel from "react-bootstrap/Carousel";
 import { AiOutlineCheckCircle } from "react-icons/ai";
 import { BsQuestionCircleFill } from "react-icons/bs";
+import CultNavbar from "../../Components/CultFit/CultNavbar/CultNavbar";
 const Fitness_Page = () => {
   return (
     <>
+        <CultNavbar />
       <Box>
         {/* top section */}
         <Box m="auto" pos="initial">

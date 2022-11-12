@@ -7,6 +7,7 @@ import {
   HStack,
   Image,
   Link,
+  Select,
   Text,
   VStack,
 } from "@chakra-ui/react";
@@ -14,7 +15,13 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getData } from "../../../../Redux/GetData/getData.actions";
 import CommanButton from "../CommanButton";
+import SortByPrice from "../FilterByPrice";
 import SingleProduct from "../SingleProduct";
+import InputSearch from "../InputSearch";
+import CultStoreNavbar from "../../CultStoreNavbar/CultStoreNavbar";
+import StoreHome from "../../CultStoreHome/StoreHome";
+import CultStoreFooter from "../../CultStoreFooter/CultStoreFooter";
+import FitnessFAQs from "../../../../Pages/cultFit_Pages/FitnessFAQs";
 
 function AllProducts() {
   const data = useSelector((state) => state?.getData?.data);
@@ -35,6 +42,7 @@ function AllProducts() {
 
   const handleGet = (el) => {
     dispatch(getData(el));
+    setTemp(data);
   };
 
   const handleLH = () => {
@@ -51,8 +59,8 @@ function AllProducts() {
     );
   };
 
-  const handleHL = ()=>{
-     const validate1 = temp?.map((elem) => {
+  const handleHL = () => {
+    const validate1 = temp?.map((elem) => {
       return { ...elem };
     });
     setTemp(
@@ -63,31 +71,59 @@ function AllProducts() {
         );
       })
     );
-  }
+  };
+
+  const hanldeOff = () => {
+    const validate = data?.filter((elem) => {
+      if (Number(elem.off.substring(0, 2)) < 30) {
+        return elem;
+      }
+    });
+    console.log("validate", validate);
+  };
 
   return isLoading ? (
     <Heading>....Loading</Heading>
   ) : (
     <>
-      <Button onClick={handleLH}>LH</Button>
-      <Button onClick={handleHL}>HL</Button>
-      <HStack w={{ base: "96%", sm: "95%", md: "90%", lg: "85%" }} m="auto">
-        <Text fontSize={"13px"} letterSpacing=".8px" as="samp">
-          {" "}
-          <span
-            style={{ color: "gray", fontSize: "13px", letterSpacing: ".8px" }}
-          >
-            Home
-          </span>{" "}
-          <Link onClick={() => handleGet(route)}>
-            {route != "" ? `- ${route}` : ""}
-          </Link>
-          <span style={{ fontSize: "12px", letterSpacing: ".8px" }}>
+      <CultStoreNavbar />
+
+      {route == "" ? <StoreHome /> : ""}
+      <Flex
+        // border="2px solid red"
+        w={{ base: "96%", sm: "95%", md: "90%", lg: "85%" }}
+        m="auto"
+        fontFamily={"sans-serif"}
+        justifyContent={"space-between"}
+        alignItems="center"
+      >
+        <Flex>
+          <Text fontSize={"13px"} letterSpacing=".8px" as="samp">
             {" "}
-            {par != "" ? `- ${par}` : ""}
-          </span>
-        </Text>
-      </HStack>
+            <span
+              style={{ color: "gray", fontSize: "13px", letterSpacing: ".8px" }}
+            >
+              Home
+            </span>{" "}
+            <Link onClick={() => handleGet(route)}>
+              {route != "" ? `- ${route}` : ""}
+            </Link>
+            <span style={{ fontSize: "12px", letterSpacing: ".8px" }}>
+              {" "}
+              {par != "" ? `- ${par}` : ""}
+            </span>
+          </Text>
+        </Flex>
+        <Flex
+          // border="2px solid blue"
+          justifyContent={"space-between"}
+          alignItems="center"
+        >
+          {/* <InputSearch /> */}
+          <Button onClick={hanldeOff}>More then 40</Button>
+          <SortByPrice handleLH={handleLH} handleHL={handleHL} />
+        </Flex>
+      </Flex>
       <br />
       {route == "topSellings" ? (
         <CommanButton array={bestSellings} handleFilter={handleFilter} />
@@ -130,7 +166,9 @@ function AllProducts() {
         {temp?.map((el) => {
           return <SingleProduct {...el} key={el._id} />;
         })}
-      </Grid>
+        </Grid>
+        
+      <CultStoreFooter />
     </>
   );
 }

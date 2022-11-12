@@ -14,3 +14,5 @@ export const getData =
       .then((res) => dispatch({ type: GETDATA_SUCCESS, payload: res.data }))
       .catch((error) => dispatch({ type: GETDATA_ERROR }));
   };
+
+

@@ -10,11 +10,12 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import { BsFillHeartFill } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
-function SingleProduct({ image, price1, price2, off, title, brand, launched }) {
+function SingleProduct({ _id,image, price1, price2, off, title, brand, launched }) {
   return (
     <VStack alignItems={"start"} position="relative">
-      <Box overflow={"hidden"} borderRadius={"2px"}>
+      <Link to={`/mens/${_id}`}><Box overflow={"hidden"} borderRadius={"2px"}>
         <Image
           src={image}
           _hover={{
@@ -25,7 +26,8 @@ function SingleProduct({ image, price1, price2, off, title, brand, launched }) {
           }}
           transition="transform .5s"
         />
-      </Box>
+      </Box></Link>
+      
       <Box
         position="absolute"
         top="1%"

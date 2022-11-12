@@ -25,10 +25,11 @@ import {
   ChevronRightIcon,
 } from "@chakra-ui/icons";
 import { BsCart } from "react-icons/bs";
-import { useDispatch} from "react-redux";
+import { useDispatch } from "react-redux";
 import { getData } from "../../../Redux/GetData/getData.actions";
 import { getButton } from "../../../Redux/ButtonRoute/button.action";
 import { Login } from "../../../Pages/Authentication/Login";
+import Cart from "../../../Pages/CultStore/Cart";
 
 export default function CultStoreNavbar() {
   const { isOpen, onToggle } = useDisclosure();
@@ -64,12 +65,14 @@ export default function CultStoreNavbar() {
           justify={{ base: "center", md: "start" }}
           align={"center"}
         >
-          <Box>
-            <Image
-              w="120px"
-              src="https://i.ibb.co/10DhWcm/Screenshot-2022-11-08-163641-removebg-preview.png"
-            />
-          </Box>
+          <Link to="/store">
+            <Box>
+              <Image
+                w="120px"
+                src="https://i.ibb.co/10DhWcm/Screenshot-2022-11-08-163641-removebg-preview.png"
+              />
+            </Box>
+          </Link>
 
           <Flex display={{ base: "none", md: "flex" }} ml={10}>
             <DesktopNav />
@@ -85,7 +88,8 @@ export default function CultStoreNavbar() {
             href={"#"}
             color="black"
           >
-            <BsCart fontSize={"30px"} />
+           
+            <Cart></Cart>
           </Button>
         </HStack>
       </Flex>
@@ -255,8 +259,10 @@ const MobileNavItem = ({ label, children, href }) => {
                 {child.label}
               </Link>
             ))}
+          
         </Stack>
       </Collapse>
+      
     </Stack>
   );
 };
