@@ -56,26 +56,27 @@ function CultNavbar() {
       <Box pos="sticky" top="0" zIndex="300">
         <Flex gap="3" className={styles.main}>
           <Link to="/">
-            <Image
-              height="35px"
-              src="https://cdn-images.cure.fit/www-curefit-com/image/upload/c_fill,w_120,q_auto:eco,dpr_2,f_auto,fl_progressive//image/test/brand-logo/vman-and-white-cult-text.png"
+            <Image mr='5vw'
+              height="45px"            
+              mixBlendMode='difference'
+              src="https://play-lh.googleusercontent.com/DQ6S6FjOtoy5o4fGZInmjM7iTkwP-KsMDoaezm4n2g0akg0SvtI6NFbZ3ntxVeR6Yas"
             ></Image>
           </Link>
 
           <Hide below="md">
             <Box className={styles.textBox}>
               <Link to="/fitness">
-                <Text className={styles.Text}>FITNESS</Text>{" "}
+                <Text  mr='5vw' className={styles.Text}>FITNESS</Text>{" "}
               </Link>
 
               <Link to="/care">
-                <Text className={styles.Text}>CARE</Text>
+                <Text mr='5vw' className={styles.Text}>CARE</Text>
               </Link>
               <Link to="/mind">
-                <Text className={styles.Text}>MIND</Text>
+                <Text mr='5vw' className={styles.Text}>MIND</Text>
               </Link>
               <Link to="/store">
-                <Text className={styles.Text}>STORE</Text>
+                <Text  className={styles.Text}>STORE</Text>
               </Link>
             </Box>
           </Hide>
@@ -222,10 +223,32 @@ function CultNavbar() {
                   _hover={{ bg: "whiteAlpha.400" }}
                 />
                 <MenuList>
-                  <MenuItem icon={<AddIcon />}>FITNESS</MenuItem>
-                  <MenuItem icon={<ExternalLinkIcon />}>CARE</MenuItem>
-                  <MenuItem icon={<RepeatIcon />}>MIND</MenuItem>
-                  <MenuItem icon={<EditIcon />}>STORE</MenuItem>
+                <Link to="/fitness">
+                  <MenuItem icon={<AddIcon />}>
+                <Text className={styles.Text}>FITNESS</Text>
+                </MenuItem>
+              </Link>
+                 
+
+              <Link to="/care">
+                  <MenuItem icon={<ExternalLinkIcon />}>
+                <Text className={styles.Text}>CARE</Text>
+                  </MenuItem>
+              </Link>
+
+              <Link to="/mind">
+                  <MenuItem icon={<RepeatIcon />}>
+                <Text className={styles.Text}>MIND</Text>
+                  </MenuItem>
+              </Link>
+                    
+
+              <Link to="/store">
+                  <MenuItem icon={<EditIcon />}>
+                <Text className={styles.Text}>STORE</Text>
+                  </MenuItem>
+              </Link>
+
                 </MenuList>
               </Menu>
             </Show>

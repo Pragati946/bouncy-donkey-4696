@@ -80,7 +80,10 @@ function Mind() {
   return (
     <div>
       <CultNavbar />
-      <Navbarmind />
+      <Box mb='8'>
+
+      <Navbarmind  />
+      </Box>
       <Box
         height="70%"
         margin="center"
@@ -108,41 +111,37 @@ function Mind() {
         >
           {expert.map((e) => {
             return (
-              <GridItem _hover={{ boxShadow: "2px 3px 10px rgb(0 0 0 / 0.2)" }}>
-                <Box borderRadius="5">
-                  <Box
-                    borderRadius="5px"
+              <GridItem  _hover={{ boxShadow: "2px 3px 10px rgb(0 0 0 / 0.2)" }}>
+                <Box borderRadius="5"
+                 pos='relative' 
                     bgImage={e.Img}
                     bgRepeat="no-repeat"
-                    bgSize="107%"
-                    h="48"
+                    bgSize="cover"
+                  
+                  border='1px solid red'>
+                  <Box                  
+                  borderRadius="5px"
+                    p="3%"
                   >
                     <Text
-                      marginLeft="5%"
-                      paddingTop="5%"
+                     
                       fontWeight="bold"
-                      fontSize="140%"
+                      fontSize={{sm:"15px",md:"18px",lg:"20px"}}
                     >
                       {e.Head}
                     </Text>
-                    <Divider
-                      width="5%"
-                      marginLeft="6%"
-                      marginTop="1%"
-                      color="black"
-                    />
+                   
                     <Text
-                      fontWeight="semibold"
-                      marginTop="1%"
-                      marginLeft="5%"
-                      fontSize="80%"
+                      fontWeight="semibold"                    
+                      p="2%"
+                      fontSize={{sm:"10px",md:"13px",lg:"16px"}}
                     >
                       {e.Desc}
                     </Text>
-                    <Text fontWeight="semibold" marginLeft="7%" marginTop="2%">
+                    <Text fontWeight="semibold" p="2%">
                       {e.time}
                     </Text>
-                    <Text fontWeight="bold" marginTop="5%" marginLeft="5%">
+                    <Text fontWeight="bold" p="3%">
                       {e.price}
                     </Text>
                   </Box>
@@ -159,6 +158,10 @@ function Mind() {
       <Box marginLeft="12%" marginRight="12%">
         <Image src="https://cdn-images.cure.fit/www-curefit-com/image/upload/fl_progressive,f_auto,q_auto:eco,w_1440/dpr_2/image/vm/7f7af73c-3ee3-46c1-9129-0df18dbb02ac.png"></Image>
       </Box>
+
+
+
+
       <Box
         bg="#171a26"
         w="100%"
@@ -166,6 +169,8 @@ function Mind() {
         paddingRight="15%"
         paddingBottom="50px"
       >
+
+
         <Box
           paddingTop="5%"
           display="flex"
@@ -182,6 +187,7 @@ function Mind() {
         <Text paddingBottom="4%" color="#6a6a6a" marginTop="-10px">
           7 QUESTIONS
         </Text>
+
         <Accordion allowToggle>
           <AccordionItem>
             <h2>
@@ -339,6 +345,7 @@ function Mind() {
             </AccordionPanel>
           </AccordionItem>
         </Accordion>
+
       </Box>
       <Footer1_cultfit />
     </div>
