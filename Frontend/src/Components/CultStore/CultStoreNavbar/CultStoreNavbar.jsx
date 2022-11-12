@@ -25,7 +25,7 @@ import {
   ChevronRightIcon,
 } from "@chakra-ui/icons";
 import { BsCart } from "react-icons/bs";
-import { useDispatch} from "react-redux";
+import { useDispatch } from "react-redux";
 import { getData } from "../../../Redux/GetData/getData.actions";
 import { getButton } from "../../../Redux/ButtonRoute/button.action";
 import { Login } from "../../../Pages/Authentication/Login";
@@ -64,12 +64,14 @@ export default function CultStoreNavbar() {
           justify={{ base: "center", md: "start" }}
           align={"center"}
         >
-          <Box>
-            <Image
-              w="120px"
-              src="https://i.ibb.co/10DhWcm/Screenshot-2022-11-08-163641-removebg-preview.png"
-            />
-          </Box>
+          <Link to="/store">
+            <Box>
+              <Image
+                w="120px"
+                src="https://i.ibb.co/10DhWcm/Screenshot-2022-11-08-163641-removebg-preview.png"
+              />
+            </Box>
+          </Link>
 
           <Flex display={{ base: "none", md: "flex" }} ml={10}>
             <DesktopNav />
