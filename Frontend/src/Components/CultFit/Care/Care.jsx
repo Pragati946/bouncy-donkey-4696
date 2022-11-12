@@ -31,12 +31,14 @@ let Senierdata = [
 
 
   return (
+    
     <div>
       <CultNavbar/>
       <NavbarCare />
       <Box
         height="70%"
         margin="center"
+        mt={{sm:'80px',md:'50px'}} 
         alignSelf="auto"
         marginLeft="15%"
         marginRight="15%"
@@ -125,99 +127,99 @@ let Senierdata = [
        <Text paddingBottom='4%' color='#6a6a6a' marginTop='-10px' >7 QUESTIONS</Text>
        <Accordion allowToggle>
   <AccordionItem>
-    <h2>
+    <Text fontSize='1rem'>
       <AccordionButton>
-        <Box margin='10px' color='#cccfd1' flex='1' textAlign='left' fontWeight='bold' fontSize='150%'>
+        <Box margin='10px' color='#cccfd1' flex='1' textAlign='left' fontWeight='bold' fontSize={{sm:'100%',md:'150%'}} >
           How does home sample collection work?
         </Box>
         <AccordionIcon color='#cccfd1' boxSize='32px' />
       </AccordionButton>
-    </h2>
-    <AccordionPanel marginRight='40%' color='#cccfd1' fontWeight='semibold' fontSize='110%' pb={4}>
+    </Text >
+    <AccordionPanel marginRight={{sm:'10%',md:'30%'}}  color='#cccfd1' fontWeight='semibold' fontSize={{sm:'80%',md:'110%'}}  pb={4}>
     Once you have chosen a convenient time slot for your booking, and placed an order, our WHO certified health professionals will arrive at your chosen address and collect blood and/or urine samples.  Once samples are collected, they will be processed at one of our partner labs closest to you and the test report will be available on your app and email.
     </AccordionPanel>
   </AccordionItem>
 
   <AccordionItem>
-    <h2>
+    <Text fontSize='1rem'>
       <AccordionButton>
-        <Box margin='10px'  color='#cccfd1' flex='1' textAlign='left' fontWeight='bold' fontSize='150%'>
+        <Box margin='10px'  color='#cccfd1' flex='1' textAlign='left' fontWeight='bold' fontSize={{sm:'100%',md:'150%'}} >
         Can I reschedule/cancel my diagnostic test appointment?
         </Box>
         <AccordionIcon color='#cccfd1' boxSize='32px'/>
       </AccordionButton>
-    </h2>
-    <AccordionPanel marginRight='40%'  color='#cccfd1' fontWeight='semibold' fontSize='110%' pb={4}>
+    </Text >
+    <AccordionPanel marginRight={{sm:'10%',md:'30%'}}   color='#cccfd1' fontWeight='semibold' fontSize={{sm:'80%',md:'110%'}}  pb={4}>
     The appointment can be rescheduled or cancelled 2 hours before your chosen slot.      </AccordionPanel>
   </AccordionItem>
 
   <AccordionItem>
-    <h2>
+    <Text fontSize='1rem'>
       <AccordionButton>
-        <Box margin='10px'  color='#cccfd1' flex='1' textAlign='left' fontWeight='bold' fontSize='150%'>
+        <Box margin='10px'  color='#cccfd1' flex='1' textAlign='left' fontWeight='bold' fontSize={{sm:'100%',md:'150%'}} >
         How can I receive my reports on email again ?
         </Box>
         <AccordionIcon color='#cccfd1' boxSize='32px' />
       </AccordionButton>
-    </h2>
-    <AccordionPanel marginRight='40%' color='#cccfd1' fontWeight='semibold' fontSize='110%' pb={4}>
+    </Text >
+    <AccordionPanel marginRight={{sm:'10%',md:'30%'}}  color='#cccfd1' fontWeight='semibold' fontSize={{sm:'80%',md:'110%'}}  pb={4}>
     You can email your test reports by going to Profile Activity &Records Medical Records Diagnostic Tests and selecting the email reports button.     </AccordionPanel>
   </AccordionItem>
 
   <AccordionItem>
-    <h2>
+    <Text fontSize='1rem'>
       <AccordionButton>
-        <Box margin='10px'color='#cccfd1' flex='1' textAlign='left' fontWeight='bold' fontSize='150%'>
+        <Box margin='10px'color='#cccfd1' flex='1' textAlign='left' fontWeight='bold' fontSize={{sm:'100%',md:'150%'}} >
         I did not get my reports on email
         </Box>
         <AccordionIcon color='#cccfd1' boxSize='32px' />
       </AccordionButton>
-    </h2>
-    <AccordionPanel marginRight='40%' color='#cccfd1' fontWeight='semibold' fontSize='110%' pb={4}>
+    </Text >
+    <AccordionPanel marginRight={{sm:'10%',md:'30%'}}  color='#cccfd1' fontWeight='semibold' fontSize={{sm:'80%',md:'110%'}}  pb={4}>
     Sometimes, mail providers mistakenly mark the reports email as Spam. Please check the spam folder (or) trigger the reports email again on the app   You would have received an SMS after your sample collection indicating the time it would take for results to be available  In case the communicated time has elapsed and you have not received your report on email, please reach out to us at hello@cure.fit     </AccordionPanel>
   </AccordionItem>
 
   <AccordionItem>
-    <h2>
+    <Text fontSize='1rem'>
       <AccordionButton>
-        <Box margin='10px' color='#cccfd1' flex='1' textAlign='left' fontWeight='bold' fontSize='150%'>
+        <Box margin='10px' color='#cccfd1' flex='1' textAlign='left' fontWeight='bold' fontSize={{sm:'100%',md:'150%'}} >
          What instructions should I follow for my tests?
         </Box>
         <AccordionIcon color='#cccfd1' boxSize='32px' />
       </AccordionButton>
-    </h2>
-    <AccordionPanel marginRight='40%' color='#cccfd1' fontWeight='semibold' fontSize='110%' pb={4}>
+    </Text >
+    <AccordionPanel marginRight={{sm:'10%',md:'30%'}}  color='#cccfd1' fontWeight='semibold' fontSize={{sm:'80%',md:'110%'}}  pb={4}>
     All instructions that have to be followed for your tests will be communicated to you at the time of booking a slot. You will also receive an email covering the instructions.    </AccordionPanel>
   </AccordionItem>
 
   <AccordionItem>
-    <h2>
+    <Text fontSize='1rem'  >
       <AccordionButton>
-        <Box margin='10px' color='#cccfd1' flex='1' textAlign='left' fontWeight='bold' fontSize='150%'>
+        <Box margin='10px' color='#cccfd1' flex='1' textAlign='left' fontWeight='bold' fontSize={{sm:'100%',md:'150%'}} >
         How can I get a refund for my Full body Health Check /Diagnostic Screening pack ?
         </Box>
         <AccordionIcon color='#cccfd1' boxSize='32px' />
       </AccordionButton>
-    </h2>
-    <AccordionPanel marginRight='40%' color='#cccfd1' fontWeight='semibold' fontSize='110%' pb={4}>
+    </Text >
+    <AccordionPanel marginRight={{sm:'10%',md:'30%'}}  color='#cccfd1' fontWeight='semibold' fontSize={{sm:'80%',md:'110%'}} pb={4}>
     Only if you have not completed your Full Body health check up/ Diagnostic Screening within 1 year from the purchase date, please write to hello@curefit.com  e.g: If heath check is purchased on 1/10/2019, you can write to us till 1/10/2020. We do not refund any amount for health check ups with a purchase date older than a year.    </AccordionPanel>
   </AccordionItem>
 
   <AccordionItem>
-    <h2>
+    <Text fontSize='1rem'>
       <AccordionButton>
-        <Box margin='10px' color='#cccfd1' flex='1' textAlign='left' fontWeight='bold' fontSize='150%'>
+        <Box margin='10px' color='#cccfd1' flex='1' textAlign='left' fontWeight='bold' fontSize={{sm:'100%',md:'150%'}} >
          Can I club two or more sample collection slots
         </Box>
         <AccordionIcon color='#cccfd1' boxSize='32px' />
       </AccordionButton>
-    </h2>
-    <AccordionPanel marginRight='40%' color='#cccfd1' fontWeight='semibold' fontSize='110%' pb={4}>
+    </Text >
+    <AccordionPanel marginRight={{sm:'10%',md:'30%'}}  color='#cccfd1' fontWeight='semibold' fontSize='110%' pb={4}>
     We are currently working on enabling multiple orders from the same address (for the same person or different).  Till then, you can request the phlebotomist who comes for the sample collection for the first order, to add on the rest of the tests (for the same person or different).  You can directly pay him via card / UPI / cash for the additional tests purchased.     </AccordionPanel>
   </AccordionItem>
 </Accordion>
         </Box>
-     <Box marginTop='5%' marginBottom='4%'  >
+     <Box marginTop='5%' marginBottom='4%' fontFamily='fantasy'  px='4' >
       <Text color='#6e6e6e' fontWeight='bold' fontSize='400%' >THE BEST</Text>
       <Text marginTop='-2%' fontWeight='bold' marginBottom='-1%' color='#cccccc' fontSize='300%' >DOCTOR GIVES</Text>
       <Text color='#cccccc' fontSize='300%' fontWeight='bold' >THE LEAST MEDICINE</Text>
