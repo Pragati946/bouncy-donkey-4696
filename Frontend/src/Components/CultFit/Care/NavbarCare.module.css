@@ -33,12 +33,13 @@
   width: 120px;
 } */
 
-.mind-nav{
+.Nav{
     z-index: -20;
     font-family: "Open Sans", sans-serif;
     font-size: 16px;
     font-weight: 700;
     background-color: #393a3b;
+    border: 1px solid red;
   height: 60px;
   display: flex;
   flex-direction: row;
@@ -48,14 +49,14 @@
   position: sticky;
   top: 0;
   left: 0;
-  right: 0;
-  z-index: -300;
+  right: 0; 
+   z-index: -300;
   transition: 1s ease-in-out;
 
 
 }
 
-.mind-link-btn{
+.mindLinkNav{
     display: flex;
     align-items: center;
     padding: 5px 20px;

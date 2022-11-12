@@ -32,7 +32,7 @@
   margin-top: 32px;
   width: 120px;
 } */
-
+/* 
 .mind-nav{
     z-index: -20;
     font-family: "Open Sans", sans-serif;
@@ -53,18 +53,18 @@
   transition: 1s ease-in-out;
 
 
-}
+} */
 
 .mind-link-btn{
     display: flex;
     align-items: center;
     padding: 5px 20px;
-    color: white;
+    color: #b8b9b9;
     background-color: #15171c;
     border-radius: 5px;
     margin-right: 10px;
 }
 
 .mind-link{
-    color: white;
+    color: #b8b9b9;
 }
