@@ -14,9 +14,9 @@ import { PassBoxElite } from "../../Components/CultFit/Fitness_cultfitPage/Commo
 const Fitness_Page = () => {
   return (
     <>
-        <Box border='4px solid red'>
+       
         <CultNavbar />
-        </Box >
+       
       <Box bg='black' >
         {/* top section */}
         <Box pos="relative">
@@ -395,44 +395,46 @@ const Fitness_Page = () => {
           </Box>
         </Grid>
 
-        <Box m='auto'  my="10%" width="100%">
-        <Box pos="relative" m='auto' >
+        <Box m='auto'  my="10%" >
+        <Box pos="relative" m='auto' ml={[0,0,0,'25%','25%']} >
 
-<Box opacity=".8" m='auto '>
-  <video 
+<Box opacity=".8" m='auto' 
+>
+  <Img as='video' 
+  m='auto'
+  height={{base:"200px",sm:"220px",md:"250px" ,lg:"400px"}}
   autoPlay 
   loop
     style={{
       borderRadius: "20px",
-      border: "1px solid red",
-      height: "400px",
+      boxSizing: "border-box",
+      objectFit:'cover',
     }}
   >
     <source
       src="https://cdn-images.cure.fit/www-curefit-com/video/upload/c_fill,w_1084,ar_2,q_auto:eco,dpr_2,vc_auto,f_auto/image/test/sku-card-widget/fitness_live.mp4"
       type="video/mp4"
     />
-  </video>
+  </Img>
 </Box>
 
-<Flex
+<Box
   pos="absolute"
-  top="15%"
-  gap="10"
-   w={{ md: "150px", lg: "150px" }}
+top='15%'
+   w={{base:'60px',sm:'60px', md: "150px", lg: "250px" }}
 >
     <Img
       src="https://cdn-images.cure.fit/www-curefit-com/image/upload/c_fill,w_500,q_auto:eco,dpr_1,f_auto,fl_progressive/image/test/we-are-cult-logo/text-only-v2.png"
      
     />
-</Flex>
+</Box>
 </Box>
         </Box>
 
 
 
 
-        <Box margin="6%" marginBottom="10" marginTop="10" >
+        <Box margin="6%" p="3" marginTop="10" >
           <Image src="https://cdn-images.cure.fit/www-curefit-com/image/upload/fl_progressive,f_auto,q_auto:eco,w_1440/dpr_2/image/vm/a5077452-0ba1-469f-a9ab-3eb6429de7c2.png"></Image>
         </Box>
 
@@ -477,9 +479,9 @@ const Fitness_Page = () => {
           </Flex>
         </Box>
       </Hide>
+      <FitnessFAQs />
       </Box>
 
-      <FitnessFAQs />
       <Footer1_cultfit />
       <Footer2_cultfit />
     </>

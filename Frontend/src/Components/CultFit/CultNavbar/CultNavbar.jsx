@@ -27,6 +27,7 @@ import {
   RepeatIcon,
 } from "@chakra-ui/icons";
 import { Link } from "react-router-dom";
+import { Login } from "../../../Pages/Authentication/Login";
 
 let data = [
   "Imphal",
@@ -193,15 +194,23 @@ function CultNavbar() {
                 GET APP
               </Button>
             </Hide>
-            <BsFillPersonFill
-              style={{
-                color: "#e8e8e9",
-                height: "40px",
-                width: "26px",
-                marginRight: "20px",
-                marginLeft: "20px",
-              }}
-            />
+              
+            <Box
+            border='1px solid white'
+            borderRadius='50%'
+            bg='whiteAlpha.700'
+            mixBlendMode='difference'
+             _hover={{bg:'whiteAlpha.500'}}          
+             maxH='40px'
+             maxW='40px'
+            style={{
+              marginRight: "20px",
+              marginLeft: "20px",
+            }}
+            >
+            <Login/>
+            </Box>
+            
             <AiOutlineShoppingCart
               style={{
                 color: "#e8e8e9",
