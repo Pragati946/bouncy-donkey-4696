@@ -3,7 +3,7 @@ const TopsellingProduct = require("./topselling.model");
 const app = express.Router();
 
 app.get("/", async (req, res) => {
-  const { q, page, limit } = req.query;
+  const { q, page, limit, off } = req.query;
   try {
     if (q) {
       let temp = new RegExp(q, "i");
@@ -11,6 +11,10 @@ app.get("/", async (req, res) => {
         .skip((page - 1) * limit)
         .limit(limit);
       res.send(products);
+    } else if (off) {
+
+      // let products = await TopsellingProduct
+
     } else {
       let products = await TopsellingProduct.find()
         .skip((page - 1) * limit)
