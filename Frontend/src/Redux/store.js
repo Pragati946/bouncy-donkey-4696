@@ -1,21 +1,16 @@
-
-import { applyMiddleware, combineReducers, legacy_createStore } from "redux";
-import thunk from "redux-thunk";
+// import { storeReducer } from "./Store/store.reducer";
+import { applyMiddleware, combineReducers, legacy_createStore} from "redux";
+import thunk from "redux-thunk"
+import ProductDetailsReducer from "./Product_Details/ProductDetails.reducer";
 import { getDataReducer } from "./GetData/getData.reducer";
 import { buttonReducer } from "./ButtonRoute/button.reducer";
-import { AuthReducer } from "./Auth/Auth.reducer";
-// import { storeReducer } from "./Store/store.reducer";
-
-const rootReducer = combineReducers({
-  getData: getDataReducer,
+import CartReducer from "./cart/Cart.reducer";
+const rootReducer=combineReducers({
+productdetail:ProductDetailsReducer,
+getData: getDataReducer,
   button: buttonReducer,
-  auth:AuthReducer,
-  // store:storeReducer,
-})
-// import ProductDetailsreducer from "./Product_Details/ProductDetails.reducer";
-// const rootReducer=combineReducers({
+  cart:CartReducer
+});
 
 
-
-
-export const store = legacy_createStore(rootReducer, applyMiddleware(thunk))
+export const store = legacy_createStore(rootReducer, applyMiddleware(thunk));

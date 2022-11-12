@@ -5,7 +5,7 @@ const initialState={
     loading:false,
     err:false
 }
-export default function ProductDetailsreducer(state=initialState,{type,payload}){
+export default function ProductDetailsReducer(state=initialState,{type,payload}){
     switch(type){
    case ProductDetails_Loading:{
     return {...state,loading:true}
