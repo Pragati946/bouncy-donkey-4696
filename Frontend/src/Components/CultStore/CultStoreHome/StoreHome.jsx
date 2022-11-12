@@ -10,9 +10,9 @@ const StoreHome = () => {
   const [loading,setLoading] = useState(false);
 
   useEffect(() => {
-    setLoading(true);
+    // setLoading(true);
     getWomens();
-    setLoading(false)
+    // setLoading(false);
     getMens();
     getTop();
     getArri();

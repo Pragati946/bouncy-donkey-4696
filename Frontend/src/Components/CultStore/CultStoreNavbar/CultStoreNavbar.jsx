@@ -25,13 +25,15 @@ import {
   ChevronRightIcon,
 } from "@chakra-ui/icons";
 import { BsCart } from "react-icons/bs";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { getData } from "../../../Redux/GetData/getData.actions";
 import { getButton } from "../../../Redux/ButtonRoute/button.action";
 import { Login } from "../../../Pages/Authentication/Login";
+import Logout from "../../../Pages/Authentication/Logout";
 
 export default function CultStoreNavbar() {
   const { isOpen, onToggle } = useDisclosure();
+  const {isAuth} = useSelector((store) => store.auth);
   return (
     <Box>
       <Flex
@@ -79,7 +81,7 @@ export default function CultStoreNavbar() {
         </Flex>
 
         <HStack flex={{ base: 1, md: 0 }} justify={"flex-end"} spacing={3}>
-          <Login />
+          {!isAuth?<Login />:<Logout/>}
           <Button
             fontSize={"sm"}
             fontWeight={200}
