@@ -18,6 +18,10 @@ import CommanButton from "../CommanButton";
 import SortByPrice from "../FilterByPrice";
 import SingleProduct from "../SingleProduct";
 import InputSearch from "../InputSearch";
+import CultStoreNavbar from "../../CultStoreNavbar/CultStoreNavbar";
+import StoreHome from "../../CultStoreHome/StoreHome";
+import CultStoreFooter from "../../CultStoreFooter/CultStoreFooter";
+import FitnessFAQs from "../../../../Pages/cultFit_Pages/FitnessFAQs";
 
 function AllProducts() {
   const data = useSelector((state) => state?.getData?.data);
@@ -82,6 +86,9 @@ function AllProducts() {
     <Heading>....Loading</Heading>
   ) : (
     <>
+      <CultStoreNavbar />
+
+      {route == "" ? <StoreHome /> : ""}
       <Flex
         // border="2px solid red"
         w={{ base: "96%", sm: "95%", md: "90%", lg: "85%" }}
@@ -159,7 +166,9 @@ function AllProducts() {
         {temp?.map((el) => {
           return <SingleProduct {...el} key={el._id} />;
         })}
-      </Grid>
+        </Grid>
+        
+      <CultStoreFooter />
     </>
   );
 }

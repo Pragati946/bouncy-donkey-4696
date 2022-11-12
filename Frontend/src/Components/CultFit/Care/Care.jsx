@@ -7,6 +7,7 @@ import "./Care.module.css";
 import { Grid, GridItem } from "@chakra-ui/react";
 import data from "./LabtestData.json";
 import Footer1_cultfit from '../Footer/Footer1_cultfit';
+import CultNavbar from "../CultNavbar/CultNavbar";
 
 function Care() {
   console.log(data);
@@ -31,6 +32,7 @@ let Senierdata = [
 
   return (
     <div>
+      <CultNavbar/>
       <NavbarCare />
       <Box
         height="70%"
