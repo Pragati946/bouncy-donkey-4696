@@ -14,7 +14,7 @@ import {
   Show,
   Text,
 } from "@chakra-ui/react";
-import React from "react";
+import React, { useState } from "react";
 import styles from "./CultNavbar.module.css";
 import { BsFillPersonFill, BsSearch } from "react-icons/bs";
 import { GoLocation } from "react-icons/go";
@@ -55,6 +55,7 @@ let data = [
 ];
 
 function CultNavbar() {
+  const [value,setValue]= useState('INDORE')
   const { isAuth } = useSelector((store) => store.auth);
 
   return (
@@ -94,17 +95,21 @@ function CultNavbar() {
             </Box>
           </Hide>
 
-          <Box className={styles.iconBox}>
+          <Box className={styles.iconBox}  >
             <Hide below="sm">
-              <Menu>
+              <Menu  ml='2'>
                 <MenuButton
                   style={{ backgroundColor: "transparent", color: "#879ca6" }}
                   as={Button}
                   rightIcon={<GoLocation color="#e8e8e9" size="23" />}
                 >
-                  INDORE
+                  {
+                  value
+                }
+                 
                 </MenuButton>
                 <MenuList
+              
                   style={{
                     backgroundColor: "#171a26",
                     height: "450px",
@@ -137,17 +142,18 @@ function CultNavbar() {
                     className={styles.menuItemColor}
                   >
                     <MenuDivider marginLeft="15px" marginRight="15px" />
-                    <MenuItem minH="48px" className={styles.menuItemColor}>
+                    <MenuItem minH="48px" className={styles.menuItemColor}  onClick={()=>setValue('Banglore')}>
                       <Image
                         boxSize="2rem"
                         borderRadius="full"
                         src="https://cdn-images.cure.fit/www-curefit-com/image/upload/e_replace_color:white,o_60//image/cities/blr_new.png"
                         alt="Fluffybuns the destroyer"
                         mr="12px"
+                        
                       />
                       <span className={styles.menuItemColor}>Banglore</span>
                     </MenuItem>
-                    <MenuItem minH="48px" className={styles.menuItemColor}>
+                    <MenuItem minH="48px" className={styles.menuItemColor} onClick={()=>setValue('Delhi NCR')}>
                       <Image
                         boxSize="2rem"
                         borderRadius="full"
@@ -157,7 +163,7 @@ function CultNavbar() {
                       />
                       <span className={styles.menuItemColor}>Delhi NCR</span>
                     </MenuItem>
-                    <MenuItem minH="48px" className={styles.menuItemColor}>
+                    <MenuItem minH="48px" className={styles.menuItemColor} onClick={()=>setValue('Hyderabad')}>
                       <Image
                         boxSize="2rem"
                         borderRadius="full"
@@ -167,7 +173,7 @@ function CultNavbar() {
                       />
                       <span className={styles.menuItemColor}>Hyderabad</span>
                     </MenuItem>
-                    <MenuItem minH="48px" className={styles.menuItemColor}>
+                    <MenuItem minH="48px" className={styles.menuItemColor} onClick={()=>setValue('Mumbai')}>
                       <Image
                         boxSize="2rem"
                         borderRadius="full"
@@ -190,6 +196,7 @@ function CultNavbar() {
                           marginBottom: "10px",
                           fontWeight: "Bold",
                         }}
+                        onClick={()=>setValue(e)}
                       >
                         {e}
                       </MenuItem>
