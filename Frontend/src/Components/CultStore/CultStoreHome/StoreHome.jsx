@@ -5,16 +5,15 @@ import { useState, useEffect } from "react";
 import HomeSlider from "./HomeSlider";
 import CultStoreNavbar from "../CultStoreNavbar/CultStoreNavbar";
 // import { FAQ } from "./FAQ";
+
 const StoreHome = () => {
-  const [man, setMan] = useState([]);
-  const getMens = async () => {
-    let res = await axios.get("http://localhost:8080/mens?limit=30");
-    let data = await res.data;
-    setMan(data);
-  };
+  const [loading,setLoading] = useState(false);
+
   useEffect(() => {
-    getMens();
+    // setLoading(true);
     getWomens();
+    // setLoading(false);
+    getMens();
     getTop();
     getArri();
     getFoot();
@@ -23,62 +22,85 @@ const StoreHome = () => {
     getAcc();
     getSupp();
     getEqu();
+
   }, []);
+  const [man, setMan] = useState([]);
+  const getMens = async () => {
+    let res = await axios.get("http://localhost:8080/mens?limit=30");
+    let data = await res.data;
+    setMan(data);
+  };
   const [women, setWomen] = useState([]);
   const getWomens = async () => {
+    // setLoading(true);
     let res = await axios.get("http://localhost:8080/womens?limit=30");
     let data = await res.data;
     setWomen(data);
   };
   const [top, setTop] = useState([]);
   const getTop = async () => {
+    
     let res = await axios.get("http://localhost:8080/topSellings?limit=30");
     let data = await res.data;
+    // setLoading(false);
     setTop(data);
   };
   const [arri, setArri] = useState([]);
   const getArri = async () => {
+    // setLoading(true);
     let res = await axios.get("http://localhost:8080/topArrivals?limit=30");
     let data = await res.data;
+    // setLoading(false);
     setArri(data);
   };
   const [foot, setFoot] = useState([]);
   const getFoot = async () => {
+    // setLoading(true);
     let res = await axios.get("http://localhost:8080/footwears?limit=30");
     let data = await res.data;
+    // setLoading(false);
     setFoot(data);
   };
   const [card, setCard] = useState([]);
   const getCard = async () => {
+    // setLoading(true);
     let res = await axios.get("http://localhost:8080/cardio?limit=30");
     let data = await res.data;
+    // setLoading(false);
     setCard(data);
   };
   const [cycle, setCycle] = useState([]);
   const getCycle = async () => {
+    // setLoading(true);
     let res = await axios.get("http://localhost:8080/cycles?limit=30");
     let data = await res.data;
+    // setLoading(false);
     setCycle(data);
   };
   const [acc, setAcc] = useState([]);
   const getAcc = async () => {
+    // setLoading(true);
     let res = await axios.get("http://localhost:8080/accessories?limit=30");
     let data = await res.data;
+    // setLoading(false);
     setAcc(data);
   };
   const [supp, setSupp] = useState([]);
   const getSupp = async () => {
+    // setLoading(true);
     let res = await axios.get("http://localhost:8080/supplements?limit=30");
     let data = await res.data;
+    // setLoading(false);
     setSupp(data);
   };
   const [equi, setEqui] = useState([]);
   const getEqu = async () => {
+    // setLoading(true);
     let res = await axios.get("http://localhost:8080/equipments?limit=30");
     let data = await res.data;
+    // setLoading(false);
     setEqui(data);
   };
-
   return (
     <>
       <CultStoreNavbar />
@@ -99,13 +121,4 @@ const StoreHome = () => {
     </>
   );
 };
-
 export default StoreHome;
-const spotlight = [
-  {
-    Url: "https://cdn-images.cure.fit/www-curefit-com/image/upload/fl_progressive,f_auto,q_auto:eco,w_420,ar_1080:600/dpr_2/image/vm/236187b6-218f-4d36-ad13-a47515b2b385.png",
-  },
-  {
-    Url: "https://cdn-images.cure.fit/www-curefit-com/image/upload/fl_progressive,f_auto,q_auto:eco,w_420,ar_1080:600/dpr_2/image/vm/89567047-8d49-493a-b032-4e48df8e112d.png",
-  },
-];

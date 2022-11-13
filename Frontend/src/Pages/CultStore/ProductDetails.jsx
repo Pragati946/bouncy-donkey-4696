@@ -21,7 +21,7 @@ export default function ProductDetails(){
     <Box>
       <Stack   direction={["column","row"]}>
         <Box marginRight={"10px"}>
-        <Box display={"grid"} gridTemplateColumns={["repeat(1,1fr)","repeat(2,1fr)"]} gap={"10px"}>
+        <Box display={"grid"} gridTemplateColumns={["repeat(1,1fr)","repeat(2,1fr)"]} gap={"20px"}>
           <Box >
 <Image width={"550px"} height="783px"  src={productdetail.image}></Image>
           </Box>
@@ -38,7 +38,7 @@ export default function ProductDetails(){
         </Box>
         
       
-        <Box  width={["400px","600px"]} height="2524px">
+        <Box  width={["70%","50%"]} height="2524px">
     <Text fontSize={"14px"}>CULTSPORT</Text>
       <VStack align={"left"} spacing="15px"> 
       
@@ -63,8 +63,8 @@ export default function ProductDetails(){
   </HStack>
   </Box>
   <Box >
-  <Button onClick={()=>{dispatch(CartAdd(productdetail))}}  borderRadius={"100px"} color={"white"} bgColor={"#ff385a"}>Add to Cart</Button>
-  {cartData.length>0?<Cart></Cart>:<Button  borderRadius={"100px"} marginLeft={"10px"} color={"white"} bgColor={"#ff385a"}>Buy Now</Button>}
+  <Button _hover={{"backgroundColor":"ff385a"}} onClick={()=>{dispatch(CartAdd(productdetail))}} padding={"20px"}  borderRadius={"100px"} color={"white"} bgColor={"#ff385a"}>Add to Cart</Button>
+  {cartData.length>0?<Cart></Cart>:<Button  borderRadius={"100px"} marginLeft={"10px"} color={"white"} _hover={{"backgroundColor":"ff385a"}} bgColor={"#ff385a"}>Buy Now</Button>}
   
   </Box>
   <Box>
@@ -78,8 +78,8 @@ export default function ProductDetails(){
   <ListItem marginLeft={"40px"}>Facilisis in pretium nisl aliquet</ListItem>
   </UnorderedList>
   <Divider margin={"20px"} height={"10px"} orientation='horizontal' />
-  <Box width={'380px'} fontSize={"12px"} border="1px solid blue" borderLeftRadius={"5px"} height="42px">
-  <Input className="no-outline"  placeholder="Enter Your Pin" width={'300px'} height="42px"/>
+  <Box width={'380px'} fontSize={"12px"}  borderLeftRadius={"5px"} height="42px">
+  <Input   placeholder="Enter Your Pin" width={'300px'} height="42px"/>
   <Button  color={"red"} bgColor={"white"} disabled>Check</Button>
   </Box>
 

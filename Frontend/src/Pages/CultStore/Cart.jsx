@@ -16,8 +16,9 @@ import {
   Divider,
 } from "@chakra-ui/react";
 import React from "react";
+import { BsCart } from "react-icons/bs";
 import { useDispatch, useSelector } from "react-redux";
-import { CartDel } from "../../Redux/cart/Cart.actiontypes";
+import { CartCountAdd, CartCountSub, CartDel } from "../../Redux/cart/Cart.actiontypes";
 
 export default function Cart() {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -29,13 +30,14 @@ export default function Cart() {
     <>
       <Button
         ref={btnRef}
+        _hover={{"backgroundColor":"ff385a"}}
         marginLeft={"10px"}
         borderRadius={"100px"}
         color={"white"}
         bgColor={"#ff385a"}
         onClick={onOpen}
       >
-        View Your Cart
+         <BsCart fontSize={"30px"} />
       </Button>
       <Drawer
         isOpen={isOpen}
@@ -48,15 +50,17 @@ export default function Cart() {
           <DrawerCloseButton />
           <DrawerHeader>Your Cart</DrawerHeader>
 
-          <DrawerBody>
-            <Divider />
+          <DrawerBody >
+         
             {cartData.map((item) => (
-              <Box marginTop={"20px"} display={"flex"}>
-                <Box key={item.id}>
+               
+              <Box key={item._id} padding={"10px"} borderTop={"1px solid black"} display={"flex"}>
+               
+                <Box >
                   <Image
-                    width={"105px"}
+                    width={"180px"}
                     borderRadius="20px"
-                    height={"140px"}
+                    height={"150px"}
                     src={item.image}
                   ></Image>
                 </Box>
@@ -81,28 +85,28 @@ export default function Cart() {
                     paddingLeft={"12px"}
                     paddingRight={"12px"}
                   >
-                    <Box color={"red"}>-</Box>
-                    <Text>1</Text>
-                    <Box color={"red"}>+</Box>
+                    <button disabled={item.count===1} onClick={()=>{dispatch(CartCountSub(item._id))}} color={"red"}>-</button>
+                    <Text>{item.count}</Text>
+                    <button  width={"10px"} onClick={()=>{dispatch(CartCountAdd(item._id))}} color={"red"}>+</button>
                   </Box>
                 </Box>
-                <Box
+                <Box 
                   onClick={() => {
-                    dispatch(CartDel(item.id));
+                    dispatch(CartDel(item._id));
                   }}
                 >
-                  X
+                 <Image width={"15px"} src="https://static.cure.fit/assets/images/modal-close.svg"></Image>
                 </Box>
               </Box>
             ))}
           </DrawerBody>
 
           <DrawerFooter>
-            <Box alignContent={"center"}>
-              <Button color={"white"} bgColor={"#ff385a"}>
+            
+          <Button width={"100%"} alignSelf={"center"} color={"white"} bgColor={"#ff385a"}>
                 BUY NOW
-              </Button>
-            </Box>
+          </Button>
+          
           </DrawerFooter>
         </DrawerContent>
       </Drawer>

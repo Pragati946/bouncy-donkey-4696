@@ -29,6 +29,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { Login } from "../../../Pages/Authentication/Login";
 
+import Logout from "../../../Pages/Authentication/Logout";
+
+import Cart from "../../../Pages/CultStore/Cart";
+
+
 export default function CultStoreNavbar() {
   const { isOpen, onToggle } = useDisclosure();
 
@@ -79,7 +84,7 @@ export default function CultStoreNavbar() {
         </Flex>
 
         <HStack flex={{ base: 1, md: 0 }} justify={"flex-end"} spacing={3}>
-          <Login />
+          {!isAuth?<Login />:<Logout/>}
           <Button
             fontSize={"sm"}
             fontWeight={200}
@@ -88,7 +93,8 @@ export default function CultStoreNavbar() {
             color="black"
             // border='3px solid red'
           >
-            <BsCart fontSize={"30px"} />
+           
+            <Cart></Cart>
           </Button>
         </HStack>
       </Flex>
@@ -261,8 +267,10 @@ const MobileNavItem = ({ label, children, href, route }) => {
                 {child.label}
               </Link>
             ))}
+          
         </Stack>
       </Collapse>
+      
     </Stack>
   );
 };
