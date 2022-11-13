@@ -209,21 +209,14 @@ function CultNavbar() {
 
             <HStack
               ml="4"
-              mr="-10"
+            borderRadius="50%"
               flex={{ base: 1, md: 0 }}
               justify={"flex-end"}
               spacing={3}
-              color="white"
+              bg="white"
             >
               {!isAuth ? <Login /> : <Logout />}
-              <Button
-                fontSize={"sm"}
-                fontWeight={200}
-                variant={"link"}
-                // href={"/"}
-                color="black"
-                // border='3px solid red'
-              ></Button>
+             
             </HStack>
 
             <Show below="md">

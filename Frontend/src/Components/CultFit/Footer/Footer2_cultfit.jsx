@@ -10,70 +10,70 @@ const Footer2_cultfit = () => {
  
 
  <Box>
-  <Text>Gym Near Me</Text>
-  <Text>Yoga Postures for Beginners</Text>
-  <Text>Bedtime Stories for Kids</Text>
-  <Text>Gyms in Pune</Text>
-  <Text>Gyms in Chandigarh</Text>
-  <Text>Strength Training</Text>
-  <Text>Core Exercises</Text>
-  <Text>Fitness Glossary</Text>
+  <Text _hover={{color:'whiteAlpha.700',cursor:'pointer'}}>Gym Near Me</Text>
+  <Text _hover={{color:'whiteAlpha.700',cursor:'pointer'}}>Yoga Postures for Beginners</Text>
+  <Text _hover={{color:'whiteAlpha.700',cursor:'pointer'}}>Bedtime Stories for Kids</Text>
+  <Text _hover={{color:'whiteAlpha.700',cursor:'pointer'}}>Gyms in Pune</Text>
+  <Text _hover={{color:'whiteAlpha.700',cursor:'pointer'}}>Gyms in Chandigarh</Text>
+  <Text _hover={{color:'whiteAlpha.700',cursor:'pointer'}}>Strength Training</Text>
+  <Text _hover={{color:'whiteAlpha.700',cursor:'pointer'}}>Core Exercises</Text>
+  <Text _hover={{color:'whiteAlpha.700',cursor:'pointer'}}>Fitness Glossary</Text>
  </Box>
  
  
  <Box>
-  <Text>Face Yoga</Text>
-  <Text>Surya Namaskar for Beginners</Text>
-  <Text>Meditaion in Hindi</Text>
-  <Text>Gyms in Hydrabad</Text>
-  <Text>Gyms in Indore</Text>
-  <Text>Mobility Exercises</Text>
-  <Text>Butt Exercises</Text>
-  <Text>Morning Exercises</Text>
+  <Text _hover={{color:'whiteAlpha.700',cursor:'pointer'}}>Face Yoga</Text>
+  <Text _hover={{color:'whiteAlpha.700',cursor:'pointer'}}>Surya Namaskar for Beginners</Text>
+  <Text _hover={{color:'whiteAlpha.700',cursor:'pointer'}}>Meditaion in Hindi</Text>
+  <Text _hover={{color:'whiteAlpha.700',cursor:'pointer'}}>Gyms in Hydrabad</Text>
+  <Text _hover={{color:'whiteAlpha.700',cursor:'pointer'}}>Gyms in Indore</Text>
+  <Text _hover={{color:'whiteAlpha.700',cursor:'pointer'}}>Mobility Exercises</Text>
+  <Text _hover={{color:'whiteAlpha.700',cursor:'pointer'}}>Butt Exercises</Text>
+  <Text _hover={{color:'whiteAlpha.700',cursor:'pointer'}}>Morning Exercises</Text>
  </Box>
 
  <Box>
-  <Text>Gyms in Hydrabad</Text>
-  <Text>Yoga For Stress Relief</Text>
-  <Text>Mindfulness Meditation</Text>
-  <Text>Gyms in Chennai</Text>
-  <Text>Gyms in Coimbatore</Text>
-  <Text>Kids Exercise</Text>
-  <Text>Arm Workout at Home</Text>
-  <Text>Home Workouts</Text>
-
- </Box>
-
- <Box>
-  <Text>Chest Exercises</Text>
-  <Text>Yoga Asanas</Text>
-  <Text>Yoga Nidra</Text>
-  <Text>Gyms in Jaipur</Text>
-  <Text>Gyms in Bangalore</Text>
-  <Text>How to Lose Weight</Text>
-  <Text>Back Exercises at Home</Text>
+  <Text _hover={{color:'whiteAlpha.700',cursor:'pointer'}}>Gyms in Hydrabad</Text>
+  <Text _hover={{color:'whiteAlpha.700',cursor:'pointer'}}>Yoga For Stress Relief</Text>
+  <Text _hover={{color:'whiteAlpha.700',cursor:'pointer'}}>Mindfulness Meditation</Text>
+  <Text _hover={{color:'whiteAlpha.700',cursor:'pointer'}}>Gyms in Chennai</Text>
+  <Text _hover={{color:'whiteAlpha.700',cursor:'pointer'}}>Gyms in Coimbatore</Text>
+  <Text _hover={{color:'whiteAlpha.700',cursor:'pointer'}}>Kids Exercise</Text>
+  <Text _hover={{color:'whiteAlpha.700',cursor:'pointer'}}>Arm Workout at Home</Text>
+  <Text _hover={{color:'whiteAlpha.700',cursor:'pointer'}}>Home Workouts</Text>
 
  </Box>
 
  <Box>
-  <Text>Exercise To Reduce Belly Fat</Text>
-  <Text>Meditation Music</Text>
-  <Text>Gyms in Mumbai</Text>
-  <Text>Gyms in Kolkata</Text>
-  <Text>Belly Fat Loss Exercise</Text>
-  <Text>HIIT Workout</Text>
-  <Text>Abs Workout at Home</Text>
+  <Text _hover={{color:'whiteAlpha.700',cursor:'pointer'}}>Chest Exercises</Text>
+  <Text _hover={{color:'whiteAlpha.700',cursor:'pointer'}}>Yoga Asanas</Text>
+  <Text _hover={{color:'whiteAlpha.700',cursor:'pointer'}}>Yoga Nidra</Text>
+  <Text _hover={{color:'whiteAlpha.700',cursor:'pointer'}}>Gyms in Jaipur</Text>
+  <Text _hover={{color:'whiteAlpha.700',cursor:'pointer'}}>Gyms in Bangalore</Text>
+  <Text _hover={{color:'whiteAlpha.700',cursor:'pointer'}}>How to Lose Weight</Text>
+  <Text _hover={{color:'whiteAlpha.700',cursor:'pointer'}}>Back Exercises at Home</Text>
 
  </Box>
 
  <Box>
- <Text>Six Pack Workout</Text>
-  <Text>Pranayama</Text>
-  <Text>Gyms in Delhi</Text>
-  <Text>Gyms in Ahmedabad</Text>
-  <Text>Weight Loss Exercise</Text>
-  <Text>Exercises for Toned Body</Text>
-  <Text>Thigh Exercises</Text>
+  <Text _hover={{color:'whiteAlpha.700',cursor:'pointer'}}>Exercise To Reduce Belly Fat</Text>
+  <Text _hover={{color:'whiteAlpha.700',cursor:'pointer'}}>Meditation Music</Text>
+  <Text _hover={{color:'whiteAlpha.700',cursor:'pointer'}}>Gyms in Mumbai</Text>
+  <Text _hover={{color:'whiteAlpha.700',cursor:'pointer'}}>Gyms in Kolkata</Text>
+  <Text _hover={{color:'whiteAlpha.700',cursor:'pointer'}}>Belly Fat Loss Exercise</Text>
+  <Text _hover={{color:'whiteAlpha.700',cursor:'pointer'}}>HIIT Workout</Text>
+  <Text _hover={{color:'whiteAlpha.700',cursor:'pointer'}}>Abs Workout at Home</Text>
+
+ </Box>
+
+ <Box>
+  <Text _hover={{color:'whiteAlpha.700',cursor:'pointer'}}>Six Pack Workout</Text>
+  <Text _hover={{color:'whiteAlpha.700',cursor:'pointer'}}>Pranayama</Text>
+  <Text _hover={{color:'whiteAlpha.700',cursor:'pointer'}}>Gyms in Delhi</Text>
+  <Text _hover={{color:'whiteAlpha.700',cursor:'pointer'}}>Gyms in Ahmedabad</Text>
+  <Text _hover={{color:'whiteAlpha.700',cursor:'pointer'}}>Weight Loss Exercise</Text>
+  <Text _hover={{color:'whiteAlpha.700',cursor:'pointer'}}>Exercises for Toned Body</Text>
+  <Text _hover={{color:'whiteAlpha.700',cursor:'pointer'}}>Thigh Exercises</Text>
  </Box>
 
 

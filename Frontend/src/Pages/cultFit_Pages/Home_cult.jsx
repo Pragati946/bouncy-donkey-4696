@@ -264,8 +264,9 @@ const Home_cult = () => {
             justifyContent="space-evenly"
           >
             {cards_premium.map((el) => (
-              <Box border="2px solid grey" borderRadius="12px">
+              <Box border="2px solid grey" borderRadius="12px" _hover={{cursor:'pointer',boxShadow: '10px 11px 5px 0px rgba(235,235,235,0.48'}}>
                 <Grid
+
                   templateColumns={{
                     base: "repeat(1,1fr)",
                     sm: "repeat(1,1fr)",
@@ -332,6 +333,7 @@ const Home_cult = () => {
               lg: "repeat(2,1fr)",
               xl: "repeat(2,1fr)",
             }}
+      
             m="auto"
             gap="10"
             justifyContent="center"
@@ -346,6 +348,7 @@ const Home_cult = () => {
                 backgroundSize="cover"
                 color="white"
                 backgroundImage={ele.img_url_features_backgrr}
+                _hover={{ boxShadow:'7px 7px 5px -3px rgba(217,214,217,0.46)' }}
               >
                 <Flex
                   justifyContent="space-between"
