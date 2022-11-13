@@ -18,6 +18,7 @@ import {
 import React from "react";
 import { BsCart } from "react-icons/bs";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { CartCountAdd, CartCountSub, CartDel } from "../../Redux/cart/Cart.actiontypes";
 
 export default function Cart() {
@@ -25,6 +26,7 @@ export default function Cart() {
   const btnRef = React.useRef();
   const cartData = useSelector((store) => store.cart);
   const dispatch = useDispatch();
+  const navigate=useNavigate();
 
   return (
     <>
@@ -76,7 +78,7 @@ export default function Cart() {
                     {item.title}
                   </Text>
                   <Text fontSize={"16px"}>Size : UK7</Text>
-                  <Text fontSize={"20px"}>{item.price}</Text>
+                  <Text fontSize={"20px"}>{item.price1}</Text>
                   <Box
                     display={"flex"}
                     width="80px"
@@ -104,7 +106,9 @@ export default function Cart() {
 
           <DrawerFooter>
             
-          <Button width={"100%"} alignSelf={"center"} color={"white"} bgColor={"#ff385a"}>
+          <Button width={"100%"} alignSelf={"center"} color={"white"} bgColor={"#ff385a"} onClick={()=>{
+               navigate("/checkout")
+          }}>
                 BUY NOW
           </Button>
           

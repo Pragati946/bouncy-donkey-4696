@@ -15,6 +15,7 @@ import Supplements from "../Components/CultStore/Products/All10Pages/Supplements
 import Womens from "../Components/CultStore/Products/All10Pages/women";
 import Mens from "../Components/CultStore/Products/All10Pages/Mens";
 import Equipments from "../Components/CultStore/Products/All10Pages/Equipments";
+import Checkout from "../Pages/Checkout";
 
 export default function AllRoutes() {
   return (
@@ -38,6 +39,7 @@ export default function AllRoutes() {
         path="/:category/:id"
         element={<ProductDetails></ProductDetails>}
       ></Route>
+      <Route path="/checkout" element={<Checkout/>}></Route>
     </Routes>
   );
 }

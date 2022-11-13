@@ -15,7 +15,7 @@ import {
 } from "@chakra-ui/react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { getProductDetail } from "../../Redux/Product_Details/ProductDetails.actions";
 import Cart from "./Cart";
 import { CartAdd } from "../../Redux/cart/Cart.actiontypes";
@@ -29,7 +29,7 @@ export default function ProductDetails() {
   );
   const cartData = useSelector((store) => store.cart);
   const dispatch = useDispatch();
-
+const navigate=useNavigate()
   useEffect(() => {
     dispatch(getProductDetail(id, category));
   }, []);
@@ -105,6 +105,7 @@ export default function ProductDetails() {
             </Box>
             <Box>
               <Button
+              
                 _hover={{ backgroundColor: "ff385a" }}
                 onClick={() => {
                   dispatch(CartAdd(productdetail));
@@ -127,6 +128,10 @@ export default function ProductDetails() {
                   _hover={{ backgroundColor: "ff385a" }}
                   bgColor={"#ff385a"}
                   w="150px"
+                  onClick={()=>{
+                    dispatch(CartAdd(productdetail))
+                    navigate("/checkout")
+                  }}
                 >
                   Buy Now
                 </Button>

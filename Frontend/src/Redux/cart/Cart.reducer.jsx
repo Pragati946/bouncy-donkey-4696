@@ -5,9 +5,21 @@ const initialState=data
 export default function CartReducer(state=initialState,{type,payload}){
 switch(type){
    case Cart_ADD:{
-    localStorage.setItem("Cart",JSON.stringify([...state,{...payload,count:1}]))
+    let  flag=true
+    state.forEach(item=>{
+        if(item._id===payload._id){
+            flag=false
+
+        }
+       
+    })
+    if(flag){
+        
+        localStorage.setItem("Cart",JSON.stringify([...state,{...payload,count:1}]))
     
-    return [...state,{...payload,count:1}]
+        return [...state,{...payload,count:1}]
+    }
+   
    }
    case Cart_Del:{
     
