@@ -1,7 +1,7 @@
 
 # 
 #### About fitify
->  fitify.com is a fitness website of daily food healthy & tasty, mental fitness easy with yoga & meditation, and medical & lifestyle care hassle-free.
+>  FITIFY.com is a fitness website of daily food healthy & tasty, mental fitness easy with yoga & meditation, and medical & lifestyle care hassle-free.
 
 
 # Deployment link:
