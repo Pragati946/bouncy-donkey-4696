@@ -3,7 +3,7 @@ import React from "react";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import HomeSlider from "./HomeSlider";
-import { SingleCarousel } from "../../Carousel/SingleCarousel";
+import CultStoreNavbar from "../CultStoreNavbar/CultStoreNavbar";
 // import { FAQ } from "./FAQ";
 
 const StoreHome = () => {
@@ -103,17 +103,21 @@ const StoreHome = () => {
   };
   return (
     <>
-      <SingleCarousel/>
-      <HomeSlider heading="BESTSELLERS" comp="LOVED BY CULT MEMBERS" arr={women} loading={loading}/>
-      <HomeSlider heading="JUST LAUNCHED" comp="NEW ARRIVALS" arr={man} loading={loading}/>
-      <HomeSlider heading="T-SHIRTS" arr={top} loading={loading} />
-      <HomeSlider heading="CYCLES" arr={arri} loading={loading}/>
-      <HomeSlider heading="CYCLES" arr={foot} loading={loading}/>
-      <HomeSlider heading="TREADMILLS" arr={card} loading={loading}/>
-      <HomeSlider heading="TREADMILLS" arr={acc} loading={loading}/>
-      <HomeSlider heading="TOPWEAR" arr={cycle} loading={loading}/>
-      <HomeSlider heading="TOPWEAR" arr={supp} loading={loading}/>
-      <HomeSlider heading="SHOP BY WORKOUT" arr={equi} loading={loading}/>
+      <CultStoreNavbar />
+      <HomeSlider
+        heading="BESTSELLERS"
+        comp="LOVED BY CULT MEMBERS"
+        arr={women}
+      />
+      <HomeSlider heading="JUST LAUNCHED" comp="NEW ARRIVALS" arr={man} />
+      <HomeSlider heading="T-SHIRTS" arr={top} />
+      <HomeSlider heading="CYCLES" arr={arri} />
+      <HomeSlider heading="CYCLES" arr={foot} />
+      <HomeSlider heading="TREADMILLS" arr={card} />
+      <HomeSlider heading="TREADMILLS" arr={acc} />
+      <HomeSlider heading="TOPWEAR" arr={cycle} />
+      <HomeSlider heading="TOPWEAR" arr={supp} />
+      <HomeSlider heading="SHOP BY WORKOUT" arr={equi} />
     </>
   );
 };

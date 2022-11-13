@@ -28,17 +28,9 @@ const Home_cult = () => {
 
   return (
     <>
-
-
-      {/* <CultNavbar /> */}
+      <CultNavbar />
       <Box bg="blackAlpha.800">
         <Box pos="relative" m="auto">
-
-
-    
-      <Box bg='blackAlpha.800'>
-        <Box pos="relative" m='auto' >
-
           <Box opacity=".8">
             <video autoPlay loop>
               <source
@@ -420,18 +412,7 @@ const Home_cult = () => {
         <Footer1_cultfit />
         <Footer2_cultfit />
       </Box>
-
-      </Box>
-      </Box>
-
-
-     
     </>
-
-      
-
-  </>
-
   );
 };
 

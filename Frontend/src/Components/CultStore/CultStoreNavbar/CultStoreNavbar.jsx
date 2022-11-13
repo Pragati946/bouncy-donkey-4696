@@ -26,8 +26,7 @@ import {
 } from "@chakra-ui/icons";
 import { BsCart } from "react-icons/bs";
 import { useDispatch, useSelector } from "react-redux";
-import { getData } from "../../../Redux/GetData/getData.actions";
-import { getButton } from "../../../Redux/ButtonRoute/button.action";
+import { useParams } from "react-router-dom";
 import { Login } from "../../../Pages/Authentication/Login";
 
 import Logout from "../../../Pages/Authentication/Logout";
@@ -37,9 +36,9 @@ import Cart from "../../../Pages/CultStore/Cart";
 
 export default function CultStoreNavbar() {
   const { isOpen, onToggle } = useDisclosure();
-  const {isAuth} = useSelector((store) => store.auth);
+
   return (
-    <Box>
+    <Box position="sticky" top="0" bgColor="white" zIndex="3">
       <Flex
         bg={useColorModeValue("white", "gray.800")}
         color=" #262626"
@@ -70,11 +69,11 @@ export default function CultStoreNavbar() {
           justify={{ base: "center", md: "start" }}
           align={"center"}
         >
-          <Link to="/store">
+          <Link href="/store">
             <Box>
               <Image
                 w="120px"
-                src="https://i.ibb.co/10DhWcm/Screenshot-2022-11-08-163641-removebg-preview.png"
+                src="https://cdn-images.cure.fit/www-curefit-com/image/upload/c_fill,w_135,ar_3.87,q_auto:eco,dpr_2,f_auto,fl_progressive//image/test/brand-logo/cultsport-black-logo.svg"
               />
             </Box>
           </Link>
@@ -90,8 +89,9 @@ export default function CultStoreNavbar() {
             fontSize={"sm"}
             fontWeight={200}
             variant={"link"}
-            href={"#"}
+            // href={"/"}
             color="black"
+            // border='3px solid red'
           >
            
             <Cart></Cart>
@@ -107,11 +107,20 @@ export default function CultStoreNavbar() {
 }
 
 const DesktopNav = () => {
+  const linkColor = useColorModeValue("gray.600", "gray.200");
   const linkHoverColor = useColorModeValue("gray.800", "white");
   const popoverContentBgColor = useColorModeValue("white", " #262626");
+  const { page } = useParams();
 
   return (
-    <Stack direction={"row"} spacing={4}>
+    <Stack
+      direction={"row"}
+      spacing={4}
+      position="sticky"
+      top="0"
+      bgColor="white"
+      zIndex="3"
+    >
       {NAV_ITEMS.map((navItem) => (
         <Box key={navItem.label}>
           <Popover trigger={"hover"} placement={"bottom-start"}>
@@ -121,7 +130,8 @@ const DesktopNav = () => {
                 fontSize="13px"
                 p={2}
                 color="#262626"
-                href={navItem.href ?? "#"}
+                // href={navItem.href ?? "/"}
+                href={navItem.href ?? "/"}
                 _hover={{
                   textDecoration: "none",
                   color: linkHoverColor,
@@ -155,23 +165,16 @@ const DesktopNav = () => {
   );
 };
 
-const DesktopSubNav = ({ label, href, subLabel, route }) => {
-  const dispatch = useDispatch();
-
-  const handleRoute = (route) => {
-    dispatch(getData(route));
-    dispatch(getButton(route));
-  };
-
+const DesktopSubNav = ({ label, href, subLabel }) => {
   return (
     <Link
       href={href}
+      target="_top"
       role={"group"}
       display={"block"}
       p={2}
       rounded={"md"}
       _hover={{ bg: useColorModeValue("pink.50", "gray.900") }}
-      onClick={() => handleRoute(route)}
     >
       <Stack direction={"row"} align={"center"}>
         <Box>
@@ -216,7 +219,7 @@ const MobileNav = () => {
   );
 };
 
-const MobileNavItem = ({ label, children, href }) => {
+const MobileNavItem = ({ label, children, href, route }) => {
   const { isOpen, onToggle } = useDisclosure();
 
   return (
@@ -278,7 +281,7 @@ const NAV_ITEMS = [
     children: [
       {
         label: "Top Selling",
-        href: "#",
+        href: "/topSellings",
         route: "topSellings",
       },
     ],
@@ -289,7 +292,7 @@ const NAV_ITEMS = [
     children: [
       {
         label: "New Arrivals",
-        href: "#",
+        href: "/topArrivals",
         route: "topArrivals",
       },
     ],
@@ -300,27 +303,27 @@ const NAV_ITEMS = [
     children: [
       {
         label: "Apparel",
-        href: "#",
+        href: "/mens",
         route: "mens",
       },
       {
         label: "T-Shirts",
-        href: "#",
+        href: "/mens",
         route: "mens",
       },
       {
         label: "Joggers and Track Pants",
-        href: "#",
+        href: "/mens",
         route: "mens",
       },
       {
         label: "Jackets and Sweatshirts",
-        href: "#",
+        href: "/mens",
         route: "mens",
       },
       {
         label: "Shorts",
-        href: "#",
+        href: "/mens",
         route: "mens",
       },
     ],
@@ -331,42 +334,42 @@ const NAV_ITEMS = [
     children: [
       {
         label: "Apparel",
-        href: "#",
+        href: "/womens",
         route: "womens",
       },
       {
         label: "T-Shirts",
-        href: "#",
+        href: "/womens",
         route: "womens",
       },
       {
         label: "Sports Bra",
-        href: "#",
+        href: "/womens",
         route: "womens",
       },
       {
         label: "Tights",
-        href: "#",
+        href: "/womens",
         route: "womens",
       },
       {
         label: "Shorts",
-        href: "#",
+        href: "/womens",
         route: "womens",
       },
       {
         label: "Joggers",
-        href: "#",
+        href: "/womens",
         route: "womens",
       },
       {
         label: "Jackets and Sweatshirts",
-        href: "#",
+        href: "/womens",
         route: "womens",
       },
       {
         label: "BoyShorts",
-        href: "#",
+        href: "/womens",
         route: "womens",
       },
     ],
@@ -377,17 +380,17 @@ const NAV_ITEMS = [
     children: [
       {
         label: "All",
-        href: "#",
+        href: "/footwears",
         route: "footwears",
       },
       {
         label: "Men's Footwear",
-        href: "#",
+        href: "/footwears",
         route: "footwears",
       },
       {
         label: "Women's Footwear",
-        href: "#",
+        href: "/footwears",
         route: "footwears",
       },
     ],
@@ -398,22 +401,22 @@ const NAV_ITEMS = [
     children: [
       {
         label: "All",
-        href: "#",
+        href: "/cardio",
         route: "cardio",
       },
       {
         label: "Spinbikes",
-        href: "#",
+        href: "/cardio",
         route: "cardio",
       },
       {
         label: "Treadmills",
-        href: "#",
+        href: "/cardio",
         route: "cardio",
       },
       {
         label: "Rower",
-        href: "#",
+        href: "/cardio",
         route: "cardio",
       },
     ],
@@ -424,27 +427,27 @@ const NAV_ITEMS = [
     children: [
       {
         label: "All",
-        href: "#",
+        href: "/cycles",
         route: "cycles",
       },
       {
         label: "Geared Cycles",
-        href: "#",
+        href: "/cycles",
         route: "cycles",
       },
       {
         label: "Sinhle speed cycles",
-        href: "#",
+        href: "/cycles",
         route: "cycles",
       },
       {
         label: "Electric cycles",
-        href: "#",
+        href: "/cycles",
         route: "cycles",
       },
       {
         label: "kids cycles",
-        href: "#",
+        href: "/cycles",
         route: "cycles",
       },
     ],
@@ -455,42 +458,42 @@ const NAV_ITEMS = [
     children: [
       {
         label: "All",
-        href: "#",
+        href: "/accessories",
         route: "accessories",
       },
       {
         label: "Towel",
-        href: "#",
+        href: "/accessories",
         route: "accessories",
       },
       {
         label: "Gloves",
-        href: "#",
+        href: "/accessories",
         route: "accessories",
       },
       {
         label: "Mask",
-        href: "#",
+        href: "/accessories",
         route: "accessories",
       },
       {
         label: "Duffle Bag",
-        href: "#",
+        href: "/accessories",
         route: "accessories",
       },
       {
         label: "Socks",
-        href: "#",
+        href: "/accessories",
         route: "accessories",
       },
       {
         label: "Yoga Mat",
-        href: "#",
+        href: "/accessories",
         route: "accessories",
       },
       {
         label: "Jumping Rope",
-        href: "#",
+        href: "/accessories",
         route: "accessories",
       },
     ],
@@ -501,47 +504,47 @@ const NAV_ITEMS = [
     children: [
       {
         label: "All",
-        href: "#",
+        href: "/supplements",
         route: "supplements",
       },
       {
         label: "Personal cares",
-        href: "#",
+        href: "/supplements",
         route: "supplements",
       },
       {
         label: "Protein",
-        href: "#",
+        href: "/supplements",
         route: "supplements",
       },
       {
         label: "Snacks",
-        href: "#",
+        href: "/supplements",
         route: "supplements",
       },
       {
         label: "Staples",
-        href: "#",
+        href: "/supplements",
         route: "supplements",
       },
       {
         label: "Vitamins",
-        href: "#",
+        href: "/supplements",
         route: "supplements",
       },
       {
         label: "Weight loss",
-        href: "#",
+        href: "/supplements",
         route: "supplements",
       },
       {
         label: "Immunity",
-        href: "#",
+        href: "/supplements",
         route: "supplements",
       },
       {
         label: "Muscle recovery",
-        href: "#",
+        href: "/supplements",
         route: "supplements",
       },
     ],
@@ -552,17 +555,17 @@ const NAV_ITEMS = [
     children: [
       {
         label: "All",
-        href: "#",
+        href: "/equipments",
         route: "equipments",
       },
       {
         label: "Strenghts",
-        href: "#",
+        href: "/equipments",
         route: "equipments",
       },
       {
         label: "Others",
-        href: "#",
+        href: "/equipments",
         route: "equipments",
       },
     ],
