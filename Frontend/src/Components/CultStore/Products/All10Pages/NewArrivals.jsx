@@ -19,6 +19,7 @@ import Loader from "../../../../utils/Loader";
 import CommanButton from "../CommanButton";
 import SingleProduct from "../SingleProduct";
 import CultStoreNavbar from "../../CultStoreNavbar/CultStoreNavbar";
+import CultStoreFooter from "../../CultStoreFooter/CultStoreFooter";
 
 function NewArrivals() {
   const [a, setA] = useState("topArrivals");
@@ -43,8 +44,8 @@ function NewArrivals() {
   return isLoading ? (
     <Loader />
   ) : (
-      <>
-        <CultStoreNavbar />
+    <>
+      <CultStoreNavbar />
       <br />
       <CommanButton array={newArrivals} handleFilter={handleFilter} />
 
@@ -67,6 +68,9 @@ function NewArrivals() {
           return <SingleProduct {...el} key={el._id} />;
         })}
       </Grid>
+      <br />
+      <br />
+      <CultStoreFooter />
     </>
   );
 }

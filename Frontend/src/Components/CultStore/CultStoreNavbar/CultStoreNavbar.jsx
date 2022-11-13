@@ -70,7 +70,7 @@ export default function CultStoreNavbar() {
           justify={{ base: "center", md: "start" }}
           align={"center"}
         >
-          <Link href="/store">
+          <Link href="/">
             <Box>
               <Image
                 width={"50px"}

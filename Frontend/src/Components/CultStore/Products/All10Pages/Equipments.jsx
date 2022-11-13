@@ -19,6 +19,7 @@ import Loader from "../../../../utils/Loader";
 import CommanButton from "../CommanButton";
 import SingleProduct from "../SingleProduct";
 import CultStoreNavbar from "../../CultStoreNavbar/CultStoreNavbar";
+import CultStoreFooter from "../../CultStoreFooter/CultStoreFooter";
 
 function Equipments() {
   const [a, setA] = useState("equipments");
@@ -33,8 +34,6 @@ function Equipments() {
     dispatch(getButton(a));
   }, []);
 
-
-
   const handleFilter = (el) => {
     dispatch(getData(a, el));
   };
@@ -43,7 +42,7 @@ function Equipments() {
     <Loader />
   ) : (
     <>
-     <CultStoreNavbar />
+      <CultStoreNavbar />
       <br />
       <CommanButton array={equipemnts} handleFilter={handleFilter} />
 
@@ -66,6 +65,9 @@ function Equipments() {
           return <SingleProduct {...el} key={el._id} />;
         })}
       </Grid>
+      <br />
+      <br />
+      <CultStoreFooter />
     </>
   );
 }

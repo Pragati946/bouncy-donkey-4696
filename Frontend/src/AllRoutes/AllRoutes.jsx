@@ -39,7 +39,7 @@ export default function AllRoutes() {
         path="/:category/:id"
         element={<ProductDetails></ProductDetails>}
       ></Route>
-      <Route path="/checkout" element={<Checkout/>}></Route>
+      <Route path="/checkout" element={<Checkout />}></Route>
     </Routes>
   );
 }

@@ -10,7 +10,9 @@ import {
   ListItem,
   Stack,
   Text,
+  Toast,
   UnorderedList,
+  useToast,
   VStack,
 } from "@chakra-ui/react";
 import { useEffect } from "react";
@@ -24,12 +26,13 @@ import CultStoreFooter from "../../Components/CultStore/CultStoreFooter/CultStor
 
 export default function ProductDetails() {
   const { id, category } = useParams();
+  const toast = useToast();
   const productdetail = useSelector(
     (store) => store.productdetail.ProductDetail
   );
   const cartData = useSelector((store) => store.cart);
   const dispatch = useDispatch();
-const navigate=useNavigate()
+  const navigate = useNavigate();
   useEffect(() => {
     dispatch(getProductDetail(id, category));
   }, []);
@@ -105,10 +108,15 @@ const navigate=useNavigate()
             </Box>
             <Box>
               <Button
-              
                 _hover={{ backgroundColor: "ff385a" }}
                 onClick={() => {
                   dispatch(CartAdd(productdetail));
+                  toast({
+                    title: `Successfully Added`,
+                    status: "success",
+                    isClosable: true,
+                    position: "top",
+                  });
                 }}
                 padding={"20px"}
                 borderRadius={"100px"}
@@ -128,9 +136,9 @@ const navigate=useNavigate()
                   _hover={{ backgroundColor: "ff385a" }}
                   bgColor={"#ff385a"}
                   w="150px"
-                  onClick={()=>{
-                    dispatch(CartAdd(productdetail))
-                    navigate("/checkout")
+                  onClick={() => {
+                    dispatch(CartAdd(productdetail));
+                    navigate("/checkout");
                   }}
                 >
                   Buy Now

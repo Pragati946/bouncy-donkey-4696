@@ -19,6 +19,7 @@ import SingleProduct from "../SingleProduct";
 import { getButton } from "../../../../Redux/ButtonRoute/button.action";
 import { getData } from "../../../../Redux/GetData/getData.actions";
 import CultStoreNavbar from "../../CultStoreNavbar/CultStoreNavbar";
+import CultStoreFooter from "../../CultStoreFooter/CultStoreFooter";
 
 function Womens() {
   const [a, setA] = useState("womens");
@@ -64,6 +65,9 @@ function Womens() {
           return <SingleProduct {...el} key={el._id} />;
         })}
       </Grid>
+      <br />
+      <br />
+      <CultStoreFooter />
     </>
   );
 }

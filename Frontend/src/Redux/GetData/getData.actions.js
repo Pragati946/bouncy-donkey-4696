@@ -10,9 +10,9 @@ export const getData =
   (dispatch) => {
     dispatch({ type: GETDATA_LOADING });
     axios
-      .get(`http://localhost:8080/${route}?q=${q}&page=1&limit=32`)
+      .get(
+        `https://fair-jade-bullfrog-gear.cyclic.app/${route}?q=${q}&page=1&limit=32`
+      )
       .then((res) => dispatch({ type: GETDATA_SUCCESS, payload: res.data }))
       .catch((error) => dispatch({ type: GETDATA_ERROR }));
   };
-
-

@@ -19,6 +19,7 @@ import SingleProduct from "../SingleProduct";
 import { getButton } from "../../../../Redux/ButtonRoute/button.action";
 import { getData } from "../../../../Redux/GetData/getData.actions";
 import CultStoreNavbar from "../../CultStoreNavbar/CultStoreNavbar";
+import CultStoreFooter from "../../CultStoreFooter/CultStoreFooter";
 
 function Supplements() {
   const [a, setA] = useState("supplements");
@@ -40,10 +41,10 @@ function Supplements() {
 
 
   return isLoading ? (
-   <Loader />
+    <Loader />
   ) : (
     <>
-   <CultStoreNavbar />
+      <CultStoreNavbar />
       <br />
       <CommanButton array={supplements} handleFilter={handleFilter} />
 
@@ -66,6 +67,9 @@ function Supplements() {
           return <SingleProduct {...el} key={el._id} />;
         })}
       </Grid>
+      <br />
+      <br />
+      <CultStoreFooter />
     </>
   );
 }

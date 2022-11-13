@@ -19,6 +19,7 @@ import SingleProduct from "../SingleProduct";
 import { getData } from "../../../../Redux/GetData/getData.actions";
 import { getButton } from "../../../../Redux/ButtonRoute/button.action";
 import CultStoreNavbar from "../../CultStoreNavbar/CultStoreNavbar";
+import CultStoreFooter from "../../CultStoreFooter/CultStoreFooter";
 
 function BestSellers() {
   const [a, setA] = useState("topSellings");
@@ -66,7 +67,10 @@ function BestSellers() {
         {data?.map((el) => {
           return <SingleProduct {...el} key={el._id} />;
         })}
-      </Grid>
+        </Grid>
+        <br />
+        <br />
+        <CultStoreFooter /> 
     </>
   );
 }

@@ -20,6 +20,7 @@ import SingleProduct from "../SingleProduct";
 import CommanButton from "../CommanButton";
 import Loader from "../../../../utils/Loader";
 import CultStoreNavbar from "../../CultStoreNavbar/CultStoreNavbar";
+import CultStoreFooter from "../../CultStoreFooter/CultStoreFooter";
 
 function Accessories() {
   const [a, setA] = useState("accessories");
@@ -69,7 +70,10 @@ function Accessories() {
             return <SingleProduct {...el} key={el._id} />;
           })}
         </Grid>
-      </Box>
+        </Box>
+        <br />
+        <br />
+        <CultStoreFooter /> 
     </>
   );
 }

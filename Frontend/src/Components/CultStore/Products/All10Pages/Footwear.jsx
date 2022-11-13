@@ -19,6 +19,7 @@ import Loader from "../../../../utils/Loader";
 import CommanButton from "../CommanButton";
 import SingleProduct from "../SingleProduct";
 import CultStoreNavbar from "../../CultStoreNavbar/CultStoreNavbar";
+import CultStoreFooter from "../../CultStoreFooter/CultStoreFooter";
 
 function Footwear() {
   const [a, setA] = useState("footwears");
@@ -70,7 +71,10 @@ function Footwear() {
         {data?.map((el) => {
           return <SingleProduct {...el} key={el._id} />;
         })}
-      </Grid>
+        </Grid>
+        <br />
+        <br />
+        <CultStoreFooter  /> 
     </>
   );
 }

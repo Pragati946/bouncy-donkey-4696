@@ -19,6 +19,7 @@ import SingleProduct from "../SingleProduct";
 import { getData } from "../../../../Redux/GetData/getData.actions";
 import { getButton } from "../../../../Redux/ButtonRoute/button.action";
 import CultStoreNavbar from "../../CultStoreNavbar/CultStoreNavbar";
+import CultStoreFooter from "../../CultStoreFooter/CultStoreFooter";
 
 function Cardio() {
   const [a, setA] = useState("cardio");
@@ -37,10 +38,10 @@ function Cardio() {
   };
 
   return isLoading ? (
-  <Loader />
+    <Loader />
   ) : (
     <>
-    <CultStoreNavbar />
+      <CultStoreNavbar />
       <br />
       <CommanButton array={cardio} handleFilter={handleFilter} />
 
@@ -63,6 +64,9 @@ function Cardio() {
           return <SingleProduct {...el} key={el._id} />;
         })}
       </Grid>
+      <br />
+      <br />
+      <CultStoreFooter />
     </>
   );
 }

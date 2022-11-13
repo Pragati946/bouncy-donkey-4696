@@ -4,10 +4,12 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import HomeSlider from "./HomeSlider";
 import CultStoreNavbar from "../CultStoreNavbar/CultStoreNavbar";
+import Loader from "../../../utils/Loader";
+import CultStoreFooter from "../CultStoreFooter/CultStoreFooter";
 // import { FAQ } from "./FAQ";
 
 const StoreHome = () => {
-  const [loading,setLoading] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     // setLoading(true);
@@ -22,25 +24,31 @@ const StoreHome = () => {
     getAcc();
     getSupp();
     getEqu();
-
   }, []);
   const [man, setMan] = useState([]);
   const getMens = async () => {
-    let res = await axios.get("http://localhost:8080/mens?limit=30");
+    setLoading(true);
+    let res = await axios.get(
+      "https://fair-jade-bullfrog-gear.cyclic.app/mens?limit=30"
+    );
     let data = await res.data;
     setMan(data);
+    setLoading(false);
   };
   const [women, setWomen] = useState([]);
   const getWomens = async () => {
     // setLoading(true);
-    let res = await axios.get("http://localhost:8080/womens?limit=30");
+    let res = await axios.get(
+      "https://fair-jade-bullfrog-gear.cyclic.app/womens?limit=30"
+    );
     let data = await res.data;
     setWomen(data);
   };
   const [top, setTop] = useState([]);
   const getTop = async () => {
-    
-    let res = await axios.get("http://localhost:8080/topSellings?limit=30");
+    let res = await axios.get(
+      "https://fair-jade-bullfrog-gear.cyclic.app/topSellings?limit=30"
+    );
     let data = await res.data;
     // setLoading(false);
     setTop(data);
@@ -48,7 +56,9 @@ const StoreHome = () => {
   const [arri, setArri] = useState([]);
   const getArri = async () => {
     // setLoading(true);
-    let res = await axios.get("http://localhost:8080/topArrivals?limit=30");
+    let res = await axios.get(
+      "https://fair-jade-bullfrog-gear.cyclic.app/topArrivals?limit=30"
+    );
     let data = await res.data;
     // setLoading(false);
     setArri(data);
@@ -56,7 +66,9 @@ const StoreHome = () => {
   const [foot, setFoot] = useState([]);
   const getFoot = async () => {
     // setLoading(true);
-    let res = await axios.get("http://localhost:8080/footwears?limit=30");
+    let res = await axios.get(
+      "https://fair-jade-bullfrog-gear.cyclic.app/footwears?limit=30"
+    );
     let data = await res.data;
     // setLoading(false);
     setFoot(data);
@@ -64,7 +76,9 @@ const StoreHome = () => {
   const [card, setCard] = useState([]);
   const getCard = async () => {
     // setLoading(true);
-    let res = await axios.get("http://localhost:8080/cardio?limit=30");
+    let res = await axios.get(
+      "https://fair-jade-bullfrog-gear.cyclic.app/cardio?limit=30"
+    );
     let data = await res.data;
     // setLoading(false);
     setCard(data);
@@ -72,7 +86,9 @@ const StoreHome = () => {
   const [cycle, setCycle] = useState([]);
   const getCycle = async () => {
     // setLoading(true);
-    let res = await axios.get("http://localhost:8080/cycles?limit=30");
+    let res = await axios.get(
+      "https://fair-jade-bullfrog-gear.cyclic.app/cycles?limit=30"
+    );
     let data = await res.data;
     // setLoading(false);
     setCycle(data);
@@ -80,7 +96,9 @@ const StoreHome = () => {
   const [acc, setAcc] = useState([]);
   const getAcc = async () => {
     // setLoading(true);
-    let res = await axios.get("http://localhost:8080/accessories?limit=30");
+    let res = await axios.get(
+      "https://fair-jade-bullfrog-gear.cyclic.app/accessories?limit=30"
+    );
     let data = await res.data;
     // setLoading(false);
     setAcc(data);
@@ -88,7 +106,9 @@ const StoreHome = () => {
   const [supp, setSupp] = useState([]);
   const getSupp = async () => {
     // setLoading(true);
-    let res = await axios.get("http://localhost:8080/supplements?limit=30");
+    let res = await axios.get(
+      "https://fair-jade-bullfrog-gear.cyclic.app/supplements?limit=30"
+    );
     let data = await res.data;
     // setLoading(false);
     setSupp(data);
@@ -96,12 +116,16 @@ const StoreHome = () => {
   const [equi, setEqui] = useState([]);
   const getEqu = async () => {
     // setLoading(true);
-    let res = await axios.get("http://localhost:8080/equipments?limit=30");
+    let res = await axios.get(
+      "https://fair-jade-bullfrog-gear.cyclic.app/equipments?limit=30"
+    );
     let data = await res.data;
     // setLoading(false);
     setEqui(data);
   };
-  return (
+  return loading ? (
+    <Loader />
+  ) : (
     <>
       <CultStoreNavbar />
       <HomeSlider
@@ -117,7 +141,10 @@ const StoreHome = () => {
       <HomeSlider heading="TREADMILLS" arr={acc} />
       <HomeSlider heading="TOPWEAR" arr={cycle} />
       <HomeSlider heading="TOPWEAR" arr={supp} />
-      <HomeSlider heading="SHOP BY WORKOUT" arr={equi} />
+        <HomeSlider heading="SHOP BY WORKOUT" arr={equi} />
+        <br />
+        <br />
+        <CultStoreFooter />
     </>
   );
 };
