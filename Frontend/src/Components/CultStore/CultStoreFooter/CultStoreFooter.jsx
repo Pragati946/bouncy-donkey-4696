@@ -2,10 +2,11 @@ import { Box,Grid,GridItem,Stack,Text,Image, Center,Link, HStack, VStack, StackD
 
 export default function CultStoreFooter(){
     return (
- <Box paddingTop={["0px","100px"]} height={"470px"} color={"whiteAlpha.900"} bgColor={"blackAlpha.900"}>
+ <Box paddingTop={["0px","100px"]} paddingBottom={["0px","100px"]}  color={"whiteAlpha.900"} bgColor={"blackAlpha.900"}>
               <Center >
-  <Stack direction={['column',"row","row", 'row']} spacing={["3px","0px","0px","60px"]}>
-  <Box  width={["400px","200px","250px","400px"]} h={["160px","400px"]}>
+  
+    <Box width={"90%"} display={"grid"} gridTemplateColumns={["repeat(1,1fr)","repeat(3,1fr)"]} margin="auto">
+    <Box   >
   <VStack
   spacing={8}
   align='stretch'
@@ -15,7 +16,7 @@ export default function CultStoreFooter(){
     </VStack>
   </Box>
  
-  <Box  width={["400px","200px","250px","400px"]} h={["120px","400px"]}>
+  <Box   >
   
 <VStack
 spacing={[0,7]}
@@ -41,7 +42,7 @@ download andriod app
 
 
 </Box>
-  <Box width={["400px","200px","250px","400px"]} h={["160px","400px"]}  >
+  <Box   >
   <VStack
   spacing={[3,12]}
   align='stretch'
@@ -69,7 +70,9 @@ download andriod app
 </VStack>
  
   </Box>
-</Stack>
+    </Box>
+
+
 </Center>
 </Box>
 

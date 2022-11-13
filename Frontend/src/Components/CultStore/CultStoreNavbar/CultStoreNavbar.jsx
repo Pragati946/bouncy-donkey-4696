@@ -29,6 +29,7 @@ import { useDispatch } from "react-redux";
 import { getData } from "../../../Redux/GetData/getData.actions";
 import { getButton } from "../../../Redux/ButtonRoute/button.action";
 import { Login } from "../../../Pages/Authentication/Login";
+import Cart from "../../../Pages/CultStore/Cart";
 
 export default function CultStoreNavbar() {
   const { isOpen, onToggle } = useDisclosure();
@@ -87,7 +88,8 @@ export default function CultStoreNavbar() {
             href={"#"}
             color="black"
           >
-            <BsCart fontSize={"30px"} />
+           
+            <Cart></Cart>
           </Button>
         </HStack>
       </Flex>
@@ -257,8 +259,10 @@ const MobileNavItem = ({ label, children, href }) => {
                 {child.label}
               </Link>
             ))}
+          
         </Stack>
       </Collapse>
+      
     </Stack>
   );
 };
