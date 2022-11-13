@@ -29,7 +29,11 @@ const Home_cult = () => {
   return (
     <>
 
-    
+
+      {/* <CultNavbar /> */}
+      <Box bg="blackAlpha.800">
+        <Box pos="relative" m="auto">
+
 
     
       <Box bg='blackAlpha.800'>
@@ -416,9 +420,18 @@ const Home_cult = () => {
         <Footer1_cultfit />
         <Footer2_cultfit />
       </Box>
+
+      </Box>
+      </Box>
+
+
+     
+    </>
+
       
 
   </>
+
   );
 };
 

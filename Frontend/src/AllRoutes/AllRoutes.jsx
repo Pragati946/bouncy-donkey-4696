@@ -2,6 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import Care from "../Components/CultFit/Care/Care";
 import Mind from "../Components/CultFit/Mind/Mind";
 import AllProducts from "../Components/CultStore/Products/AllProduct/AllProducts";
+import Logout from "../Pages/Authentication/Logout";
 import Fitness_Page from "../Pages/cultFit_Pages/FitnessPage_cultfit";
 import Home_cult from "../Pages/cultFit_Pages/Home_cult";
 import ProductDetails from "../Pages/CultStore/ProductDetails";

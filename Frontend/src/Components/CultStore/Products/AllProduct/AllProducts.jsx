@@ -22,6 +22,7 @@ import CultStoreNavbar from "../../CultStoreNavbar/CultStoreNavbar";
 import StoreHome from "../../CultStoreHome/StoreHome";
 import CultStoreFooter from "../../CultStoreFooter/CultStoreFooter";
 import FitnessFAQs from "../../../../Pages/cultFit_Pages/FitnessFAQs";
+import { FAQ } from "../../CultStoreHome/FAQ";
 
 function AllProducts() {
   const data = useSelector((state) => state?.getData?.data);
@@ -167,8 +168,8 @@ function AllProducts() {
           return <SingleProduct {...el} key={el._id} />;
         })}
         </Grid>
-        
-      <CultStoreFooter />
+        <FAQ/>
+      {/* <CultStoreFooter /> */}
     </>
   );
 }

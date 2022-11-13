@@ -3,7 +3,7 @@ import React from 'react'
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-const HomeSlider = ({arr,heading,comp}) => {
+const HomeSlider = ({arr,heading,comp,loading}) => {
     const settings2 = {
         dots: false,
         infinite: true,
@@ -16,7 +16,7 @@ const HomeSlider = ({arr,heading,comp}) => {
           {
             breakpoint: 1281,
             settings: {
-              slidesToShow: 3,
+              slidesToShow: 3.1,
               slidesToScroll: 1,
               arrows: true,
             },
@@ -46,10 +46,14 @@ const HomeSlider = ({arr,heading,comp}) => {
           },
         ],
       };
+      if(loading){
+        return <Box>...Loading</Box>
+      }
+      else
   return (
-    <Box style={{width:"80%",margin:"auto",marginTop:"50px"}}>
-       
-        <Box style={{marginBottom:"10px"}}>
+    <>
+    <Box w={{ base: "96%", sm: "95%", md: "90%", lg: "85%" }} style={{margin:"auto",marginTop:"20px"}}>
+        <Box style={{marginBottom:"15px"}}>
         <Heading>{heading}</Heading>
         <h1 >{comp}</h1>
         </Box>
@@ -81,6 +85,7 @@ const HomeSlider = ({arr,heading,comp}) => {
         ))}
       </Slider>
     </Box>
+    </>
   )
 }
 
