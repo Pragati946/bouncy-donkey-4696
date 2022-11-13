@@ -3,6 +3,7 @@ import React from "react";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import HomeSlider from "./HomeSlider";
+import CultStoreNavbar from "../CultStoreNavbar/CultStoreNavbar";
 // import { FAQ } from "./FAQ";
 const StoreHome = () => {
   const [man, setMan] = useState([]);
@@ -80,7 +81,7 @@ const StoreHome = () => {
 
   return (
     <>
-      {/* <ManCarousel /> */}
+      <CultStoreNavbar />
       <HomeSlider
         heading="BESTSELLERS"
         comp="LOVED BY CULT MEMBERS"
