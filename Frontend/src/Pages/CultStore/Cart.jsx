@@ -36,6 +36,7 @@ export default function Cart() {
         color={"white"}
         bgColor={"#ff385a"}
         onClick={onOpen}
+        
       >
          <BsCart fontSize={"30px"} />
       </Button>

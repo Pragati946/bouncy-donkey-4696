@@ -3,6 +3,7 @@ import {
   Button,
   Flex,
   Hide,
+  HStack,
   IconButton,
   Image,
   Input,
@@ -27,6 +28,9 @@ import {
 } from "@chakra-ui/icons";
 import { Link } from "react-router-dom";
 import { Login } from "../../../Pages/Authentication/Login";
+import { useSelector } from "react-redux";
+import Logout from "../../../Pages/Authentication/Logout";
+import Cart from "../../../Pages/CultStore/Cart";
 
 let data = [
   "Imphal",
@@ -51,14 +55,17 @@ let data = [
 ];
 
 function CultNavbar() {
+  const { isAuth } = useSelector((store) => store.auth);
+
   return (
     <>
       <Box pos="sticky" top="0" zIndex="300">
         <Flex gap="3" className={styles.main}>
           <Link to="/">
-            <Image mr='5vw'
-              height="45px"            
-              mixBlendMode='difference'
+            <Image
+              mr="5vw"
+              height="45px"
+              mixBlendMode="difference"
               src="https://play-lh.googleusercontent.com/DQ6S6FjOtoy5o4fGZInmjM7iTkwP-KsMDoaezm4n2g0akg0SvtI6NFbZ3ntxVeR6Yas"
             ></Image>
           </Link>
@@ -66,17 +73,23 @@ function CultNavbar() {
           <Hide below="md">
             <Box className={styles.textBox}>
               <Link to="/fitness">
-                <Text  mr='5vw' className={styles.Text}>FITNESS</Text>{" "}
+                <Text mr="5vw" className={styles.Text}>
+                  FITNESS
+                </Text>{" "}
               </Link>
 
               <Link to="/care">
-                <Text mr='5vw' className={styles.Text}>CARE</Text>
+                <Text mr="5vw" className={styles.Text}>
+                  CARE
+                </Text>
               </Link>
               <Link to="/mind">
-                <Text mr='5vw' className={styles.Text}>MIND</Text>
+                <Text mr="5vw" className={styles.Text}>
+                  MIND
+                </Text>
               </Link>
               <Link to="/store">
-                <Text  className={styles.Text}>STORE</Text>
+                <Text className={styles.Text}>STORE</Text>
               </Link>
             </Box>
           </Hide>
@@ -193,22 +206,25 @@ function CultNavbar() {
                 GET APP
               </Button>
             </Hide>
-              
-            <Box
-            border='1px solid white'
-            borderRadius='50%'
-            bg='whiteAlpha.700'
-            mixBlendMode='difference'
-             _hover={{bg:'whiteAlpha.500'}}          
-             maxH='40px'
-             maxW='40px'
-            style={{
-              marginRight: "20px",
-              marginLeft: "20px",
-            }}
+
+            <HStack
+              ml="4"
+              mr="-10"
+              flex={{ base: 1, md: 0 }}
+              justify={"flex-end"}
+              spacing={3}
+              color="white"
             >
-            <Login/>
-            </Box>
+              {!isAuth ? <Login /> : <Logout />}
+              <Button
+                fontSize={"sm"}
+                fontWeight={200}
+                variant={"link"}
+                // href={"/"}
+                color="black"
+                // border='3px solid red'
+              ></Button>
+            </HStack>
 
             <Show below="md">
               <Menu>
@@ -222,32 +238,29 @@ function CultNavbar() {
                   _hover={{ bg: "whiteAlpha.400" }}
                 />
                 <MenuList>
-                <Link to="/fitness">
-                  <MenuItem icon={<AddIcon />}>
-                <Text className={styles.Text}>FITNESS</Text>
-                </MenuItem>
-              </Link>
-                 
+                  <Link to="/fitness">
+                    <MenuItem icon={<AddIcon />}>
+                      <Text className={styles.Text}>FITNESS</Text>
+                    </MenuItem>
+                  </Link>
 
-              <Link to="/care">
-                  <MenuItem icon={<ExternalLinkIcon />}>
-                <Text className={styles.Text}>CARE</Text>
-                  </MenuItem>
-              </Link>
+                  <Link to="/care">
+                    <MenuItem icon={<ExternalLinkIcon />}>
+                      <Text className={styles.Text}>CARE</Text>
+                    </MenuItem>
+                  </Link>
 
-              <Link to="/mind">
-                  <MenuItem icon={<RepeatIcon />}>
-                <Text className={styles.Text}>MIND</Text>
-                  </MenuItem>
-              </Link>
-                    
+                  <Link to="/mind">
+                    <MenuItem icon={<RepeatIcon />}>
+                      <Text className={styles.Text}>MIND</Text>
+                    </MenuItem>
+                  </Link>
 
-              <Link to="/store">
-                  <MenuItem icon={<EditIcon />}>
-                <Text className={styles.Text}>STORE</Text>
-                  </MenuItem>
-              </Link>
-
+                  <Link to="/store">
+                    <MenuItem icon={<EditIcon />}>
+                      <Text className={styles.Text}>STORE</Text>
+                    </MenuItem>
+                  </Link>
                 </MenuList>
               </Menu>
             </Show>

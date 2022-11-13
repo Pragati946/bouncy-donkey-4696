@@ -52,7 +52,7 @@ export const Login = () => {
           <ModalContent
             w={{ base: "310px", sm: "340px", md: "360px", lg: "420px" }}
           >
-          <ModalCloseButton _hover={{ bgColor: "none" }} />
+            <ModalCloseButton _hover={{ bgColor: "none" }} />
             <ModalBody w="full" m="auto" mt="20">
               <VStack px={{ base: "0", md: "2", lg: "10" }}>
                 <Flex justifyContent={"center"} alignItems="center">

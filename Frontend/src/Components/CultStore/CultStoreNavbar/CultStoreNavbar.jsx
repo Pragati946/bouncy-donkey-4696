@@ -33,9 +33,10 @@ import Logout from "../../../Pages/Authentication/Logout";
 
 import Cart from "../../../Pages/CultStore/Cart";
 
-
 export default function CultStoreNavbar() {
   const { isOpen, onToggle } = useDisclosure();
+
+  const isAuth = useSelector((state) => state?.auth?.isAuth);
 
   return (
     <Box position="sticky" top="0" bgColor="white" zIndex="3">
@@ -72,8 +73,9 @@ export default function CultStoreNavbar() {
           <Link href="/store">
             <Box>
               <Image
-                w="120px"
-                src="https://cdn-images.cure.fit/www-curefit-com/image/upload/c_fill,w_135,ar_3.87,q_auto:eco,dpr_2,f_auto,fl_progressive//image/test/brand-logo/cultsport-black-logo.svg"
+                width={"50px"}
+                height={"39px"}
+                src="https://play-lh.googleusercontent.com/DQ6S6FjOtoy5o4fGZInmjM7iTkwP-KsMDoaezm4n2g0akg0SvtI6NFbZ3ntxVeR6Yas"
               />
             </Box>
           </Link>
@@ -84,7 +86,7 @@ export default function CultStoreNavbar() {
         </Flex>
 
         <HStack flex={{ base: 1, md: 0 }} justify={"flex-end"} spacing={3}>
-          {!isAuth?<Login />:<Logout/>}
+          {!isAuth ? <Login /> : <Logout />}
           <Button
             fontSize={"sm"}
             fontWeight={200}
@@ -93,7 +95,6 @@ export default function CultStoreNavbar() {
             color="black"
             // border='3px solid red'
           >
-           
             <Cart></Cart>
           </Button>
         </HStack>
@@ -267,10 +268,8 @@ const MobileNavItem = ({ label, children, href, route }) => {
                 {child.label}
               </Link>
             ))}
-          
         </Stack>
       </Collapse>
-      
     </Stack>
   );
 };
