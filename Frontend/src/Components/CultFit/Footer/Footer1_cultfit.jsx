@@ -5,7 +5,10 @@ const Footer1_cultfit = () => {
  <Box bgColor='black' color='whiteAlpha.800' py='20' px='20px' >
 <Grid  templateColumns={{base:"repeat(1,1fr)",sm:"repeat(1,1fr)", md:"repeat(2,1fr)" , lg:"repeat(2,1fr)", xl:"repeat(2,1fr)"}} gap='45px'>
 <Box>
-    <Img src='https://framerusercontent.com/images/p0p2QDo9SGEP5w1KV2uX5dsBXU.jpg' w='40' />
+    <Img
+    borderRadius='14'              
+    mixBlendMode='difference'
+    src='https://play-lh.googleusercontent.com/DQ6S6FjOtoy5o4fGZInmjM7iTkwP-KsMDoaezm4n2g0akg0SvtI6NFbZ3ntxVeR6Yas' w='40' />
     <Text maxW='70%'>At cult.fit, we make group workouts fun, daily food healthy & tasty, mental fitness easy with yoga & meditation, Medical & lifestyle care hassle-free.#BeBetterEveryDay</Text>
 </Box>
 <Grid lineHeight='30px' templateColumns={{base:"repeat(1,1fr)",sm:"repeat(2,1fr)", md:"repeat(2,1fr)" , lg:"repeat(4,1fr)", xl:"repeat(4,1fr)"}} gap='35px' >
