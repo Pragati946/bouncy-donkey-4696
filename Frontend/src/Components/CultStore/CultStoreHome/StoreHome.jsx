@@ -6,7 +6,7 @@ import HomeSlider from "./HomeSlider";
 import CultStoreNavbar from "../CultStoreNavbar/CultStoreNavbar";
 import Loader from "../../../utils/Loader";
 import CultStoreFooter from "../CultStoreFooter/CultStoreFooter";
-// import { FAQ } from "./FAQ";
+import { FAQ } from "./FAQ";
 
 const StoreHome = () => {
   const [loading, setLoading] = useState(false);
@@ -144,6 +144,7 @@ const StoreHome = () => {
         <HomeSlider heading="SHOP BY WORKOUT" arr={equi} />
         <br />
         <br />
+        <FAQ />
         <CultStoreFooter />
     </>
   );

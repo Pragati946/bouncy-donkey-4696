@@ -13,12 +13,14 @@ import {
 
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
+import { useNavigate } from "react-router-dom";
 export default function Payment() {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const toast = useToast();
+  const navigate = useNavigate();
 
   return (
     <>
@@ -71,7 +73,7 @@ export default function Payment() {
         </Modal.Body>
         <Modal.Footer>
           <Button
-            onClick={() =>
+            onClick={() => {
               toast({
                 title: "Payment successfull.",
                 description: "We've Placed Your Order.",
@@ -79,8 +81,9 @@ export default function Payment() {
                 position: "top",
                 duration: 1000,
                 isClosable: true,
-              })
-            }
+              });
+              navigate("/store");
+            }}
             display={"block"}
             borderRadius={"100px"}
             width="200px"
