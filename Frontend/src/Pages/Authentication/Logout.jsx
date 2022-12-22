@@ -2,7 +2,6 @@ import {
   Avatar,
   Box,
   Button,
-  Flex,
   HStack,
   Image,
   Modal,
@@ -15,12 +14,10 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { logout } from "../../Redux/Auth/Auth.action";
-import { LOGOUT } from "../../Redux/Auth/Auth.types";
 const Logout = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const { isAuth } = useSelector((store) => store.auth);
   const dispatch = useDispatch();
   const handlelogout = () => {
     dispatch(logout());
@@ -29,10 +26,10 @@ const Logout = () => {
   return (
     <Box>
       <Button
-        as={"a"}
-        fontSize={"lg"}
+        as="a"
+        fontSize="lg"
         fontWeight={200}
-        variant={"link"}
+        variant="link"
         href={"#"}
         color="black"
         onClick={onOpen}
@@ -46,28 +43,34 @@ const Logout = () => {
         <ModalOverlay />
         <ModalContent
           w={{ base: "310px", sm: "340px", md: "360px", lg: "420px" }}
+          bgColor="black"
         >
-          <ModalCloseButton _hover={{ bgColor: "none" }} />
+          <ModalCloseButton _hover={{ color: "white" }} />
           <ModalBody w="full" m="auto" mt="20">
             <VStack px={{ base: "0", md: "2", lg: "10" }}>
-              <Flex justifyContent={"center"} alignItems="center">
+              <Box alignItems="center">
                 <Image
-                  w="120px"
-                  src="https://cdn-images.cure.fit/www-curefit-com/image/upload/c_fill,w_135,ar_3.87,q_auto:eco,dpr_2,f_auto,fl_progressive//image/test/brand-logo/cultsport-black-logo.svg"
+                  w="80px"
+                  src="https://cdn-images.cure.fit/www-curefit-com/image/upload/c_fill,w_75,q_auto:eco,dpr_1,f_auto,fl_progressive//image/test/brand-logo/curefit-logo-white.svg"
+                  mb="20px"
                 />
-              </Flex>
+                <Image
+                  w="90px"
+                  src="https://cdn-images.cure.fit/www-curefit-com/image/upload/c_fill,w_135,q_auto:eco,dpr_1,f_auto,fl_progressive//image/test/brand-logo/cf-name-white.png"
+                />
+              </Box>
               <HStack
-                borderBottom={"2px solid white"}
+                borderBottom="2px solid black"
                 w="full"
                 pt="25px"
               ></HStack>
               <Button
-                bgColor="rgba(255, 49, 109, 0.7)"
+                bgColor="white"
                 w="full"
                 size="sm"
                 mt="5"
                 type="submit"
-                _hover={{ bgColor: "rgba(255, 49, 109, 0.7)" }}
+                _hover={{ bgColor: "white" }}
                 onClick={handlelogout}
                 marginBottom="200px"
               >
@@ -75,11 +78,14 @@ const Logout = () => {
                   letterSpacing={"1.2px"}
                   fontWeight="500"
                   fontSize="14px"
-                  color="white"
+                  color="black"
                 >
                   Wants to Logout
                 </Text>
               </Button>
+              <br />
+              <br />
+              <br />
             </VStack>
           </ModalBody>
         </ModalContent>
