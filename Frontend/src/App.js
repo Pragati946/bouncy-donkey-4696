@@ -1,4 +1,7 @@
+import { useSelector } from "react-redux";
 import AllRoutes from "./AllRoutes/AllRoutes";
+import CultNavbar from "./Components/CultFit/CultNavbar/CultNavbar";
+import CultStoreNavbar from "./Components/CultStore/CultStoreNavbar/CultStoreNavbar";
 
 
 
@@ -15,9 +18,13 @@ import AllRoutes from "./AllRoutes/AllRoutes";
 
 
 function App() {
+  const navVal=useSelector((store)=>store.navToggle.nav)
   return (
     <div>
+      {navVal?<CultStoreNavbar/>:<CultNavbar />}
+      
       <AllRoutes />
+      
     </div>
   );
 }

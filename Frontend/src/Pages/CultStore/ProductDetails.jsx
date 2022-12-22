@@ -39,7 +39,7 @@ export default function ProductDetails() {
 
   return (
     <>
-      <CultStoreNavbar />
+   
       <br />
       <Grid
         // direction={["column", "row"]}

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { NavbarCare } from "./NavbarCare";
 import "bootstrap/dist/css/bootstrap.css";
 import Carousel from "react-bootstrap/Carousel";
@@ -8,9 +8,16 @@ import { Grid, GridItem } from "@chakra-ui/react";
 import data from "./LabtestData.json";
 import Footer1_cultfit from '../Footer/Footer1_cultfit';
 import CultNavbar from "../CultNavbar/CultNavbar";
+import { cultNavbar } from "../../../Redux/NavBarToggle/actiontypes";
+import { useDispatch } from "react-redux";
 
 function Care() {
   console.log(data);
+
+  const dispatch=useDispatch();
+  useEffect(()=>{
+    dispatch(cultNavbar())
+  },[])
 
 let Senierdata = [
   {
@@ -33,7 +40,7 @@ let Senierdata = [
   return (
     
     <div>
-      <CultNavbar/>
+      
       <NavbarCare />
       <Box
         height="70%"

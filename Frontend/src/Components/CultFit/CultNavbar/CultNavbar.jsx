@@ -53,9 +53,9 @@ let data = [
   "Agra",
   "Lucknow",
 ];
-
+let loc = localStorage.getItem("location") || "INDORE"
 function CultNavbar() {
-  const [value,setValue]= useState('INDORE')
+  const [value,setValue]= useState(loc)
   const { isAuth } = useSelector((store) => store.auth);
 
   return (
@@ -142,7 +142,7 @@ function CultNavbar() {
                     className={styles.menuItemColor}
                   >
                     <MenuDivider marginLeft="15px" marginRight="15px" />
-                    <MenuItem minH="48px" className={styles.menuItemColor}  onClick={()=>setValue('Banglore')}>
+                    <MenuItem minH="48px" className={styles.menuItemColor}  onClick={()=>{setValue('Banglore');localStorage.setItem("location","Banglore")}}>
                       <Image
                         boxSize="2rem"
                         borderRadius="full"
@@ -153,7 +153,7 @@ function CultNavbar() {
                       />
                       <span className={styles.menuItemColor}>Banglore</span>
                     </MenuItem>
-                    <MenuItem minH="48px" className={styles.menuItemColor} onClick={()=>setValue('Delhi NCR')}>
+                    <MenuItem minH="48px" className={styles.menuItemColor} onClick={()=>{setValue('Delhi NCR');localStorage.setItem("location","Delhi NCR")}}>
                       <Image
                         boxSize="2rem"
                         borderRadius="full"
@@ -163,7 +163,7 @@ function CultNavbar() {
                       />
                       <span className={styles.menuItemColor}>Delhi NCR</span>
                     </MenuItem>
-                    <MenuItem minH="48px" className={styles.menuItemColor} onClick={()=>setValue('Hyderabad')}>
+                    <MenuItem minH="48px" className={styles.menuItemColor} onClick={()=>{setValue('Hyderabad');localStorage.setItem("location","Hyderabad")}}>
                       <Image
                         boxSize="2rem"
                         borderRadius="full"
@@ -173,7 +173,7 @@ function CultNavbar() {
                       />
                       <span className={styles.menuItemColor}>Hyderabad</span>
                     </MenuItem>
-                    <MenuItem minH="48px" className={styles.menuItemColor} onClick={()=>setValue('Mumbai')}>
+                    <MenuItem minH="48px" className={styles.menuItemColor} onClick={()=>{setValue('Mumbai');localStorage.setItem("location","Mumbai")}}>
                       <Image
                         boxSize="2rem"
                         borderRadius="full"
@@ -196,7 +196,10 @@ function CultNavbar() {
                           marginBottom: "10px",
                           fontWeight: "Bold",
                         }}
-                        onClick={()=>setValue(e)}
+                        onClick={()=>{setValue(e);
+                        localStorage.setItem("location",e)}
+                      }
+
                       >
                         {e}
                       </MenuItem>

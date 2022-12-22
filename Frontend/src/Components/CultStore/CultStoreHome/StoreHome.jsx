@@ -127,7 +127,6 @@ const StoreHome = () => {
     <Loader />
   ) : (
     <>
-      <CultStoreNavbar />
       <HomeSlider
         heading="BESTSELLERS"
         comp="LOVED BY CULT MEMBERS"

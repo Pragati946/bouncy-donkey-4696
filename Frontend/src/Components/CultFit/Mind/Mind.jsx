@@ -7,7 +7,7 @@ import {
   Box,
   Image,
 } from "@chakra-ui/react";
-import React from "react";
+import React, { useEffect } from "react";
 import Footer1_cultfit from "../Footer/Footer1_cultfit";
 import { Navbarmind } from "./Navbarmind";
 import { Text } from "@chakra-ui/react";
@@ -16,8 +16,14 @@ import { GridItem } from "@chakra-ui/react";
 import { border } from "@chakra-ui/react";
 import { Divider } from "@chakra-ui/react";
 import CultNavbar from "../CultNavbar/CultNavbar";
+import { cultNavbar } from "../../../Redux/NavBarToggle/actiontypes";
+import { useDispatch } from "react-redux";
 
 function Mind() {
+  const dispatch=useDispatch();
+  useEffect(()=>{
+    dispatch(cultNavbar())
+  },[])
   let expert = [
     {
       Img: "https://cdn-images.cure.fit/www-curefit-com/image/upload/fl_progressive,f_auto,q_auto:eco,w_580,c_fit/dpr_2/image/vm/84248218-f8c0-44d8-b2d6-be415b742b9a.png",
@@ -79,7 +85,6 @@ function Mind() {
 
   return (
     <div>
-      <CultNavbar />
       <Box mb='8'>
 
       <Navbarmind  />

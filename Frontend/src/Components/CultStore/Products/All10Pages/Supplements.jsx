@@ -44,7 +44,7 @@ function Supplements() {
     <Loader />
   ) : (
     <>
-      <CultStoreNavbar />
+  
       <br />
       <CommanButton array={supplements} handleFilter={handleFilter} />
 
