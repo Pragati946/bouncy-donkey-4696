@@ -3,7 +3,15 @@ import React from 'react'
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { storeNavbar } from '../../../Redux/NavBarToggle/actiontypes';
 const HomeSlider = ({arr,heading,comp,loading}) => {
+ const dispatch=useDispatch();
+
+  useEffect(()=>{
+    dispatch(storeNavbar())
+  },[])
     const settings2 = {
         dots: false,
         infinite: true,

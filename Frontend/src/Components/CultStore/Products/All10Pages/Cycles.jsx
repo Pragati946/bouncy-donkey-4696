@@ -44,7 +44,7 @@ function Cycles() {
     <Loader />
   ) : (
     <>
-     <CultStoreNavbar />
+   
       <br />
       <CommanButton array={cycles} handleFilter={handleFilter} />
 

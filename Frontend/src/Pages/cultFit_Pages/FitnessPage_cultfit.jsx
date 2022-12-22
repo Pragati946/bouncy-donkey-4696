@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {  Box,  Button,  Flex,  Grid,  Heading,  Hide,  Image,  Img,  Link,  Show,  Text} from "@chakra-ui/react";
 import {  Table,  Thead,  Tbody,  Tfoot,  Tr,  Th,  Td,  TableContainer} from "@chakra-ui/react";
 import { CheckCircleIcon } from "@chakra-ui/icons";
@@ -11,11 +11,17 @@ import { AiOutlineCheckCircle } from "react-icons/ai";
 import { BsQuestionCircleFill } from "react-icons/bs";
 import CultNavbar from "../../Components/CultFit/CultNavbar/CultNavbar";
 import { PassBoxElite } from "../../Components/CultFit/Fitness_cultfitPage/CommonExports_Raj/components_cultfit";
+import { cultNavbar } from "../../Redux/NavBarToggle/actiontypes";
+import { useDispatch } from "react-redux";
 const Fitness_Page = () => {
+  const dispatch=useDispatch();
+  useEffect(()=>{
+    dispatch(cultNavbar())
+  },[])
   return (
     <>
        
-        <CultNavbar />
+        
        
       <Box bg='black' >
         {/* top section */}

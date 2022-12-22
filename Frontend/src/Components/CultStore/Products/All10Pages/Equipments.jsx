@@ -30,6 +30,7 @@ function Equipments() {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    
     dispatch(getData(a));
     dispatch(getButton(a));
   }, []);
@@ -42,7 +43,7 @@ function Equipments() {
     <Loader />
   ) : (
     <>
-      <CultStoreNavbar />
+      
       <br />
       <CommanButton array={equipemnts} handleFilter={handleFilter} />
 
