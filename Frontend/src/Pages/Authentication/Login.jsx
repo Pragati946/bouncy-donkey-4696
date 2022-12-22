@@ -1,7 +1,6 @@
 import {
   Box,
   Button,
-  color,
   Flex,
   Heading,
   HStack,
@@ -22,16 +21,16 @@ import { BiUserCircle } from "react-icons/bi";
 import { useDispatch } from "react-redux";
 import { login } from "../../Redux/Auth/Auth.action";
 export const Login = () => {
-  const [loginCred, setLoginCred] = useState({});
+  const [cred, setCred] = useState({});
   const dispatch = useDispatch();
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setLoginCred({ ...loginCred, [name]: value });
+    setCred({ ...cred, [name]: value });
   };
   const { isOpen, onOpen, onClose } = useDisclosure();
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(login(loginCred));
+    dispatch(login(cred));
   };
   return (
     <>

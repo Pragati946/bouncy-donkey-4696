@@ -2,7 +2,6 @@ import {
   Avatar,
   Box,
   Button,
-  Flex,
   HStack,
   Image,
   Modal,
@@ -15,7 +14,7 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { logout } from "../../Redux/Auth/Auth.action";
 const Logout = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -46,7 +45,7 @@ const Logout = () => {
           w={{ base: "310px", sm: "340px", md: "360px", lg: "420px" }}
           bgColor="black"
         >
-          <ModalCloseButton _hover={{ bgColor: "white" }} />
+          <ModalCloseButton _hover={{ color: "white" }} />
           <ModalBody w="full" m="auto" mt="20">
             <VStack px={{ base: "0", md: "2", lg: "10" }}>
               <Box alignItems="center">
