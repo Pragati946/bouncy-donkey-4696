@@ -24,7 +24,7 @@ export default function AllRoutes() {
       <Route path="/fitness" element={<Fitness_Page />}></Route>
       <Route path="/care" element={<Care />}></Route>
       <Route path="/mind" element={<Mind />}></Route>
-      <Route path="/store" element={<StoreHome />}></Route>
+      <Route path="/store" element={<StoreHome/>}></Route>
       <Route path="/mens" element={<Mens />}></Route>
       <Route path="/womens" element={<Womens />}></Route>
       <Route path="/topSellings" element={<BestSellers />}></Route>
@@ -35,6 +35,7 @@ export default function AllRoutes() {
       <Route path="/accessories" element={<Accessories />}></Route>
       <Route path="/supplements" element={<Supplements />}></Route>
       <Route path="/equipments" element={<Equipments />}></Route>
+   
       <Route
         path="/:category/:id"
         element={<ProductDetails></ProductDetails>}
