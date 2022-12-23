@@ -28,7 +28,6 @@ function SingleProduct({
 
   return (
     <>
-
       <VStack alignItems={"start"} position="relative">
         <Link to={`/${route}/${_id}`}>
           <Box overflow={"hidden"} borderRadius={"2px"}>

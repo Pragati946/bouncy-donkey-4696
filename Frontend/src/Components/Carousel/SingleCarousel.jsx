@@ -4,7 +4,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import { Box, Image } from "@chakra-ui/react";
 export const SingleCarousel = () => {
-  const carouselcall = {
+  const setting = {
     dots: true,
     infinite: true,
     speed: 1000,
@@ -12,32 +12,37 @@ export const SingleCarousel = () => {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 5000,
+    arrows:true
   };
-  const list = [
+  const dataCarousel = [
     {
-      Url: "https://cdn-images.cure.fit/www-curefit-com/image/upload/fl_progressive,f_auto,q_auto:eco,w_1440,ar_2880:596/dpr_2/image/vm/b18213c7-7fa6-4281-a0b2-785366ead9d0.jpg",
+      img: "https://img7.hkrtcdn.com/22230/bnr_2222996_o.jpg",
     },
     {
-      Url: "https://cdn-images.cure.fit/www-curefit-com/image/upload/fl_progressive,f_auto,q_auto:eco,w_1440,ar_2880:596/dpr_2/image/vm/0fd1e3fb-c9e2-4ffd-bf7c-eab810edaaf8.png",
+      img: "https://img10.hkrtcdn.com/7579/bnr_757879_o.png",
     },
     {
-      Url: "https://cdn-images.cure.fit/www-curefit-com/image/upload/fl_progressive,f_auto,q_auto:eco,w_1440,ar_2880:596/dpr_2/image/vm/b18213c7-7fa6-4281-a0b2-785366ead9d0.jpg",
+      img: "https://img8.hkrtcdn.com/10131/bnr_1013017_o.jpg",
     },
     {
-      Url: "https://cdn-images.cure.fit/www-curefit-com/image/upload/fl_progressive,f_auto,q_auto:eco,w_1440,ar_2880:596/dpr_2/image/vm/94851c73-d7f2-4597-a24d-e9a33aeb2c47.jpg",
+      img: "https://img4.hkrtcdn.com/7579/bnr_757883_o.png",
+    },
+    {
+      img: "https://img4.hkrtcdn.com/10162/bnr_1016123_o.jpg",
+    },
+    {
+      img: "https://img7.hkrtcdn.com/22577/bnr_2257636_o.jpg",
     },
   ];
   return (
-    <Box>
-        <Box>
-        <Slider {...carouselcall} style={{ overflow: "hidden" }}>
-            {list.map((el)=>(
-              <Box>
-                <Image src={el.Url} alt="" style={{ width: "100vw" }}/>
-              </Box>
-            ))}
-          </Slider>
-        </Box>
-  </Box>
-  )
-}
+    <Box mb="40px">
+      <Slider {...setting} style={{ overflow: "hidden" }}>
+        {dataCarousel.map((el) => (
+          <Box>
+            <Image src={el.img} alt="imgUrl" style={{ width: "100vw" }} />
+          </Box>
+        ))}
+      </Slider>
+    </Box>
+  );
+};

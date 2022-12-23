@@ -2,6 +2,7 @@ import { Button, Flex, Grid, HStack, Wrap, WrapItem } from "@chakra-ui/react";
 import React from "react";
 import { useRef } from "react";
 import { useState } from "react";
+import { SingleCarousel } from "../../Carousel/SingleCarousel";
 
 function CommanButton({ array, handleFilter }) {
   const curr_id = useRef(null);
@@ -12,6 +13,8 @@ function CommanButton({ array, handleFilter }) {
   curr_id.current = null;
 
   return (
+    <>
+  <SingleCarousel/>
     <Wrap
       w={{ base: "96%", sm: "95%", md: "90%", lg: "85%" }}
       m="auto"
@@ -21,6 +24,7 @@ function CommanButton({ array, handleFilter }) {
     >
       {array?.map((el) => {
         return (
+          
           <WrapItem key={el}>
             <Button
               variant="outline"
@@ -37,6 +41,7 @@ function CommanButton({ array, handleFilter }) {
         );
       })}
     </Wrap>
+    </>
   );
 }
 
