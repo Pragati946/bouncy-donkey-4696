@@ -49,7 +49,7 @@ function Footwear() {
     <Loader />
   ) : (
       <>
-        <CultStoreNavbar />
+     
       <br />
       <CommanButton array={footWear} handleFilter={handleFilter} />
 

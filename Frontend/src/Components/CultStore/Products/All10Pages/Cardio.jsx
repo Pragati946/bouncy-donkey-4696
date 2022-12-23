@@ -41,7 +41,7 @@ function Cardio() {
     <Loader />
   ) : (
     <>
-      <CultStoreNavbar />
+      
       <br />
       <CommanButton array={cardio} handleFilter={handleFilter} />
 

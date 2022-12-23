@@ -44,7 +44,7 @@ function BestSellers() {
     <Loader />
   ) : (
       <>
-        <CultStoreNavbar />
+    
      
       <br />
       <CommanButton array={bestSellings} handleFilter={handleFilter} />

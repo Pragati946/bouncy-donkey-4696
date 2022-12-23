@@ -1,0 +1,2 @@
+export const STORENAVBAR="STORENAVBAR";
+export const CULTNAVBAR="CULTNAVBAR";

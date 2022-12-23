@@ -47,7 +47,7 @@ function Accessories() {
     <Loader />
   ) : (
       <>
-        <CultStoreNavbar />
+     
       <Box bgColor="#F8F8F8">
         <CommanButton array={accessrories} handleFilter={handleFilter} />
 

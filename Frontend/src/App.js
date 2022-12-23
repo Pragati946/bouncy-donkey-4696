@@ -1,13 +1,23 @@
+import { useSelector } from "react-redux";
 import AllRoutes from "./AllRoutes/AllRoutes";
-import { PrivateRoute } from "./PrivateRoute/PrivateRoute";
+import CultNavbar from "./Components/CultFit/CultNavbar/CultNavbar";
+import CultStoreNavbar from "./Components/CultStore/CultStoreNavbar/CultStoreNavbar";
+
+
+
+
+
+
+
 function App() {
+  const navVal=useSelector((store)=>store.navToggle.nav)
   return (
     <div>
+      {navVal?<CultStoreNavbar/>:<CultNavbar />}
       <AllRoutes />
-      {/* <PrivateRoute/> */}
-
     </div>
   );
 }
 
 export default App;
+

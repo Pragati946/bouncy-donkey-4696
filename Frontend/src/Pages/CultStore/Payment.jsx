@@ -14,7 +14,7 @@ import {
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
 import { useNavigate } from "react-router-dom";
-export default function Payment() {
+export default function Payment({details,totalprice}) {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -35,6 +35,7 @@ export default function Payment() {
         _hover={{ bgColor: "#ff385a" }}
         color={"white"}
         bgColor={"#ff385a"}
+        disabled={totalprice==0 || details.address==="" || details.pin==="" ||details.state==="" || details.country===""}
       >
         Check out
       </Button>
@@ -92,6 +93,7 @@ export default function Payment() {
             _hover={{ bgColor: "#ff385a" }}
             color={"white"}
             bgColor={"#ff385a"}
+            
           >
             Pay
           </Button>

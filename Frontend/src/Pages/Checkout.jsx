@@ -21,6 +21,16 @@ import Payment from "./CultStore/Payment";
 export default function Checkout() {
   const cartData = useSelector((store) => store.cart);
   const dispatch = useDispatch();
+  const [details,setDetails] =useState({
+    address: "",
+    pin: "",
+    city: "",
+    state: "",
+  })
+  const handleChange=(e)=>{
+    const { name, value } = e.target;
+    setDetails({...details,[name]:value})
+  }
   const [value, setValue] = useState(0);
   const totalprice = cartData.reduce((a, b) => {
     let price = b.price1.split(" ");
@@ -32,7 +42,7 @@ export default function Checkout() {
 
   return (
     <>
-      <CultStoreNavbar />
+      
       <Box
         margin={"auto"}
         marginBottom="30px"
@@ -120,6 +130,8 @@ export default function Checkout() {
               Address{" "}
             </Heading>
             <Input
+             onChange={handleChange}
+             name="address"
               type={"Text"}
               width={["300px", "400px"]}
               placeholder="address"
@@ -130,9 +142,12 @@ export default function Checkout() {
               Pin Code{" "}
             </Heading>
             <Input
-              type={"number"}
+              type={"text"}
               width={["300px", "400px"]}
               placeholder="pincode"
+              onChange={handleChange}
+              name="pin"
+
             />
           </Box>
           <Box margin={"10px"} display={"flex"} justifyContent="space-between">
@@ -140,9 +155,11 @@ export default function Checkout() {
               City{" "}
             </Heading>
             <Input
+             onChange={handleChange}
               type={"Text"}
               width={["300px", "400px"]}
               placeholder="city"
+              name="city"
             />
           </Box>
           <Box
@@ -155,9 +172,11 @@ export default function Checkout() {
               State{" "}
             </Heading>
             <Input
+            onChange={handleChange}
               type={"Text"}
               width={["300px", "400px"]}
               placeholder="state"
+              name="state"
             />
           </Box>
 
@@ -172,7 +191,7 @@ export default function Checkout() {
             <Heading fontSize={"18px"}>{totalprice}</Heading>
           </Box>
           <Box>
-            <Payment></Payment>
+            <Payment details={details} totalprice={totalprice}></Payment>
           </Box>
         </Box>
       </Box>

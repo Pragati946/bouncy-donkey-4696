@@ -41,7 +41,7 @@ function Mens() {
     <Loader />
   ) : (
     <>
-      <CultStoreNavbar />
+  
       <br />
       <CommanButton array={mens} handleFilter={handleFilter} />
 

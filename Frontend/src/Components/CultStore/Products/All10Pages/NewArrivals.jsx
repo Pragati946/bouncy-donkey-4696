@@ -45,7 +45,7 @@ function NewArrivals() {
     <Loader />
   ) : (
     <>
-      <CultStoreNavbar />
+     
       <br />
       <CommanButton array={newArrivals} handleFilter={handleFilter} />
 

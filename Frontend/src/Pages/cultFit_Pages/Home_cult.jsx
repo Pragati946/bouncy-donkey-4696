@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   Box,
   Button,
@@ -23,12 +23,18 @@ import {
 } from "../../Components/CultFit/Fitness_cultfitPage/CommonExports_Raj/components_cultfit";
 import { data_passes_fitness } from "./FitnessPage_cultfit";
 import CultNavbar from "../../Components/CultFit/CultNavbar/CultNavbar";
+import { cultNavbar } from "../../Redux/NavBarToggle/actiontypes";
+import { useDispatch } from "react-redux";
 const Home_cult = () => {
   const { scrollProgress } = useScroll();
 
+  const dispatch=useDispatch();
+  useEffect(()=>{
+    dispatch(cultNavbar())
+  },[])
   return (
     <>
-      <CultNavbar />
+ 
       <Box bg="blackAlpha.800">
         <Box pos="relative" m="auto">
           <Box opacity=".8">
