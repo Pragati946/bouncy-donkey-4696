@@ -10,7 +10,7 @@ export const PrivateRoute = ({ children }) => {
   if (!isAuth) {
     toast({
       title: "Please Login First.",
-      description: "To discover this page",
+      description: "To access this page",
       status: "success",
       duration: 9000,
       isClosable: true,
