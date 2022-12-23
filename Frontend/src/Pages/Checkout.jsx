@@ -16,7 +16,9 @@ import {
   CartCountSub,
   CartDel,
 } from "../Redux/cart/Cart.actiontypes";
-import Payment from "./CultStore/Payment";
+import Payment from "./CultStore/Payment"; 
+import RazorPay from "./CultStore/paymentgate";
+
 
 export default function Checkout() {
   const cartData = useSelector((store) => store.cart);
@@ -191,7 +193,8 @@ export default function Checkout() {
             <Heading fontSize={"18px"}>{totalprice}</Heading>
           </Box>
           <Box>
-            <Payment details={details} totalprice={totalprice}></Payment>
+          
+            <RazorPay details={details} totalprice={totalprice}></RazorPay>
           </Box>
         </Box>
       </Box>
