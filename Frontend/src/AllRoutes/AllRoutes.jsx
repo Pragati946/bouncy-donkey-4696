@@ -16,6 +16,7 @@ import Womens from "../Components/CultStore/Products/All10Pages/women";
 import Mens from "../Components/CultStore/Products/All10Pages/Mens";
 import Equipments from "../Components/CultStore/Products/All10Pages/Equipments";
 import Checkout from "../Pages/Checkout";
+import { PrivateRoute } from "../PrivateRoute/PrivateRoute";
 
 export default function AllRoutes() {
   return (
@@ -24,7 +25,7 @@ export default function AllRoutes() {
       <Route path="/fitness" element={<Fitness_Page />}></Route>
       <Route path="/care" element={<Care />}></Route>
       <Route path="/mind" element={<Mind />}></Route>
-      <Route path="/store" element={<StoreHome/>}></Route>
+      <Route path="/store" element={<PrivateRoute><StoreHome/></PrivateRoute>}></Route>
       <Route path="/mens" element={<Mens />}></Route>
       <Route path="/womens" element={<Womens />}></Route>
       <Route path="/topSellings" element={<BestSellers />}></Route>
