@@ -61,7 +61,7 @@ To be Authenticated for this site you have to use Reqres api.
 <img width="913" alt="fifty" src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-12-24/Screenshot_20221224_121006_652254.png">
 
 ##### Payment Page :
-<img width="913" alt="fifty" src="">
+<img width="913" alt="fifty" src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-12-24/Screenshot_20221224_141411_747677.png">
 
 
 
