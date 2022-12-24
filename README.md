@@ -32,24 +32,38 @@ https://drive.google.com/file/d/1IUq53wdJcP01lM1IM9ITQ0ONgxCRunhO/view
 # Roles and Responsibilities
 
 
-##### login page:
-To login User has to enter their Phone number and password to log into the website.
+##### Login Page:
+To be Authenticated for this site you have to use Reqres api.
 
-<img width="913" alt="fifty" src="https://user-images.githubusercontent.com/86112788/201525257-b6ea0829-1861-4c48-bf24-6c65fa51a056.PNG">
+<img width="913" alt="fifty" src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-12-24/Screenshot_20221224_120306_108845.png">
 
 ##### Homepage : 
 <img width="913" alt="fifty" src="https://user-images.githubusercontent.com/86112788/201525927-fd99c566-1e52-43f0-b948-50f27f912852.PNG">
 
-
-
-##### Fitnees page : 
+##### Fitness Page : 
 <img width="913" alt="fifty" src="https://user-images.githubusercontent.com/86112788/201525959-504c8c5a-32a9-4400-bad3-4c74d94b3362.PNG">
 
 ##### Mind Page :
 <img width="913" alt="fifty" src="https://user-images.githubusercontent.com/86112788/201525983-8367c214-bf4b-4809-ad06-183fa3283ec0.PNG">
 
-##### Store page :
-<img width="913" alt="fifty" src="https://user-images.githubusercontent.com/86112788/201526007-b6e9bfdd-2c38-4c97-890a-29bbf226a121.PNG">
+##### Store Homepage :
+<img width="913" alt="fifty" src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-12-24/Screenshot_20221224_120608_520378.png">
+
+##### Products Page :
+<img width="913" alt="fifty" src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-12-24/Screenshot_20221224_120717_822667.png">
+
+
+##### Single Productpage :
+<img width="913" alt="fifty" src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-12-24/Screenshot_20221224_120832_567902.png">
+
+
+##### Checkout Page :
+<img width="913" alt="fifty" src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-12-24/Screenshot_20221224_121006_652254.png">
+
+##### Payment Page :
+<img width="913" alt="fifty" src="">
+
+
 
 
 
