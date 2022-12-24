@@ -35,7 +35,7 @@ https://drive.google.com/file/d/1IUq53wdJcP01lM1IM9ITQ0ONgxCRunhO/view
 ##### Login Page:
 To be Authenticated for this site you have to use Reqres api.
 
-<img width="913" height="500" alt="fifty" src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-12-24/Screenshot_20221224_120306_108845.png">
+<img width="913" alt="fifty" src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-12-24/Screenshot_20221224_120306_108845.png">
 
 ##### Homepage : 
 <img width="913" alt="fifty" src="https://user-images.githubusercontent.com/86112788/201525927-fd99c566-1e52-43f0-b948-50f27f912852.PNG">
