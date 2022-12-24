@@ -132,14 +132,14 @@ const StoreHome = () => {
         comp="LOVED BY CULT MEMBERS"
         arr={women}
       />
-      <HomeSlider heading="JUST LAUNCHED" comp="NEW ARRIVALS" arr={man} />
-      <HomeSlider heading="T-SHIRTS" arr={top} />
-      <HomeSlider heading="CYCLES" arr={arri} />
-      <HomeSlider heading="CYCLES" arr={foot} />
+      <HomeSlider heading="T-SHIRTS"  arr={man} />
+      <HomeSlider heading="JUST LAUNCHED" comp="NEW ARRIVALS" arr={top} />
+      <HomeSlider heading="TRENDING NOW" arr={arri} />
+      <HomeSlider heading="FOOTWEAR" arr={foot} />
       <HomeSlider heading="TREADMILLS" arr={card} />
-      <HomeSlider heading="TREADMILLS" arr={acc} />
-      <HomeSlider heading="TOPWEAR" arr={cycle} />
-      <HomeSlider heading="TOPWEAR" arr={supp} />
+      <HomeSlider heading="SUPPORTER" arr={acc} />
+      <HomeSlider heading="CYCLES" arr={cycle} />
+      <HomeSlider heading="PROTEIN" arr={supp} />
         <HomeSlider heading="SHOP BY WORKOUT" arr={equi} />
         <br />
         <br />
