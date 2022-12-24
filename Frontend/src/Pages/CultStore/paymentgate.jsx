@@ -28,7 +28,7 @@ async function displayRazorpay() {
       return;
   }
 
-  const result = await axios.post("http://localhost:5000/payment/orders",{totalprice});
+  const result = await axios.post("https://razorpay-43ea.onrender.com/payment/orders",{totalprice});
 
   if (!result) {
       alert("Server error. Are you online?");
@@ -52,7 +52,7 @@ async function displayRazorpay() {
               razorpaySignature: response.razorpay_signature,
           };
 
-          const result = await axios.post("http://localhost:5000/payment/success", data);
+          const result = await axios.post("https://razorpay-43ea.onrender.com/payment/success", data);
 
           toast({
             title: "Payment successfull.",
@@ -82,9 +82,7 @@ async function displayRazorpay() {
 }
 
 return (
-  
-      
-          <Button display={"block"}
+         <Button display={"block"}
           borderRadius={"100px"}
           width="200px"
           margin="auto"
