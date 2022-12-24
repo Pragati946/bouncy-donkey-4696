@@ -15,7 +15,7 @@ import {
   useToast,
   VStack,
 } from "@chakra-ui/react";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 import { getProductDetail } from "../../Redux/Product_Details/ProductDetails.actions";
@@ -27,6 +27,7 @@ import CultStoreFooter from "../../Components/CultStore/CultStoreFooter/CultStor
 export default function ProductDetails() {
   const { id, category } = useParams();
   const toast = useToast();
+  const [state,setState] = useState(false)
   const productdetail = useSelector(
     (store) => store.productdetail.ProductDetail
   );
@@ -110,13 +111,25 @@ export default function ProductDetails() {
               <Button
                 _hover={{ backgroundColor: "ff385a" }}
                 onClick={() => {
-                  dispatch(CartAdd(productdetail));
-                  toast({
-                    title: `Successfully Added`,
-                    status: "success",
-                    isClosable: true,
-                    position: "top",
-                  });
+                  if(state){
+                    toast({
+                      title: `Already Added`,
+                      status: "success",
+                      isClosable: true,
+                      position: "top",
+                    });
+
+                  }else{
+                    dispatch(CartAdd(productdetail));
+                    setState(true)
+                    toast({
+                      title: `Successfully Added`,
+                      status: "success",
+                      isClosable: true,
+                      position: "top",
+                    });
+                  }
+                  
                 }}
                 padding={"20px"}
                 borderRadius={"100px"}
